@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
-import { ModeToggle } from "./ModeToggle";
+import { ModeToggle } from "./theme/ModeToggle";
 
 const Headder = () => {
   const router = useRouter();
@@ -15,14 +15,14 @@ const Headder = () => {
   // Logout handler
   const handleLogout = () => {
     // Clear any local storage, cookies, or session data here
-    localStorage.removeItem("users"); // example
+    localStorage.removeItem("Current User"); // example
     // Redirect to login page
     router.push("/login");
   };
 
   React.useEffect(() => {
     // Runs only in the browser
-    const userData = localStorage.getItem("currentUser");
+    const userData = localStorage.getItem("Current User");
     // console.log("User Data:", userData); // Debugging line
 
     if (userData) {
