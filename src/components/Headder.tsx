@@ -196,8 +196,8 @@ const Headder = () => {
               className="flex items-center gap-2  p-2 rounded-full hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors focus:outline-none"
               aria-label="Profile menu"
             >
-              <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-400 to-yellow-400 flex items-center justify-center text-white dark:from-[#ffff] dark:to-[#00000] font-bold text-lg">
-                {userInitials || "RB"}
+              <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-400 to-yellow-400 flex items-center justify-center text-white dark:from-[#ffff] dark:to-[#00000] font-bold text-lg dark:text-[#ffffff]">
+                {userInitials}
               </span>
             </button>
             {openDropdown === "profile" && (
