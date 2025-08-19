@@ -1,0 +1,223 @@
+import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import { useRouter } from "next/navigation";
+import { ModeToggle } from "./ModeToggle";
+
+const Headder = () => {
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const [userInitials, setUserInitials] = React.useState(""); // Default initials
+
+  // Logout handler
+  const handleLogout = () => {
+    // Clear any local storage, cookies, or session data here
+    localStorage.removeItem("users"); // example
+    // Redirect to login page
+    router.push("/login");
+  };
+
+  React.useEffect(() => {
+    // Runs only in the browser
+    const userData = localStorage.getItem("currentUser");
+    // console.log("User Data:", userData); // Debugging line
+
+    if (userData) {
+      try {
+        const user = JSON.parse(userData);
+        console.log("Parsed User Data:", user); // Debugging line
+        const firstInitial = user.firstName?.[0]?.toUpperCase() || "R";
+        const lastInitial = user.lastName?.[0]?.toUpperCase() || "B";
+        setUserInitials(firstInitial + lastInitial);
+      } catch (error) {
+        console.error("Failed to parse user data:", error);
+      }
+    }
+  }, []);
+
+  // Dropdown handler: only one open at a time
+  const handleDropdown = (menu: string) => {
+    setOpenDropdown((prev) => (prev === menu ? null : menu));
+  };
+
+  // Close dropdowns on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <header className="w-full sticky caret-transparent top-0 z-50 bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-b border-orange-200 dark:border-yellow-700 transition-colors duration-300 shadow-none">
+      <nav
+        ref={navRef}
+        className="mx-auto flex items-center justify-between px-4 py-2"
+      >
+        <div className="">
+          <Image src="/logo-stackly.png" alt="Logo" width={150} height={150} />
+        </div>
+        <button
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="md:hidden text-3xl p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          &#9776;
+        </button>
+
+        <div className="flex items-center ml-2 gap-2">
+          <ul
+            className={`nav-list flex-col md:flex-row md:flex items-center gap-2 md:gap-5 font-medium text-base md:text-lg transition-all duration-300 bg-white/80 dark:bg-zinc-900/90 md:bg-transparent md:dark:bg-transparent absolute md:static left-0 w-full md:w-auto top-16 md:top-auto shadow-lg md:shadow-none text-nowrap ${
+              menuOpen ? "flex" : "hidden"
+            }`}
+          >
+            <li className="relative">
+              <button
+                onClick={() => handleDropdown("home")}
+                className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors"
+              >
+                Home <span className="ml-1">&#9662;</span>
+              </button>
+              {openDropdown === "home" && (
+                <ul className="absolute left-0 mt-2 w-44 bg-white dark:bg-zinc-800 rounded-lg shadow-lg py-2 z-20    ">
+                  <li>
+                    <Link href="/home1">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer  ">
+                        Home 1
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/home2">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Home 2
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link href="/about-us">
+                <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
+                  About Us
+                </span>
+              </Link>
+            </li>
+            <li className="relative">
+              <button
+                onClick={() => handleDropdown("services")}
+                className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors"
+              >
+                Services <span className="ml-1">&#9662;</span>
+              </button>
+              {openDropdown === "services" && (
+                <ul className="absolute left-0 mt-2   bg-white dark:bg-zinc-800 rounded-lg shadow-lg py-2 z-20   ">
+                  <li>
+                    <Link href="/services">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        All Services
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/food-delivery">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Food Delivery
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/table-booking">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Table Booking
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/catering">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Catering
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/online-menu">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Online Menu
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/party-orders">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Party Orders
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/reservation-management">
+                      <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
+                        Reservation Management
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link href="/blog">
+                <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
+                  Blog
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact-us">
+                <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
+                  Contact Us
+                </span>
+              </Link>
+            </li>
+          </ul>
+
+          <div className="relative">
+            <button
+              onClick={() => handleDropdown("profile")}
+              className="flex items-center gap-2  p-2 rounded-full hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors focus:outline-none"
+              aria-label="Profile menu"
+            >
+              <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-orange-400 to-yellow-400 flex items-center justify-center text-white dark:from-[#ffff] dark:to-[#00000] font-bold text-lg">
+                {userInitials || "RB"}
+              </span>
+            </button>
+            {openDropdown === "profile" && (
+              <ul className="absolute right-0 mt-2 w-36 bg-white dark:bg-zinc-800 rounded-lg shadow-lg py-2 z-20 ">
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer text-red-600 dark:text-red-400 font-semibold"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            )}
+          </div>
+          <ModeToggle />
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Headder;
