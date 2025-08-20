@@ -22,7 +22,7 @@ const Home1 = () => {
           Your browser does not support the video tag.
         </video>
         {/* Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent dark:from-zinc-900/80 to-30% z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent dark:from-zinc-900/80 to-30% z-10 flex items-center justify-center" />
         <div className="flex-1 text-center md:text-left relative z-20">
           <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
             Delicious Food Delivered Fast
@@ -55,14 +55,14 @@ const Home1 = () => {
         <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
           Our Services
         </h2>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative max-w-screen">
           {/* Decorative line for desktop */}
           <div
-            className="hidden md:block absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-orange-200 via-orange-400 to-yellow-200 dark:from-zinc-800 dark:via-yellow-500 dark:to-zinc-800 z-0"
+            className="hidden md:block absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-orange-200 via-orange-400 to-yellow-200 dark:from-zinc-800 dark:via-yellow-500 dark:to-zinc-800 z-0  "
             style={{ transform: "translateY(-50%)" }}
           />
           {/* Service Items */}
-          <div className="flex flex-col md:flex-row items-center justify-between w-full z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between max-w-screen    ">
             {[
               {
                 icon: "/food-delivery.svg",
@@ -97,12 +97,18 @@ const Home1 = () => {
             ].map((item, idx) => (
               <div
                 key={item.title}
-                className="flex flex-col items-center text-center mx-4 mb-12 md:mb-0 md:w-1/6 min-w-[120px]"
+                className="flex flex-col items-center text-center mx-4 mb-12 md:mb-0 md:w-1/6 min-w-[90px]"
               >
                 <div className="bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-zinc-800 dark:to-yellow-900 p-4 rounded-full shadow-lg mb-4">
-                  <img src={item.icon} alt={item.title} className="w-12 h-12" />
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-12 h-12"
+                    height={48}
+                    width={48}
+                  />
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-orange-700 dark:text-yellow-300">
+                <h3 className="font-bold   text-lg mb-2 text-orange-700 dark:text-yellow-300">
                   {item.title}
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-300 text-sm">
@@ -114,12 +120,12 @@ const Home1 = () => {
         </div>
       </section>
 
-      {/* Section 3: Featured Restaurants - Horizontal scroll with highlight */}
-      <section className="py-16 px-4 flex justify-center items-center flex-col mx-auto">
+      {/* Section 3: Featured Restaurants - Responsive horizontal/vertical layout */}
+      <section className="py-16 px-4 flex justify-center items-center flex-col mx-auto w-full max-w-screen">
         <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
           Featured Restaurants
         </h2>
-        <div className="flex gap-8 pb-4">
+        <div className="flex flex-wrap   gap-8 pb-4 w-full max-w-screen justify-center items-stretch">
           {[
             {
               img: "/restaurant1.jpg",
@@ -138,8 +144,8 @@ const Home1 = () => {
             },
           ].map((r, idx) => (
             <div
-              key={r.name}
-              className="flex-shrink-0 w-80 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-3xl p-8 flex flex-col items-center shadow-xl hover:scale-105 transition-transform border-4 border-transparent hover:border-orange-400 dark:hover:border-yellow-400"
+              key={idx}
+              className="w-full sm:w-80 md:w-80 flex-shrink-0 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-3xl p-8 flex flex-col items-center shadow-xl hover:scale-105 transition-transform border-4 border-transparent hover:border-orange-400 dark:hover:border-yellow-400 mx-auto"
             >
               <img
                 src={r.img}
@@ -195,51 +201,49 @@ const Home1 = () => {
         </div>
       </section>
 
-      {/* Section 5: Customer Reviews - Carousel style */}
-      <section className="py-16 px-4   mx-auto">
+      {/* Section 5: Customer Reviews - Responsive layout */}
+      <section className="py-16 px-4 w-full flex justify-center items-center flex-col mx-auto max-w-screen">
         <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
           What Our Customers Say
         </h2>
-        <div className="relative flex items-center justify-center">
-          <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-orange-200 dark:scrollbar-thumb-yellow-700">
-            {[
-              {
-                img: "/user1.jpg",
-                name: "Priya S.",
-                review:
-                  "“The food always arrives hot and on time. Love the variety!”",
-              },
-              {
-                img: "/user2.jpg",
-                name: "Rahul M.",
-                review:
-                  "“Booking a table is so easy, and the service is fantastic!”",
-              },
-              {
-                img: "/user3.jpg",
-                name: "Anjali T.",
-                review:
-                  "“Great catering for our office party. Highly recommend!”",
-              },
-            ].map((u) => (
-              <div
-                key={u.name}
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-3xl p-8 flex flex-col items-center shadow-xl border-4 border-transparent hover:border-orange-400 dark:hover:border-yellow-400 transition-all mx-2"
-              >
-                <img
-                  src={u.img}
-                  alt={u.name}
-                  className="w-16 h-16 rounded-full mb-4 object-cover border-4 border-orange-200 dark:border-yellow-400"
-                />
-                <p className="italic text-zinc-700 dark:text-zinc-200 mb-2 text-center">
-                  {u.review}
-                </p>
-                <span className="font-bold text-orange-600 dark:text-yellow-400">
-                  {u.name}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-wrap   gap-8 pb-4 w-full max-w-5xl justify-center items-stretch">
+          {[
+            {
+              img: "/user1.jpg",
+              name: "Priya S.",
+              review:
+                "“The food always arrives hot and on time. Love the variety!”",
+            },
+            {
+              img: "/user2.jpg",
+              name: "Rahul M.",
+              review:
+                "“Booking a table is so easy, and the service is fantastic!”",
+            },
+            {
+              img: "/user3.jpg",
+              name: "Anjali T.",
+              review:
+                "“Great catering for our office party. Highly recommend!”",
+            },
+          ].map((u) => (
+            <div
+              key={u.name}
+              className="w-full sm:w-80 md:w-80 flex-shrink-0 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-3xl p-8 flex flex-col items-center shadow-xl border-4 border-transparent hover:border-orange-400 dark:hover:border-yellow-400 transition-all mx-auto"
+            >
+              <img
+                src={u.img}
+                alt={u.name}
+                className="w-16 h-16 rounded-full mb-4 object-cover border-4 border-orange-200 dark:border-yellow-400"
+              />
+              <p className="italic text-zinc-700 dark:text-zinc-200 mb-2 text-center">
+                {u.review}
+              </p>
+              <span className="font-bold text-orange-600 dark:text-yellow-400">
+                {u.name}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
