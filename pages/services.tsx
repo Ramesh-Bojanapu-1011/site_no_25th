@@ -145,63 +145,174 @@ export default function Services() {
 
       {/* 3. Why Choose Us Section */}
       <section
-        className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16 max-w-7xl mx-auto overflow-visible"
+        className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible"
         data-aos="fade-up"
       >
         {/* Diagonal split background */}
-        <span className="absolute inset-0 w-full h-full bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl -z-10" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)' }}></span>
+        <span
+          className="absolute inset-0 w-full h-full bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl -z-10"
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 100%)" }}
+        ></span>
         {/* Left: Glassmorphism card with frosted border and floating badges */}
-        <div className="flex-1 flex flex-col items-start z-10" data-aos="fade-right">
+        <div
+          className="flex-1 flex flex-col items-start z-10"
+          data-aos="fade-right"
+        >
           <div className="relative w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-10 py-12 animate-fade-in-up overflow-visible">
             <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 tracking-tight animate-slide-in-left">
               Why Choose Us?
             </h2>
             <ul className="flex flex-col gap-7">
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.1s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">Fast, reliable, and contactless delivery</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  Fast, reliable, and contactless delivery
+                </span>
               </li>
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 via-orange-200 to-yellow-600 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">Wide range of cuisines and restaurants</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  Wide range of cuisines and restaurants
+                </span>
               </li>
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.3s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 via-yellow-200 to-green-600 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">Easy online reservations and management</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  Easy online reservations and management
+                </span>
               </li>
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.4s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-yellow-200 to-orange-400 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V5m0 11v3m7-7h3m-17 0H2" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V5m0 11v3m7-7h3m-17 0H2"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">Custom catering for every occasion</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  Custom catering for every occasion
+                </span>
               </li>
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-400 via-yellow-200 to-pink-500 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2z" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2z"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">Exclusive party and group order deals</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  Exclusive party and group order deals
+                </span>
               </li>
-              <li className="flex items-center gap-5 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <li
+                className="flex items-center gap-5 animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
                 <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-400 via-yellow-200 to-blue-600 text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-1.414 1.414M6.343 17.657l-1.414 1.414M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 7.364l-1.414-1.414M6.343 6.343L4.929 4.929" /></svg>
+                  <svg
+                    className="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M18.364 5.636l-1.414 1.414M6.343 17.657l-1.414 1.414M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 7.364l-1.414-1.414M6.343 6.343L4.929 4.929"
+                    />
+                  </svg>
                 </span>
-                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">24/7 customer support</span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  24/7 customer support
+                </span>
               </li>
             </ul>
             {/* Floating decorative badge */}
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-xl animate-bounce border-2 border-orange-200 dark:border-yellow-600 z-20">
+            {/* <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-xl animate-bounce border-2 border-orange-200 dark:border-yellow-600 z-20">
               Trusted by Thousands
-            </span>
+            </span> */}
           </div>
         </div>
         {/* Right: Layered image card with glowing border and floating sparkles */}
-        <div className="flex-1 flex justify-center items-center z-10" data-aos="zoom-in">
+        <div
+          className="flex-1 flex justify-center items-center z-10"
+          data-aos="zoom-in"
+        >
           <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible">
             {/* Glowing border ring */}
             <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
@@ -209,7 +320,7 @@ export default function Services() {
               src="/choose-us.svg"
               alt="Why Choose Us"
               className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
-              style={{ animationDelay: '0.7s', animationDuration: '1.2s' }}
+              style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
             />
             {/* Floating sparkles */}
             <span className="absolute -top-6 -right-6 w-10 h-10 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
@@ -221,53 +332,136 @@ export default function Services() {
 
       {/* 4. How It Works Section */}
       <section
-        className="py-16 px-4 w-full max-w-7xl mx-auto"
+        className="relative py-24 px-4 w-full mx-auto overflow-visible"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
+        {/* Decorative background gradient */}
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   shadow-2xl -z-10"></span>
+        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-20 text-center animate-fade-in-up relative z-10">
           How It Works
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1 flex flex-col gap-6 animate-fade-in-up">
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 text-white font-bold text-2xl shadow-lg ">
-                1
+        <div className="flex flex-col md:flex-row items-center gap-20 relative z-10">
+          {/* Zig-zag stepper on the left */}
+          <div className="flex-1 flex flex-col gap-16 relative animate-fade-in-up">
+            {/* Step 1 */}
+            <div className="flex flex-col   md:flex-row items-center md:items-start gap-8 relative group">
+              <span className="z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 text-white text-3xl shadow-2xl border-4 border-white dark:border-zinc-900 group-hover:scale-110 transition-transform duration-300 animate-pop-in">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8v8m0 0l-4-4m4 4l4-4"
+                  />
+                </svg>
               </span>
-              <span className="text-lg text-zinc-700 dark:text-zinc-200">
-                Choose your service
-              </span>
+              <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-xl px-8 py-7 border-l-4 border-orange-400 dark:border-yellow-400 w-full">
+                <span className="text-2xl text-orange-600 dark:text-yellow-400 font-extrabold block mb-2">
+                  Browse & Select
+                </span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-medium">
+                  Explore our wide range of restaurants, cuisines, and services.
+                  Use filters and recommendations to find exactly what you
+                  crave.
+                </span>
+              </div>
+              {/* Connecting line */}
+              <span className="hidden md:block absolute left-7 top-20 h-16 w-1 bg-gradient-to-b from-orange-400 via-yellow-200 to-orange-600 rounded-full opacity-60"></span>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 text-white font-bold text-2xl shadow-lg ">
-                2
+            {/* Step 2 */}
+            <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 relative group">
+              <span className="z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-orange-200 to-yellow-600 text-white text-3xl shadow-2xl border-4 border-white dark:border-zinc-900 group-hover:scale-110 transition-transform duration-300 animate-pop-in">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8v8m0 0l-4-4m4 4l4-4"
+                  />
+                </svg>
               </span>
-              <span className="text-lg text-zinc-700 dark:text-zinc-200">
-                Place your order or reservation
-              </span>
+              <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-xl px-8 py-7 border-l-4 border-yellow-400 dark:border-orange-400 w-full md:text-right">
+                <span className="text-2xl text-yellow-500 dark:text-orange-300 font-extrabold block mb-2">
+                  Order & Reserve
+                </span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-medium">
+                  Place your food order, book a table, or request catering in
+                  just a few clicks. Enjoy real-time updates and instant
+                  confirmations.
+                </span>
+              </div>
+              {/* Connecting line */}
+              <span className="hidden md:block absolute right-7 top-20 h-16 w-1 bg-gradient-to-b from-yellow-400 via-orange-200 to-yellow-600 rounded-full opacity-60"></span>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 text-white font-bold text-2xl shadow-lg ">
-                3
+            {/* Step 3 */}
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 relative group">
+              <span className="z-10 w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 via-yellow-200 to-green-600 text-white text-3xl shadow-2xl border-4 border-white dark:border-zinc-900 group-hover:scale-110 transition-transform duration-300 animate-pop-in">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
               </span>
-              <span className="text-lg text-zinc-700 dark:text-zinc-200">
-                Enjoy seamless service and great food!
-              </span>
+              <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-xl px-8 py-7 border-l-4 border-green-400 dark:border-yellow-400 w-full">
+                <span className="text-2xl text-green-600 dark:text-yellow-400 font-extrabold block mb-2">
+                  Enjoy & Celebrate
+                </span>
+                <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-medium">
+                  Sit back and relax! Your food arrives hot, your table is
+                  ready, or your event is perfectly catered. Savor every moment
+                  with us.
+                </span>
+              </div>
             </div>
+            {/* Floating badge */}
+            {/* <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-10 py-4 rounded-full font-extrabold shadow-2xl animate-bounce border-4 border-orange-200 dark:border-yellow-600 z-20 text-lg md:text-2xl tracking-wide">
+              Seamless Experience, Every Time
+            </span> */}
           </div>
-          <div className="flex-1 flex justify-center items-center animate-pop-in">
-            <img
-              src="/how-it-works.svg"
-              alt="How It Works"
-              className="w-72 md:w-96 rounded-2xl shadow-2xl"
-              style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
-            />
-          </div>
+          {/* Animated illustration card on the right with 3D tilt */}
+          {/* <div className="flex-1 flex justify-center items-center animate-pop-in relative">
+            <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible group perspective-1000">
+              <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:rotate-y-6 group-hover:-rotate-x-3" style={{ transformStyle: 'preserve-3d' }}>
+                <img
+                  src="/how-it-works.svg"
+                  alt="How It Works"
+                  className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
+                  style={{ animationDelay: '0.7s', animationDuration: '1.2s' }}
+                />
+                {/* Floating sparkles */}
+          {/*  <span className="absolute -top-8 left-8 w-6 h-6 bg-pink-300 rounded-full blur-md opacity-60 animate-float-slow"></span>
+                <span className="absolute -top-6 right-10 w-8 h-8 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
+                <span className="absolute bottom-0 right-0 w-10 h-10 bg-orange-200 dark:bg-yellow-900 rounded-full blur-lg opacity-50 animate-float-slow"></span>
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-5 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 rounded-full blur-md opacity-40 animate-fade-in-up"></span>
+                <span className="absolute top-1/2 left-0 w-4 h-4 bg-blue-300 rounded-full blur-sm opacity-50 animate-float-slow"></span>
+                <span className="absolute top-1/3 right-0 w-5 h-5 bg-green-300 rounded-full blur-md opacity-40 animate-float-slow"></span>
+              </div>
+            </div>
+          </div> */}
         </div>
       </section>
 
       {/* 5. Testimonials Section */}
       <section
-        className="py-16 px-4 w-full max-w-7xl mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-xl"
+        className="py-16 px-4 w-full  mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-xl"
         data-aos="fade-up"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
