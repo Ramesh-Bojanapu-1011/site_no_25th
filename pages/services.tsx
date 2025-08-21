@@ -5,47 +5,48 @@ import AOS from "aos";
 import Image from "next/image";
 import Link from "next/link";
 import "aos/dist/aos.css";
+import Head from "next/head";
 
 const services = [
   {
     title: "Food Delivery",
     desc: "Get your favorite meals delivered hot and fresh to your doorstep, fast and hassle-free.",
-    icon: "/delivery.svg",
+    icon: "https://www.svgrepo.com/show/401385/delivery-truck.svg",
     link: "/food-delivery",
     color: "from-orange-400 via-yellow-300 to-orange-600",
   },
   {
     title: "Table Booking",
     desc: "Reserve your table at top restaurants instantly and skip the wait.",
-    icon: "/table.svg",
+    icon: "https://www.svgrepo.com/show/265562/table.svg",
     link: " /table-booking",
     color: "from-yellow-400 via-orange-200 to-yellow-600",
   },
   {
     title: "Catering",
     desc: "Delicious catering for all occasions, tailored to your needs and preferences.",
-    icon: "/catering.svg",
+    icon: "https://www.svgrepo.com/show/251535/catering-buffet.svg",
     link: " /catering",
     color: "from-green-400 via-yellow-200 to-green-600",
   },
   {
     title: "Online Menu",
     desc: "Browse and order from our digital menu, updated in real-time.",
-    icon: "/menu.svg",
+    icon: "https://www.svgrepo.com/show/277641/menu.svg",
     link: " /online-menu",
     color: "from-pink-400 via-yellow-200 to-orange-400",
   },
   {
     title: "Party Orders",
     desc: "Order in bulk for parties and events, with special discounts and combos.",
-    icon: "/party.svg",
+    icon: "https://www.svgrepo.com/show/401329/confetti-ball.svg",
     link: " /party-orders",
     color: "from-purple-400 via-yellow-200 to-pink-500",
   },
   {
     title: "Reservation Management",
     desc: "Seamlessly manage your reservations and bookings online.",
-    icon: "/reservation.svg",
+    icon: "https://www.svgrepo.com/show/428761/management-check-gear.svg",
     link: " /reservation-management",
     color: "from-blue-400 via-yellow-200 to-blue-600",
   },
@@ -57,7 +58,14 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-zinc-900 transition-colors duration-300">
+    <>
+      <Head>
+        <title>Our Services</title>
+        <meta
+          name="description"
+          content="Explore our range of services including food delivery, table booking, and more."
+        />
+      </Head>
       <Headder />
 
       {/* 1. Hero Section */}
@@ -122,7 +130,7 @@ export default function Services() {
                 <Image
                   src={service.icon}
                   alt={service.title}
-                  className="w-12 h-12 object-contain"
+                  className="w-12 h-12 object-cover"
                   width={48}
                   height={48}
                 />
@@ -302,10 +310,6 @@ export default function Services() {
                 </span>
               </li>
             </ul>
-            {/* Floating decorative badge */}
-            {/* <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-xl animate-bounce border-2 border-orange-200 dark:border-yellow-600 z-20">
-              Trusted by Thousands
-            </span> */}
           </div>
         </div>
         {/* Right: Layered image card with glowing border and floating sparkles */}
@@ -317,7 +321,7 @@ export default function Services() {
             {/* Glowing border ring */}
             <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
             <Image
-              src="/choose-us.svg"
+              src="/choose-us.png"
               alt="Why Choose Us"
               className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
               style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
@@ -456,7 +460,7 @@ export default function Services() {
               <img
                 src="/profile1.jpg"
                 alt="Priya S."
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </span>
             <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
@@ -479,7 +483,7 @@ export default function Services() {
               <img
                 src="/profile2.jpg"
                 alt="Rahul M."
-                className="w-full h-full object-cover"
+                className="w-full h-full object-top object-cover"
               />
             </span>
             <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
@@ -502,7 +506,7 @@ export default function Services() {
               <img
                 src="/profile3.jpg"
                 alt="Aisha K."
-                className="w-full h-full object-cover"
+                className="w-full h-full object-top object-cover"
               />
             </span>
             <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
@@ -539,6 +543,6 @@ export default function Services() {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 }
