@@ -10,7 +10,7 @@ const foodSections = [
   {
     title: "How Table Booking Works",
     desc: "Reserve your perfect table in just a few easy steps and enjoy a seamless dining experience.",
-    icon: "/table-booking.svg",
+    icon: "/table-booking.png",
     content: (
       <div className="w-full flex flex-col items-center">
         <div className="relative w-full max-w-2xl mx-auto py-8">
@@ -18,22 +18,22 @@ const foodSections = [
           <div className="relative z-10 flex flex-col gap-0">
             {[
               {
-                icon: "/calendar.svg",
+                icon: "https://www.svgrepo.com/show/530375/calendar.svg",
                 label: "Pick a Date",
                 desc: "Choose your preferred date and time",
               },
               {
-                icon: "/table.svg",
+                icon: "https://www.svgrepo.com/show/265562/table.svg",
                 label: "Select Table Type",
                 desc: "Indoor, outdoor, or private dining",
               },
               {
-                icon: "/user.svg",
+                icon: "https://www.svgrepo.com/show/499764/user.svg",
                 label: "Enter Details",
                 desc: "Provide your name and contact info",
               },
               {
-                icon: "/success.svg",
+                icon: "https://www.svgrepo.com/show/388670/success.svg",
                 label: "Confirm Reservation",
                 desc: "Get instant confirmation & reminders",
               },
@@ -42,7 +42,11 @@ const foodSections = [
               return (
                 <div
                   key={step.label}
-                  className={`relative flex w-full justify-${isLeft ? "start" : "end"} md:justify-${isLeft ? "start" : "end"} max-[495px]:justify-center max-[495px]:my-4 group`}
+                  className={`relative flex w-full justify-${
+                    isLeft ? "start" : "end"
+                  } md:justify-${
+                    isLeft ? "start" : "end"
+                  } max-[495px]:justify-center max-[495px]:my-4 group`}
                   style={{
                     animationDelay: `${0.1 + idx * 0.12}s`,
                     animationDuration: "1.1s",
@@ -52,7 +56,11 @@ const foodSections = [
                     <span className="absolute left-1/2 top-0 w-1 h-10 bg-gradient-to-b from-orange-300 via-yellow-200 to-orange-200 dark:from-yellow-800 dark:via-yellow-700 dark:to-yellow-900 opacity-70 z-0 -translate-x-1/2 animate-pulse" />
                   )}
                   <div
-                    className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${isLeft ? "ml-0 md:-ml-32 md:self-start" : "mr-0 md:-mr-32 md:self-end"}`}
+                    className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${
+                      isLeft
+                        ? "ml-0 md:-ml-32 md:self-start"
+                        : "mr-0 md:-mr-32 md:self-end"
+                    }`}
                   >
                     <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700 shadow-lg border-2 border-orange-200 dark:border-yellow-800 mb-2 relative animate-bounce-slow">
                       <Image
@@ -83,7 +91,7 @@ const foodSections = [
   {
     title: "Table Types & Ambience",
     desc: "Choose from a variety of seating options to match your mood and occasion.",
-    icon: "/table.svg",
+    icon: "https://www.svgrepo.com/show/265562/table.svg",
     content: (
       <div className="flex flex-wrap gap-8 justify-center items-center py-4">
         {[
@@ -129,13 +137,13 @@ const foodSections = [
   {
     title: "Why Reserve a Table?",
     desc: "Enjoy guaranteed seating, special requests, and a personalized dining experience.",
-    icon: "/success.svg",
+    icon: "https://www.svgrepo.com/show/388670/success.svg",
     content: (
       <ul className="flex flex-col gap-4 text-zinc-700 dark:text-zinc-200 text-left max-w-xl mx-auto">
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/success.svg"
+              src="https://www.svgrepo.com/show/388670/success.svg"
               alt="Priority Seating"
               width={20}
               height={20}
@@ -146,7 +154,7 @@ const foodSections = [
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/user.svg"
+              src="https://www.svgrepo.com/show/499764/user.svg"
               alt="Personalized Service"
               width={20}
               height={20}
@@ -157,7 +165,7 @@ const foodSections = [
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/calendar.svg"
+              src="https://www.svgrepo.com/show/474756/calendar.svg"
               alt="Celebration Perks"
               width={20}
               height={20}
@@ -167,7 +175,12 @@ const foodSections = [
         </li>
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
-            <Image src="/table.svg" alt="Easy Changes" width={20} height={20} />
+            <Image
+              src="https://www.svgrepo.com/show/265562/table.svg"
+              alt="Easy Changes"
+              width={20}
+              height={20}
+            />
           </span>
           Easy modifications or cancellations anytime
         </li>
@@ -176,31 +189,37 @@ const foodSections = [
   },
   // Section 4: Customer Experiences
   {
-    title: "Customer Experiences",
-    desc: "See what our guests are saying about their table booking and dining experience.",
-    icon: "/user1.jpg",
     content: (
-      <div className="flex flex-wrap gap-6 justify-center">
-        {["Priya S.", "Rahul M.", "Anjali T.", "Meera D."].map((name, i) => (
-          <div
-            key={name}
-            className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-2xl p-4 w-56 flex flex-col items-center shadow border border-orange-100 dark:border-yellow-900"
-          >
-            <Image
-              src={`/user${(i % 4) + 1}.jpg`}
-              alt={name}
-              width={48}
-              height={48}
-              className="rounded-full mb-2"
-            />
-            <span className="italic text-zinc-700 dark:text-zinc-200 text-sm mb-1">
-              “Wonderful service and a beautiful atmosphere!”
-            </span>
-            <span className="font-bold text-orange-600 dark:text-yellow-400 text-xs">
-              {name}
-            </span>
-          </div>
-        ))}
+      <div className="w-full flex flex-col items-center justify-center py-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
+          Customer Experiences
+        </h2>
+        <p className="text-zinc-700 dark:text-zinc-200 mb-2 max-w-2xl">
+          See what our guests are saying about their table booking and dining
+          experience.
+        </p>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {["Priya S.", "Rahul M.", "Anjali T.", "Arjun D."].map((name, i) => (
+            <div
+              key={name}
+              className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-2xl p-4 w-56 flex flex-col items-center shadow border border-orange-100 dark:border-yellow-900"
+            >
+              <Image
+                src={`/user${(i % 4) + 1}.jpg`}
+                alt={name}
+                width={48}
+                height={48}
+                className="rounded-full w-20 h-20 object-cover object-top mb-2"
+              />
+              <span className="italic text-zinc-700 dark:text-zinc-200 text-sm mb-1">
+                “Wonderful service and a beautiful atmosphere!”
+              </span>
+              <span className="font-bold text-orange-600 dark:text-yellow-400 text-xs">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     ),
   },
@@ -208,7 +227,7 @@ const foodSections = [
   {
     title: "Book Your Table Now!",
     desc: "Ready to reserve your spot? Secure your table in seconds and look forward to a memorable meal.",
-    icon: "/calendar.svg",
+    icon: "https://www.svgrepo.com/show/530375/calendar.svg",
     content: (
       <div
         className="w-full flex flex-col items-center justify-center py-8"
@@ -246,6 +265,17 @@ const TableBooking = () => {
         <Headder />
         {/* Hero Section */}
         <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 py-16 md:py-24 mx-auto gap-8 min-h-[100vh]">
+          {/* Background Video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/table-booking-hero-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               Reserve Your Table Instantly

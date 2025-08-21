@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: false,
   images: {
-    domains: ["i.pinimg.com"],
+    domains: ["i.pinimg.com", "cdn-icons-png.flaticon.com"],
   },
 };
 

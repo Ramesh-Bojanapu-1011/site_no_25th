@@ -10,7 +10,7 @@ const foodSections = [
   {
     title: "How Food Delivery Works",
     desc: "From browsing menus to doorstep delivery, experience a seamless process designed for your convenience.",
-    icon: "/fast-delivery.svg",
+    icon: "https://www.reshot.com/preview-assets/icons/YR6EWFPLB5/delivery-truck-YR6EWFPLB5.svg",
     content: (
       <div className="w-full flex flex-col items-center">
         {/* Modern floating card timeline with glowing connectors */}
@@ -20,22 +20,22 @@ const foodSections = [
           <div className="relative z-10 flex flex-col gap-0">
             {[
               {
-                icon: "/choose-menu.svg",
+                icon: "https://www.svgrepo.com/show/277641/menu.svg",
                 label: "Browse Menus",
                 desc: "Explore restaurants and dishes",
               },
               {
-                icon: "/place-order.svg",
+                icon: "https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/order-placed-purchased-icon.svg",
                 label: "Place Order",
                 desc: "Select your favorites & checkout",
               },
               {
-                icon: "/track-order.svg",
+                icon: "https://cdn-icons-png.flaticon.com/128/5161/5161406.png",
                 label: "Track Order",
                 desc: "Real-time delivery updates",
               },
               {
-                icon: "/fast-delivery.svg",
+                icon: "https://www.svgrepo.com/show/283358/delivery-truck-delivery.svg",
                 label: "Enjoy Delivery",
                 desc: "Contactless, fast, and fresh",
               },
@@ -101,10 +101,10 @@ const foodSections = [
   {
     title: "Featured Restaurants",
     desc: "Discover top-rated local favorites and trending new spots, all available for delivery.",
-    icon: "/restaurant1.jpg",
+    icon: "https://www.reshot.com/preview-assets/icons/HVA6XRGLSU/japanese-restaurant-HVA6XRGLSU.svg",
     content: (
       <div className="relative w-full  flex  items-center justify-center mx-auto  py-4">
-        <div className="flex gap-10 md:gap-16 px-2 md:px-8 items-end min-w-[600px] md:min-w-[900px] animate-fade-in-up">
+        <div className="flex  justify-center items-center md:gap-16 flex-wrap gap-10 px-2 md:px-8     animate-fade-in-up">
           {[
             {
               name: "Spicy Spoon",
@@ -161,7 +161,7 @@ const foodSections = [
   {
     title: "Real-Time Order Tracking",
     desc: "Track your food delivery in real time, from restaurant to your doorstep, with live updates and animated progress.",
-    icon: "/track-order.svg",
+    icon: "https://cdn-icons-png.flaticon.com/128/5161/5161406.png",
     content: (
       <div className="relative w-full max-w-2xl mx-auto flex flex-col items-center py-8">
         {/* Route line */}
@@ -195,7 +195,7 @@ const foodSections = [
               }}
             >
               <Image
-                src="/fast-delivery.svg"
+                src="https://www.svgrepo.com/show/283358/delivery-truck-delivery.svg"
                 alt="Scooter"
                 width={48}
                 height={48}
@@ -233,31 +233,38 @@ const foodSections = [
   },
   // Section 5: Customer Reviews
   {
-    title: "Customer Reviews",
-    desc: "See what our happy customers are saying about their food delivery experience.",
-    icon: "/user1.jpg",
     content: (
-      <div className="flex flex-wrap gap-6 justify-center">
-        {["Priya S.", "Rahul M.", "Anjali T.", "Meera D."].map((name, i) => (
-          <div
-            key={name}
-            className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-2xl p-4 w-56 flex flex-col items-center shadow border border-orange-100 dark:border-yellow-900"
-          >
-            <Image
-              src={`/user${(i % 4) + 1}.jpg`}
-              alt={name}
-              width={48}
-              height={48}
-              className="rounded-full mb-2"
-            />
-            <span className="italic text-zinc-700 dark:text-zinc-200 text-sm mb-1">
-              “Amazing service and delicious food!”
-            </span>
-            <span className="font-bold text-orange-600 dark:text-yellow-400 text-xs">
-              {name}
-            </span>
-          </div>
-        ))}
+      <div className="flex flex-col items-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
+          Customer Reviews
+        </h2>
+        <p className="text-zinc-700 dark:text-zinc-200 mb-2 max-w-2xl">
+          See what our happy customers are saying about their food delivery
+          experience.
+        </p>
+
+        <div className="flex flex-wrap gap-6 justify-center">
+          {["Priya S.", "Rahul M.", "Anjali T.", "Arjun D."].map((name, i) => (
+            <div
+              key={name}
+              className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-2xl p-4 w-56 flex flex-col items-center shadow border border-orange-100 dark:border-yellow-900"
+            >
+              <Image
+                src={`/user${(i % 4) + 1}.jpg`}
+                alt={name}
+                width={48}
+                height={48}
+                className="rounded-full w-20 h-20 object-cover object-top mb-2"
+              />
+              <span className="italic text-zinc-700 dark:text-zinc-200 text-sm mb-1">
+                “Amazing service and delicious food!”
+              </span>
+              <span className="font-bold text-orange-600 dark:text-yellow-400 text-xs">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     ),
   },
@@ -297,6 +304,17 @@ const FoodDelivery = () => {
         <Headder />
         {/* Hero Section */}
         <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 py-16 md:py-24   mx-auto gap-8 min-h-[100vh]">
+          {/* Background Video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-60 dark:opacity-50 pointer-events-none"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/food-delivery-hero-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               Food Delivery, Fast & Fresh
