@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const Home1 = () => {
   return (
-    <div className="bg-white dark:bg-zinc-900 transition-colors duration-300">
+    <div className="bg-white dark:bg-zinc-900     transition-colors duration-300 caret-transparent">
       <Headder />
       {/* Hero Section with Background Video */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-12 md:py-20    mx-auto gap-8 overflow-hidden    min-h-screen mb-6">
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-12 md:py-20    mx-auto gap-8  max-w-screen   min-h-screen mb-6">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-60 dark:opacity-50 pointer-events-none"
@@ -50,121 +50,150 @@ const Home1 = () => {
         </div>
       </section>
 
-      {/* Section 2: Services - Modern horizontal scroll with icons and lines */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
-          Our Services
-        </h2>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative max-w-screen">
-          {/* Decorative line for desktop */}
-          <div
-            className="hidden md:block absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-orange-200 via-orange-400 to-yellow-200 dark:from-zinc-800 dark:via-yellow-500 dark:to-zinc-800 z-0  "
-            style={{ transform: "translateY(-50%)" }}
+      {/* Section 2: Our Story - Creative narrative with image */}
+      <section className="py-20 px-4 max-w-screen mx-auto flex flex-col md:flex-row items-center gap-12 ">
+        <div className="flex-1 flex justify-center items-center">
+          <Image
+            src="/our-story.jpg"
+            alt="Our Story"
+            className="rounded-3xl shadow-2xl w-full max-w-md object-cover border-4 border-orange-200 dark:border-yellow-700"
+            width={420}
+            height={420}
           />
-          {/* Service Items */}
-          <div className="flex flex-col md:flex-row items-center justify-between max-w-screen    ">
-            {[
-              {
-                icon: "/food-delivery.svg",
-                title: "Food Delivery",
-                desc: "Get your favorite meals delivered fast and fresh to your doorstep.",
-              },
-              {
-                icon: "/table-booking.svg",
-                title: "Table Booking",
-                desc: "Reserve your table at top restaurants with just a few clicks.",
-              },
-              {
-                icon: "/catering.svg",
-                title: "Catering",
-                desc: "Perfect catering solutions for your parties and events.",
-              },
-              {
-                icon: "/online-menu.svg",
-                title: "Online Menu",
-                desc: "Browse our digital menu and order with ease from anywhere.",
-              },
-              {
-                icon: "/party-orders.svg",
-                title: "Party Orders",
-                desc: "Order in bulk for your celebrations and gatherings.",
-              },
-              {
-                icon: "/reservation-management.svg",
-                title: "Reservation Management",
-                desc: "Manage your reservations easily and get instant confirmations.",
-              },
-            ].map((item, idx) => (
-              <div
-                key={item.title}
-                className="flex flex-col items-center text-center mx-4 mb-12 md:mb-0 md:w-1/6 min-w-[90px]"
+        </div>
+        <div className="flex-1 flex flex-col justify-center items-start">
+          <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg">
+            Our Story
+          </h2>
+          <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-2xl text-justify">
+            Founded with a passion for great food and seamless experiences, our
+            journey began in a small kitchen with a big dream: to bring the best
+            flavors of the city to your doorstep. Today, we connect food lovers
+            with top restaurants, deliver joy to every home, and make every meal
+            memorable—whether you dine in or order out.
+          </p>
+          <ul className="mb-6 space-y-3">
+            <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
               >
-                <div className="bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-zinc-800 dark:to-yellow-900 p-4 rounded-full shadow-lg mb-4">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    className="w-12 h-12"
-                    height={48}
-                    width={48}
-                  />
-                </div>
-                <h3 className="font-bold   text-lg mb-2 text-orange-700 dark:text-yellow-300">
-                  {item.title}
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-300 text-sm">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              10+ Years Serving Foodies
+            </li>
+            <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              100+ Partner Restaurants
+            </li>
+            <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              Thousands of Happy Customers
+            </li>
+          </ul>
+          <Link
+            href={"/about-us"}
+            className="inline-block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 hover:shadow-orange-300 dark:hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-600 text-lg transition-all duration-300 cursor-pointer"
+          >
+            Learn More About Us
+          </Link>
         </div>
       </section>
 
-      {/* Section 3: Featured Restaurants - Responsive horizontal/vertical layout */}
-      <section className="py-16 px-4 flex justify-center items-center flex-col mx-auto w-full max-w-screen">
-        <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
+      {/* Section 3: Featured Restaurants - Modern Overlap Card Style */}
+      <section className="  flex flex-col items-center mx-auto w-full max-w-screen relative">
+        <h2 className="text-4xl font-extrabold text-center text-orange-600 dark:text-yellow-400 mb-14 tracking-tight drop-shadow-lg">
           Featured Restaurants
         </h2>
-        <div className="flex flex-wrap   gap-8 pb-4 w-full max-w-screen justify-center items-stretch">
+        <div className="flex flex-col md:flex-row gap-12 justify-center items-stretch w-full relative ">
           {[
             {
               img: "/restaurant1.jpg",
               name: "Spicy Spoon",
               desc: "Authentic Indian cuisine with a modern twist.",
+              badge: "Top Rated",
             },
             {
               img: "/restaurant2.jpg",
               name: "Urban Bites",
               desc: "Trendy urban eatery with global flavors and fast delivery.",
+              badge: "Fastest Delivery",
             },
             {
               img: "/restaurant3.jpg",
               name: "Green Garden",
               desc: "Fresh, healthy, and delicious vegetarian options.",
+              badge: "Best Veg",
             },
           ].map((r, idx) => (
             <div
               key={idx}
-              className="w-full sm:w-80 md:w-80 flex-shrink-0 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-3xl p-8 flex flex-col items-center shadow-xl hover:scale-105 transition-transform border-4 border-transparent hover:border-orange-400 dark:hover:border-yellow-400 mx-auto"
+              className={`relative group flex-1 min-w-[200px] max-w-xs mx-auto bg-white/90 dark:bg-zinc-900/90 rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center text-center transition-transform duration-500 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 cursor-pointer overflow-visible animate-fade-in-up`}
+              style={{
+                animationDelay: `${0.1 + idx * 0.15}s`,
+                animationDuration: "1.1s",
+              }}
             >
-              <img
-                src={r.img}
-                alt={r.name}
-                className="w-28 h-28 rounded-full mb-4 object-cover border-4 border-orange-200 dark:border-yellow-400"
-              />
-              <h3 className="font-bold text-xl mb-2 text-orange-700 dark:text-yellow-300">
+              {/* Badge */}
+              <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-4 py-1 rounded-full font-bold text-xs shadow-lg border-2 border-orange-200 dark:border-yellow-600 z-20 animate-pop-in">
+                {r.badge}
+              </span>
+              {/* Overlapping Image */}
+              <div className="relative -mt-16 mb-4 z-10">
+                <img
+                  src={r.img}
+                  alt={r.name}
+                  className="w-32 h-32 rounded-2xl object-cover border-4 border-orange-200 dark:border-yellow-400 shadow-xl group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-4 ring-yellow-200 dark:ring-yellow-700 opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none" />
+              </div>
+              <h3 className="font-extrabold text-2xl mb-2 text-orange-700 dark:text-yellow-300 tracking-tight group-hover:text-orange-600 dark:group-hover:text-yellow-400 transition-colors">
                 {r.name}
               </h3>
-              <p className="text-zinc-600 dark:text-zinc-300 text-center">
+              <p className="text-zinc-600 dark:text-zinc-300 text-base mb-2">
                 {r.desc}
               </p>
+              <span className="inline-block mt-2 text-xs font-semibold text-orange-400 dark:text-yellow-400 opacity-80 group-hover:opacity-100 transition-opacity">
+                View Menu
+              </span>
             </div>
           ))}
         </div>
       </section>
 
       {/* Section 4: How It Works - Vertical timeline */}
-      <section className="py-16 px-4 max-w-3xl mx-auto">
+      <section className="py-16 px-4   mx-auto">
         <h2 className="text-3xl font-bold text-center text-orange-600 dark:text-yellow-400 mb-12">
           How It Works
         </h2>
@@ -248,7 +277,7 @@ const Home1 = () => {
       </section>
 
       {/* Section 6: Call to Action */}
-      <section className="py-12 px-4 max-w-6xl mx-auto text-center">
+      <section className="py-12 px-4 max-w-screen mx-auto text-center">
         <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
           Ready to Order?
         </h2>

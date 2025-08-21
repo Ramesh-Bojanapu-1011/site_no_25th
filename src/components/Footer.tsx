@@ -60,44 +60,52 @@ const Footer = (props: Props) => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="/home1"
                 className="hover:text-orange-500 transition-colors"
               >
                 Home 1
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/home2"
                 className="hover:text-orange-500 transition-colors"
               >
                 Home 2
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/about-us"
                 className="hover:text-orange-500 transition-colors"
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                href="/services"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/blog"
                 className="hover:text-orange-500 transition-colors"
               >
                 Blog
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact-us"
                 className="hover:text-orange-500 transition-colors"
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -108,52 +116,52 @@ const Footer = (props: Props) => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="/food-delivery"
                 className="hover:text-orange-500 transition-colors"
               >
                 Food Delivery
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/table-booking"
                 className="hover:text-orange-500 transition-colors"
               >
                 Table Booking
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/catering"
                 className="hover:text-orange-500 transition-colors"
               >
                 Catering
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/online-menu"
                 className="hover:text-orange-500 transition-colors"
               >
                 Online Menu
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/party-orders"
                 className="hover:text-orange-500 transition-colors"
               >
                 Party Orders
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/reservation-management"
                 className="hover:text-orange-500 transition-colors"
               >
                 Reservation Management
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -173,23 +181,23 @@ const Footer = (props: Props) => {
               <span className="text-orange-500">
                 <Phone />
               </span>
-              <a
+              <Link
                 href="tel:+1234567890"
                 className="hover:text-orange-500 transition-colors"
               >
                 +1 234 567 890
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <span className="text-orange-500">
                 <Mail />
               </span>
-              <a
+              <Link
                 href="mailto:info@restaurant.com"
                 className="hover:text-orange-500 transition-colors"
               >
                 info@restaurant.com
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
