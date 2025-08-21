@@ -11,42 +11,42 @@ const services = [
     title: "Food Delivery",
     desc: "Get your favorite meals delivered hot and fresh to your doorstep, fast and hassle-free.",
     icon: "/delivery.svg",
-    link: "/services/food-delivery",
+    link: "/food-delivery",
     color: "from-orange-400 via-yellow-300 to-orange-600",
   },
   {
     title: "Table Booking",
     desc: "Reserve your table at top restaurants instantly and skip the wait.",
     icon: "/table.svg",
-    link: "/services/table-booking",
+    link: " /table-booking",
     color: "from-yellow-400 via-orange-200 to-yellow-600",
   },
   {
     title: "Catering",
     desc: "Delicious catering for all occasions, tailored to your needs and preferences.",
     icon: "/catering.svg",
-    link: "/services/catering",
+    link: " /catering",
     color: "from-green-400 via-yellow-200 to-green-600",
   },
   {
     title: "Online Menu",
     desc: "Browse and order from our digital menu, updated in real-time.",
     icon: "/menu.svg",
-    link: "/services/online-menu",
+    link: " /online-menu",
     color: "from-pink-400 via-yellow-200 to-orange-400",
   },
   {
     title: "Party Orders",
     desc: "Order in bulk for parties and events, with special discounts and combos.",
     icon: "/party.svg",
-    link: "/services/party-orders",
+    link: " /party-orders",
     color: "from-purple-400 via-yellow-200 to-pink-500",
   },
   {
     title: "Reservation Management",
     desc: "Seamlessly manage your reservations and bookings online.",
     icon: "/reservation.svg",
-    link: "/services/reservation-management",
+    link: " /reservation-management",
     color: "from-blue-400 via-yellow-200 to-blue-600",
   },
 ];
@@ -433,31 +433,7 @@ export default function Services() {
                 </span>
               </div>
             </div>
-            {/* Floating badge */}
-            {/* <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-10 py-4 rounded-full font-extrabold shadow-2xl animate-bounce border-4 border-orange-200 dark:border-yellow-600 z-20 text-lg md:text-2xl tracking-wide">
-              Seamless Experience, Every Time
-            </span> */}
           </div>
-          {/* Animated illustration card on the right with 3D tilt */}
-          {/* <div className="flex-1 flex justify-center items-center animate-pop-in relative">
-            <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible group perspective-1000">
-              <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:rotate-y-6 group-hover:-rotate-x-3" style={{ transformStyle: 'preserve-3d' }}>
-                <img
-                  src="/how-it-works.svg"
-                  alt="How It Works"
-                  className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
-                  style={{ animationDelay: '0.7s', animationDuration: '1.2s' }}
-                />
-                {/* Floating sparkles */}
-          {/*  <span className="absolute -top-8 left-8 w-6 h-6 bg-pink-300 rounded-full blur-md opacity-60 animate-float-slow"></span>
-                <span className="absolute -top-6 right-10 w-8 h-8 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
-                <span className="absolute bottom-0 right-0 w-10 h-10 bg-orange-200 dark:bg-yellow-900 rounded-full blur-lg opacity-50 animate-float-slow"></span>
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-5 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 rounded-full blur-md opacity-40 animate-fade-in-up"></span>
-                <span className="absolute top-1/2 left-0 w-4 h-4 bg-blue-300 rounded-full blur-sm opacity-50 animate-float-slow"></span>
-                <span className="absolute top-1/3 right-0 w-5 h-5 bg-green-300 rounded-full blur-md opacity-40 animate-float-slow"></span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
 
