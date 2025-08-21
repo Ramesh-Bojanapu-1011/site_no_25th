@@ -64,7 +64,15 @@ const Headder = () => {
         className="mx-auto flex items-center justify-between px-4 py-2"
       >
         <div className="">
-          <Image src="/logo-stackly.png" alt="Logo" width={150} height={150} />
+          <Link href="/home1" className="flex items-center">
+            <Image
+              src="/logo-stackly.png"
+              alt="Logo"
+              width={150}
+              height={150}
+              className="h-10 w-auto"
+            />
+          </Link>
         </div>
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
