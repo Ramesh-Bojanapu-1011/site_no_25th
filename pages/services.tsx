@@ -316,11 +316,13 @@ export default function Services() {
           <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible">
             {/* Glowing border ring */}
             <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
-            <img
+            <Image
               src="/choose-us.svg"
               alt="Why Choose Us"
               className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
               style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
+              width={500}
+              height={500}
             />
             {/* Floating sparkles */}
             <span className="absolute -top-6 -right-6 w-10 h-10 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
@@ -461,44 +463,81 @@ export default function Services() {
 
       {/* 5. Testimonials Section */}
       <section
-        className="py-16 px-4 w-full  mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-xl"
+        className="relative py-20 px-4 w-full mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 shadow-xl overflow-visible"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
+        {/* Decorative background and floating badge */}
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   shadow-2xl -z-10"></span>
+
+        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-20 text-center animate-fade-in-up relative z-10">
           What Our Customers Say
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 border-2 border-orange-100 dark:border-yellow-900 animate-fade-in-up">
-            <p className="text-zinc-700 dark:text-zinc-200 mb-4">
-              “The food delivery is always on time and the quality is top-notch.
-              Highly recommend!”
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-8 relative z-10">
+          {/* Testimonial Card 1 */}
+          <div className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center w-full max-w-xs animate-fade-in-up hover:scale-105 transition-transform duration-300 group overflow-visible">
+            {/* Profile image */}
+            <span className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-4 border-orange-200 dark:border-yellow-700 shadow-xl bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 flex items-center justify-center overflow-hidden">
+              <img
+                src="/profile1.jpg"
+                alt="Priya S."
+                className="w-full h-full object-cover"
+              />
+            </span>
+            <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
+              “The food delivery is always on time and the quality is
+              top-notch.”
             </p>
-            <span className="font-bold text-orange-600 dark:text-yellow-400">
-              — Priya S.
+            <span className="font-bold text-orange-600 dark:text-yellow-400 text-lg">
+              Priya S.
+            </span>
+            <span className="text-zinc-500 dark:text-zinc-400 text-sm mb-2">
+              Foodie & Blogger
             </span>
           </div>
+          {/* Testimonial Card 2 */}
           <div
-            className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 border-2 border-orange-100 dark:border-yellow-900 animate-fade-in-up"
+            className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center w-full max-w-xs animate-fade-in-up hover:scale-105 transition-transform duration-300 group overflow-visible"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-zinc-700 dark:text-zinc-200 mb-4">
+            <span className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-4 border-orange-200 dark:border-yellow-700 shadow-xl bg-gradient-to-br from-yellow-400 via-orange-200 to-yellow-600 flex items-center justify-center overflow-hidden">
+              <img
+                src="/profile2.jpg"
+                alt="Rahul M."
+                className="w-full h-full object-cover"
+              />
+            </span>
+            <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
               “Booking a table is so easy now. The app is user-friendly and the
               staff is great!”
             </p>
-            <span className="font-bold text-orange-600 dark:text-yellow-400">
-              — Rahul M.
+            <span className="font-bold text-orange-600 dark:text-yellow-400 text-lg">
+              Rahul M.
+            </span>
+            <span className="text-zinc-500 dark:text-zinc-400 text-sm mb-2">
+              Businessman
             </span>
           </div>
+          {/* Testimonial Card 3 */}
           <div
-            className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 border-2 border-orange-100 dark:border-yellow-900 animate-fade-in-up"
+            className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center w-full max-w-xs animate-fade-in-up hover:scale-105 transition-transform duration-300 group overflow-visible"
             style={{ animationDelay: "0.4s" }}
           >
-            <p className="text-zinc-700 dark:text-zinc-200 mb-4">
+            <span className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-4 border-orange-200 dark:border-yellow-700 shadow-xl bg-gradient-to-br from-green-400 via-yellow-200 to-green-600 flex items-center justify-center overflow-hidden">
+              <img
+                src="/profile3.jpg"
+                alt="Aisha K."
+                className="w-full h-full object-cover"
+              />
+            </span>
+            <p className="text-zinc-700 dark:text-zinc-200 mb-6 mt-16 text-center text-lg font-medium">
               “We ordered catering for our event and everyone loved the food.
               Will use again!”
             </p>
-            <span className="font-bold text-orange-600 dark:text-yellow-400">
-              — Aisha K.
+            <span className="font-bold text-orange-600 dark:text-yellow-400 text-lg">
+              Aisha K.
+            </span>
+            <span className="text-zinc-500 dark:text-zinc-400 text-sm mb-2">
+              Event Planner
             </span>
           </div>
         </div>
@@ -506,23 +545,21 @@ export default function Services() {
 
       {/* 6. Call to Action Section */}
       <section
-        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl"
+        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   "
         data-aos="fade-up"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-4 text-center animate-fade-in-up">
           Ready to Experience the Best?
         </h2>
-        <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-6 animate-fade-in-up">
-          Sign up now or contact us to get started with our restaurant and food
-          delivery services. We’re here to make every meal special!
+        <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-8 animate-fade-in-up">
+          Get started with our restaurant and food delivery services. One click
+          away from your next great meal!
         </p>
-        <div className="flex flex-col md:flex-row gap-4 w-full justify-center">
-          <Link href="/contact-us">
-            <span className="inline-block bg-gradient-to-r from-yellow-400 via-orange-300 to-yellow-600 text-white px-8 py-3 rounded-full font-bold shadow-lg  transition-all duration-300 hover:scale-105 hover:shadow-yellow-300 dark:hover:shadow-orange-700 border-2 border-yellow-200 dark:border-orange-600">
-              Contact Us
-            </span>
-          </Link>
-        </div>
+        <Link href="/contact-us">
+          <span className="inline-block bg-gradient-to-r from-yellow-400 via-orange-300 to-yellow-600 text-white px-10 py-4 rounded-full font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-yellow-300 dark:hover:shadow-orange-700 border-2 border-yellow-200 dark:border-orange-600 animate-pop-in text-lg">
+            Contact Us
+          </span>
+        </Link>
       </section>
 
       <Footer />

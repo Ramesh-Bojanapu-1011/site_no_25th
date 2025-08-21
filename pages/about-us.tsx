@@ -52,7 +52,7 @@ export default function AboutUs() {
 
       {/* 1. Hero Section */}
       <section
-        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full overflow-hidden"
+        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen"
         data-aos="fade-up"
       >
         {/* Background Video */}
@@ -89,7 +89,7 @@ export default function AboutUs() {
 
       {/* 2. Our Vision */}
       <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-yellow-900 dark:to-zinc-900   shadow-xl"
+        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-br max-w-screen from-yellow-50 to-orange-100 dark:from-yellow-900 dark:to-zinc-900   shadow-xl"
         data-aos="fade-up"
       >
         <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
@@ -138,7 +138,7 @@ export default function AboutUs() {
 
       {/* 3. Our Mission */}
       <section
-        className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-white dark:bg-zinc-800  shadow-2xl overflow-visible border-0 border-t-8 border-orange-200 dark:border-yellow-700"
+        className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-white dark:bg-zinc-800  shadow-2xl max-w-screen border-0 border-t-8 border-orange-200 dark:border-yellow-700"
         data-aos="fade-up"
       >
         <div
@@ -202,7 +202,7 @@ export default function AboutUs() {
 
       {/* 4. Our Milestones - with animated counters */}
       <section
-        className="relative py-20 px-4 w-full flex flex-col items-center gap-16   mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 overflow-visible"
+        className="relative py-20 px-4 w-full flex flex-col items-center gap-16   mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen"
         data-aos="fade-up"
       >
         {/* Animated gradient border ring */}
@@ -292,7 +292,7 @@ export default function AboutUs() {
 
       {/* 5. Our Team */}
       <section
-        className="relative py-20 px-4 w-full   md:flex-row items-center gap-16  mx-auto bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-t-8 border-orange-200 dark:border-yellow-700 overflow-visible"
+        className="relative py-20 px-4 w-full   md:flex-row items-center gap-16  mx-auto bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-t-8 border-orange-200 dark:border-yellow-700 max-w-screen"
         data-aos="fade-up"
       >
         <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">
@@ -414,7 +414,7 @@ export default function AboutUs() {
 
       {/* 6. Community & Sustainability */}
       <section
-        className="py-20 px-4 w-full flex flex-col-reverse md:flex-row items-center gap-16 mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:to-zinc-900 rounded-3xl shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 overflow-visible"
+        className="py-20 px-4 w-full flex flex-col-reverse md:flex-row items-center gap-16 mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:to-zinc-900 rounded-3xl shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen"
         data-aos="fade-up"
       >
         {/* Left: Image with new accent and floating badge */}
@@ -456,7 +456,7 @@ export default function AboutUs() {
         {/* Right: Content in glassmorphism card */}
         <div
           className="flex-1 flex flex-col items-start z-10"
-          data-aos="fade-left"
+          // data-aos="fade-left"
         >
           <div className="relative w-full bg-white/80 dark:bg-zinc-900/90 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-700 px-8 py-10 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">
