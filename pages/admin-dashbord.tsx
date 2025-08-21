@@ -63,7 +63,7 @@ type User = {
 
 // For new user structure, count by domain or just count all as 'User'
 function getPieData(
-  users: User[]
+  users: User[],
   // currentUser?: User
 ): { name: string; value: number }[] {
   try {
@@ -74,7 +74,7 @@ function getPieData(
     if (currentUser) {
       const parsedUser = JSON.parse(currentUser);
       currentUserCount = users.filter(
-        (u) => u.email === parsedUser.email
+        (u) => u.email === parsedUser.email,
       ).length;
     }
 
@@ -149,126 +149,126 @@ const AdminDashboardPage = () => {
 
   return (
     <>
-    <Headder/>
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 py-10 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 text-center drop-shadow-lg">
-          Admin Dashboard
-        </h1>
+      <Headder />
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 py-10 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 text-center drop-shadow-lg">
+            Admin Dashboard
+          </h1>
 
-        {/* Login User Details */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 flex flex-col md:flex-row gap-8 items-center border-2 border-orange-100 dark:border-yellow-900">
-           
-          {/* Pie Chart */}
-          <div className="flex-1 flex flex-col items-center">
-            <h3 className="text-lg font-bold text-orange-500 dark:text-yellow-300 mb-2">
-              Number of Login and Other Users
-            </h3>
-            <ResponsiveContainer width={220} height={220}>
-              <PieChart>
-                <Pie
-                  data={pieData}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  label
-                >
-                  {pieData.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
+          {/* Login User Details */}
+          <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 flex flex-col md:flex-row gap-8 items-center border-2 border-orange-100 dark:border-yellow-900">
+            {/* Pie Chart */}
+            <div className="flex-1 flex flex-col items-center">
+              <h3 className="text-lg font-bold text-orange-500 dark:text-yellow-300 mb-2">
+                Number of Login and Other Users
+              </h3>
+              <ResponsiveContainer width={220} height={220}>
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={80}
+                    label
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* All Users Table */}
+          <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 border-2 border-orange-100 dark:border-yellow-900 overflow-x-auto">
+            <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
+              All Users
+            </h2>
+            <table className="min-w-full text-left border-collapse">
+              <thead>
+                <tr>
+                  <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
+                    Name
+                  </th>
+                  <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
+                    Email
+                  </th>
+
+                  <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
+                    Registered At
+                  </th>
+                  <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
+                    Last Login
+                  </th>
+                  <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
+                    Log Out
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {allUsers.map((user, idx) => (
+                  <tr
+                    key={user.email + idx}
+                    className="border-b border-orange-100 dark:border-yellow-900 hover:bg-orange-50/40 dark:hover:bg-yellow-900/20 transition"
+                  >
+                    <td className="py-2 px-4">
+                      {user.firstName} {user.lastName}
+                    </td>
+                    <td className="py-2 px-4">{user.email}</td>
+                    <td className="py-2 px-4">{user.registeredAt}</td>
+                    <td className="py-2 px-4">{user.lastLoginAt}</td>
+                    <td className="py-2 px-4">
+                      {user.lastLoginOut ? user.lastLoginOut : "N/A"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Dual Bar Graph */}
+          <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 border-2 border-orange-100 dark:border-yellow-900 mb-10">
+            <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
+              Login vs Logout Activity
+            </h2>
+            <ResponsiveContainer width="100%" height={320}>
+              <BarChart
+                data={barData}
+                margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis allowDecimals={false} />
                 <Tooltip />
-              </PieChart>
+                <Legend />
+                <Bar
+                  dataKey="login"
+                  fill="#f59e42"
+                  name="Login Users"
+                  barSize={32}
+                  radius={[8, 8, 0, 0]}
+                />
+                <Bar
+                  dataKey="logout"
+                  fill="#f87171"
+                  name="Logout Users"
+                  barSize={32}
+                  radius={[8, 8, 0, 0]}
+                />
+              </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
-
-        {/* All Users Table */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 border-2 border-orange-100 dark:border-yellow-900 overflow-x-auto">
-          <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
-            All Users
-          </h2>
-          <table className="min-w-full text-left border-collapse">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                  Name
-                </th>
-                <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                  Email
-                </th>
-
-                <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                  Registered At
-                </th>
-                <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                  Last Login
-                </th>
-                <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                  Log Out
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {allUsers.map((user, idx) => (
-                <tr
-                  key={user.email + idx}
-                  className="border-b border-orange-100 dark:border-yellow-900 hover:bg-orange-50/40 dark:hover:bg-yellow-900/20 transition"
-                >
-                  <td className="py-2 px-4">
-                    {user.firstName} {user.lastName}
-                  </td>
-                  <td className="py-2 px-4">{user.email}</td>
-                  <td className="py-2 px-4">{user.registeredAt}</td>
-                  <td className="py-2 px-4">{user.lastLoginAt}</td>
-                  <td className="py-2 px-4">
-                    {user.lastLoginOut ? user.lastLoginOut : "N/A"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Dual Bar Graph */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 border-2 border-orange-100 dark:border-yellow-900 mb-10">
-          <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
-            Login vs Logout Activity
-          </h2>
-          <ResponsiveContainer width="100%" height={320}>
-            <BarChart
-              data={barData}
-              margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" />
-              <YAxis allowDecimals={false} />
-              <Tooltip />
-              <Legend />
-              <Bar
-                dataKey="login"
-                fill="#f59e42"
-                name="Login Users"
-                barSize={32}
-                radius={[8, 8, 0, 0]}
-              />
-              <Bar
-                dataKey="logout"
-                fill="#f87171"
-                name="Logout Users"
-                barSize={32}
-                radius={[8, 8, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
       </div>
-    </div></>
+    </>
   );
 };
 

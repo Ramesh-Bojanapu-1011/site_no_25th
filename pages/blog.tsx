@@ -137,7 +137,12 @@ export default function Blog() {
           {/* Icon */}
           <div className="flex-shrink-0 flex flex-col items-center justify-center">
             <span className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-orange-200 to-yellow-300 dark:from-yellow-900 dark:to-yellow-700 shadow-lg border-4 border-orange-100 dark:border-yellow-800">
-              <Image src="/blog-about-icon.svg" alt="About Blog" width={48} height={48} />
+              <Image
+                src="/blog-about-icon.svg"
+                alt="About Blog"
+                width={48}
+                height={48}
+              />
             </span>
           </div>
           {/* Content */}
@@ -146,7 +151,10 @@ export default function Blog() {
               About Our Blog
             </h2>
             <p className="text-zinc-700 dark:text-zinc-200 text-lg mb-6 animate-fade-in-up">
-              Our blog is dedicated to sharing the latest insights, expert tips, and inspiring stories from the world of restaurants and food delivery. Whether you’re a business owner, chef, or food lover, you’ll find something valuable here.
+              Our blog is dedicated to sharing the latest insights, expert tips,
+              and inspiring stories from the world of restaurants and food
+              delivery. Whether you’re a business owner, chef, or food lover,
+              you’ll find something valuable here.
             </p>
             <blockquote className="border-l-4 border-orange-400 dark:border-yellow-500 pl-6 italic text-orange-700 dark:text-yellow-300 bg-orange-50/60 dark:bg-yellow-900/30 rounded-lg py-3 mb-2 animate-fade-in-up">
               "Great food brings people together—so does great knowledge."
@@ -160,8 +168,6 @@ export default function Blog() {
         className="relative py-20 px-4 w-full flex flex-col items-center justify-center bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 overflow-hidden"
         data-aos="fade-up"
       >
-        
-         
         <h2 className="text-3xl md:text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up drop-shadow-lg z-10">
           Tips & Resources
         </h2>
@@ -170,13 +176,19 @@ export default function Blog() {
           <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-10 flex flex-col items-start hover:scale-[1.03] hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-400 animate-fade-in-up overflow-hidden">
             {/* Floating icon */}
             <span className="absolute -top-0 left-5 bg-gradient-to-br from-orange-400 to-yellow-400 dark:from-yellow-800 dark:to-yellow-600 w-16 h-16 flex items-center justify-center rounded-full shadow-lg border-4 border-white dark:border-zinc-900 animate-bounce-slow">
-              <Image src="/delivery-partner-icon.svg" alt="Delivery Partner" width={36} height={36} />
+              <Image
+                src="/delivery-partner-icon.svg"
+                alt="Delivery Partner"
+                width={36}
+                height={36}
+              />
             </span>
             <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 dark:text-yellow-400 mb-3 mt-8">
               How to Choose the Right Delivery Partner
             </h3>
             <p className="text-zinc-700 dark:text-zinc-200 text-base mb-2">
-              Learn what to look for in a delivery partner to ensure your food arrives fresh and on time, every time.
+              Learn what to look for in a delivery partner to ensure your food
+              arrives fresh and on time, every time.
             </p>
             <span className="inline-block mt-2 px-4 py-1 rounded-full bg-gradient-to-r from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700 text-orange-700 dark:text-yellow-300 font-semibold text-xs shadow animate-pop-in">
               Delivery Tips
@@ -186,13 +198,19 @@ export default function Blog() {
           <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-10 flex flex-col items-start hover:scale-[1.03] hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-400 animate-fade-in-up overflow-hidden">
             {/* Floating icon */}
             <span className="absolute -top-0 left-5 bg-gradient-to-br from-yellow-400 to-orange-400 dark:from-yellow-700 dark:to-orange-700 w-16 h-16 flex items-center justify-center rounded-full shadow-lg border-4 border-white dark:border-zinc-900 animate-bounce-slow">
-              <Image src="/marketing-icon.svg" alt="Marketing" width={36} height={36} />
+              <Image
+                src="/marketing-icon.svg"
+                alt="Marketing"
+                width={36}
+                height={36}
+              />
             </span>
             <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 dark:text-yellow-400 mb-3 mt-8">
               Marketing Your Restaurant Online
             </h3>
             <p className="text-zinc-700 dark:text-zinc-200 text-base mb-2">
-              Discover digital marketing strategies to attract new customers and keep your regulars coming back for more.
+              Discover digital marketing strategies to attract new customers and
+              keep your regulars coming back for more.
             </p>
             <span className="inline-block mt-2 px-4 py-1 rounded-full bg-gradient-to-r from-yellow-200 to-orange-200 dark:from-yellow-900 dark:to-orange-700 text-orange-700 dark:text-yellow-300 font-semibold text-xs shadow animate-pop-in">
               Marketing Tips

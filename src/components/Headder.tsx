@@ -23,7 +23,7 @@ const Headder = () => {
         const users = JSON.parse(usersData);
         const now = new Date().toISOString();
         const updatedUsers = users.map((u: any) =>
-          u.email === user.email ? { ...u, lastLoginOut: now } : u
+          u.email === user.email ? { ...u, lastLoginOut: now } : u,
         );
         localStorage.setItem("Users", JSON.stringify(updatedUsers));
       } catch (e) {
