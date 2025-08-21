@@ -13,6 +13,7 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
+import Headder from "@/components/Headder";
 
 const defaultLoginUser = {
   email: "riya.sharma@email.com",
@@ -62,7 +63,7 @@ type User = {
 
 // For new user structure, count by domain or just count all as 'User'
 function getPieData(
-  users: User[],
+  users: User[]
   // currentUser?: User
 ): { name: string; value: number }[] {
   try {
@@ -92,9 +93,7 @@ const AdminDashboardPage = () => {
   // const [loginUser, setLoginUser] = useState(defaultLoginUser);
   const [allUsers, setAllUsers] = useState(defaultAllUsers);
   const [barData, setBarData] = useState(defaultBarData);
-  const [pieData, setPieData] = useState(
-    getPieData(defaultAllUsers)
-  );
+  const [pieData, setPieData] = useState(getPieData(defaultAllUsers));
   // console.log("Pie Data:", pieData);
 
   useEffect(() => {
@@ -108,9 +107,7 @@ const AdminDashboardPage = () => {
         if (users) {
           const parsedUsers = JSON.parse(users);
           setAllUsers(parsedUsers);
-          setPieData(
-            getPieData(parsedUsers)
-          );
+          setPieData(getPieData(parsedUsers));
 
           // Calculate login/logout counts per weekday
           // Weekdays: Sun, Mon, Tue, Wed, Thu, Fri, Sat
@@ -151,6 +148,8 @@ const AdminDashboardPage = () => {
   }, []);
 
   return (
+    <>
+    <Headder/>
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 text-center drop-shadow-lg">
@@ -159,29 +158,11 @@ const AdminDashboardPage = () => {
 
         {/* Login User Details */}
         <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 flex flex-col md:flex-row gap-8 items-center border-2 border-orange-100 dark:border-yellow-900">
-          {/* <div className="flex-1">
-            <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-2">
-              Logged In User
-            </h2>
-            <div className="text-zinc-700 dark:text-zinc-200 text-lg mb-1">
-              Name:{" "}
-              <span className="font-semibold">
-                {loginUser.firstName} {loginUser.lastName}
-              </span>
-            </div>
-            <div className="text-zinc-700 dark:text-zinc-200 text-lg mb-1">
-              Email: <span className="font-semibold">{loginUser.email}</span>
-            </div>
-
-            <div className="text-zinc-700 dark:text-zinc-200 text-lg">
-              Joined:{" "}
-              <span className="font-semibold">{loginUser.registeredAt}</span>
-            </div>
-          </div> */}
+           
           {/* Pie Chart */}
           <div className="flex-1 flex flex-col items-center">
             <h3 className="text-lg font-bold text-orange-500 dark:text-yellow-300 mb-2">
-              User Roles Distribution
+              Number of Login and Other Users
             </h3>
             <ResponsiveContainer width={220} height={220}>
               <PieChart>
@@ -287,7 +268,7 @@ const AdminDashboardPage = () => {
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
