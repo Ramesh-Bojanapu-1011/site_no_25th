@@ -14,10 +14,26 @@ const Headder = () => {
 
   // Logout handler
   const handleLogout = () => {
+    // Update lastLoginOut for the current user in "Users" localStorage
+    const userData = localStorage.getItem("Current User");
+    const usersData = localStorage.getItem("Users");
+    if (userData && usersData) {
+      try {
+        const user = JSON.parse(userData);
+        const users = JSON.parse(usersData);
+        const now = new Date().toISOString();
+        const updatedUsers = users.map((u: any) =>
+          u.email === user.email ? { ...u, lastLoginOut: now } : u
+        );
+        localStorage.setItem("Users", JSON.stringify(updatedUsers));
+      } catch (e) {
+        // ignore
+      }
+    }
     // Clear any local storage, cookies, or session data here
-    localStorage.removeItem("Current User"); // example
+    localStorage.removeItem("Current User");
     // Redirect to login page
-    router.push("/login");
+    router.push("/auth");
   };
 
   React.useEffect(() => {

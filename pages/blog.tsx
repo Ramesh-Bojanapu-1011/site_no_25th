@@ -130,46 +130,73 @@ export default function Blog() {
 
       {/* 3. About the Blog Section */}
       <section
-        className="py-16 px-4 w-full max-w-4xl mx-auto"
+        className="py-20 px-4 w-full flex justify-center items-center bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
-          About Our Blog
-        </h2>
-        <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-6 animate-fade-in-up">
-          Our blog is dedicated to sharing the latest insights, expert tips, and
-          inspiring stories from the world of restaurants and food delivery.
-          Whether you’re a business owner, chef, or food lover, you’ll find
-          something valuable here.
-        </p>
+        <div className="relative flex flex-col md:flex-row items-center gap-10   w-full bg-white/80 dark:bg-zinc-900/80 rounded-3xl shadow-2xl border-l-8 border-gradient-to-b from-orange-400 via-yellow-400 to-orange-600 dark:from-yellow-800 dark:via-orange-700 dark:to-orange-900 p-10 md:p-16 backdrop-blur-xl">
+          {/* Icon */}
+          <div className="flex-shrink-0 flex flex-col items-center justify-center">
+            <span className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-orange-200 to-yellow-300 dark:from-yellow-900 dark:to-yellow-700 shadow-lg border-4 border-orange-100 dark:border-yellow-800">
+              <Image src="/blog-about-icon.svg" alt="About Blog" width={48} height={48} />
+            </span>
+          </div>
+          {/* Content */}
+          <div className="flex-1 flex flex-col items-start">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 animate-fade-in-up drop-shadow-lg">
+              About Our Blog
+            </h2>
+            <p className="text-zinc-700 dark:text-zinc-200 text-lg mb-6 animate-fade-in-up">
+              Our blog is dedicated to sharing the latest insights, expert tips, and inspiring stories from the world of restaurants and food delivery. Whether you’re a business owner, chef, or food lover, you’ll find something valuable here.
+            </p>
+            <blockquote className="border-l-4 border-orange-400 dark:border-yellow-500 pl-6 italic text-orange-700 dark:text-yellow-300 bg-orange-50/60 dark:bg-yellow-900/30 rounded-lg py-3 mb-2 animate-fade-in-up">
+              "Great food brings people together—so does great knowledge."
+            </blockquote>
+          </div>
+        </div>
       </section>
 
       {/* 4. Tips & Resources Section */}
       <section
-        className="py-16 px-4 w-full max-w-7xl mx-auto"
+        className="relative py-20 px-4 w-full flex flex-col items-center justify-center bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 overflow-hidden"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
+        
+         
+        <h2 className="text-3xl md:text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up drop-shadow-lg z-10">
           Tips & Resources
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 border-2 border-orange-100 dark:border-yellow-900 animate-fade-in-up">
-            <h3 className="text-xl font-bold text-orange-600 dark:text-yellow-400 mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl z-10">
+          {/* Card 1 */}
+          <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-10 flex flex-col items-start hover:scale-[1.03] hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-400 animate-fade-in-up overflow-hidden">
+            {/* Floating icon */}
+            <span className="absolute -top-0 left-5 bg-gradient-to-br from-orange-400 to-yellow-400 dark:from-yellow-800 dark:to-yellow-600 w-16 h-16 flex items-center justify-center rounded-full shadow-lg border-4 border-white dark:border-zinc-900 animate-bounce-slow">
+              <Image src="/delivery-partner-icon.svg" alt="Delivery Partner" width={36} height={36} />
+            </span>
+            <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 dark:text-yellow-400 mb-3 mt-8">
               How to Choose the Right Delivery Partner
             </h3>
-            <p className="text-zinc-700 dark:text-zinc-200">
-              Learn what to look for in a delivery partner to ensure your food
-              arrives fresh and on time, every time.
+            <p className="text-zinc-700 dark:text-zinc-200 text-base mb-2">
+              Learn what to look for in a delivery partner to ensure your food arrives fresh and on time, every time.
             </p>
+            <span className="inline-block mt-2 px-4 py-1 rounded-full bg-gradient-to-r from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700 text-orange-700 dark:text-yellow-300 font-semibold text-xs shadow animate-pop-in">
+              Delivery Tips
+            </span>
           </div>
-          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 border-2 border-orange-100 dark:border-yellow-900 animate-fade-in-up">
-            <h3 className="text-xl font-bold text-orange-600 dark:text-yellow-400 mb-2">
+          {/* Card 2 */}
+          <div className="relative bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-10 flex flex-col items-start hover:scale-[1.03] hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-400 animate-fade-in-up overflow-hidden">
+            {/* Floating icon */}
+            <span className="absolute -top-0 left-5 bg-gradient-to-br from-yellow-400 to-orange-400 dark:from-yellow-700 dark:to-orange-700 w-16 h-16 flex items-center justify-center rounded-full shadow-lg border-4 border-white dark:border-zinc-900 animate-bounce-slow">
+              <Image src="/marketing-icon.svg" alt="Marketing" width={36} height={36} />
+            </span>
+            <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 dark:text-yellow-400 mb-3 mt-8">
               Marketing Your Restaurant Online
             </h3>
-            <p className="text-zinc-700 dark:text-zinc-200">
-              Discover digital marketing strategies to attract new customers and
-              keep your regulars coming back for more.
+            <p className="text-zinc-700 dark:text-zinc-200 text-base mb-2">
+              Discover digital marketing strategies to attract new customers and keep your regulars coming back for more.
             </p>
+            <span className="inline-block mt-2 px-4 py-1 rounded-full bg-gradient-to-r from-yellow-200 to-orange-200 dark:from-yellow-900 dark:to-orange-700 text-orange-700 dark:text-yellow-300 font-semibold text-xs shadow animate-pop-in">
+              Marketing Tips
+            </span>
           </div>
         </div>
       </section>
@@ -184,13 +211,13 @@ export default function Blog() {
         </h2>
         <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-6 animate-fade-in-up">
           Read inspiring stories from restaurant owners, delivery partners, and
-          foodies who are making a difference in their communities.
+          foodies who are making a difference in thei ties.
         </p>
       </section>
 
       {/* 6. Call to Action Section */}
       <section
-        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8 max-w-2xl mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl"
+        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8  mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl"
         data-aos="fade-up"
       >
         <div className="w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-12 flex flex-col items-center">
@@ -201,9 +228,9 @@ export default function Blog() {
             Subscribe to our newsletter for the latest updates, tips, and
             exclusive offers from the world of food delivery and restaurants.
           </p>
-          <Link href="/subscribe">
+          <Link href="/contact-us">
             <span className="inline-block bg-gradient-to-r from-yellow-400 via-orange-300 to-yellow-600 text-white px-10 py-4 rounded-full font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-yellow-300 dark:hover:shadow-orange-700 border-2 border-yellow-200 dark:border-orange-600 animate-pop-in text-lg">
-              Subscribe Now
+              Contact Us
             </span>
           </Link>
         </div>
