@@ -84,7 +84,7 @@ function CustomerCarousel() {
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-20 h-20 rounded-full object-cover border-4 border-orange-300 dark:border-yellow-400 shadow-xl bg-white dark:bg-zinc-800"
+                  className="w-20 h-20 rounded-full object-top object-cover border-4 border-orange-300 dark:border-yellow-400 shadow-xl bg-white dark:bg-zinc-800"
                 />
               </div>
               <div className="mt-12" />
@@ -328,21 +328,21 @@ const Home1 = () => {
             />
             {[
               {
-                icon: "/choose-menu.svg",
+                icon: "https://www.svgrepo.com/show/277641/menu.svg",
                 title: "Choose Menu",
                 desc: "Browse and select your favorite dishes from our menu.",
                 color:
                   "from-orange-200 to-yellow-200 dark:from-zinc-800 dark:to-yellow-900",
               },
               {
-                icon: "/place-order.svg",
+                icon: "https://www.svgrepo.com/show/277664/tray-food-and-restaurant.svg",
                 title: "Place Order",
                 desc: "Place your order easily through our website or app.",
                 color:
                   "from-yellow-200 to-orange-100 dark:from-yellow-900 dark:to-orange-900",
               },
               {
-                icon: "/fast-delivery.svg",
+                icon: "https://www.reshot.com/preview-assets/icons/EA7YQRPCX9/delivery-truck-EA7YQRPCX9.svg",
                 title: "Fast Delivery",
                 desc: "Enjoy quick and reliable delivery to your doorstep.",
                 color:
