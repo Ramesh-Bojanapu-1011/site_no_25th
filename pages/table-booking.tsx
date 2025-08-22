@@ -10,7 +10,7 @@ const foodSections = [
   {
     title: "How Table Booking Works",
     desc: "Reserve your perfect table in just a few easy steps and enjoy a seamless dining experience.",
-    icon: "/table-booking.png",
+
     content: (
       <div className="w-full flex flex-col items-center">
         <div className="relative w-full max-w-2xl mx-auto py-8">
@@ -91,7 +91,7 @@ const foodSections = [
   {
     title: "Table Types & Ambience",
     desc: "Choose from a variety of seating options to match your mood and occasion.",
-    icon: "https://www.svgrepo.com/show/265562/table.svg",
+
     content: (
       <div className="flex flex-wrap gap-8 justify-center items-center py-4">
         {[
@@ -137,7 +137,7 @@ const foodSections = [
   {
     title: "Why Reserve a Table?",
     desc: "Enjoy guaranteed seating, special requests, and a personalized dining experience.",
-    icon: "https://www.svgrepo.com/show/388670/success.svg",
+
     content: (
       <ul className="flex flex-col gap-4 text-zinc-700 dark:text-zinc-200 text-left max-w-xl mx-auto">
         <li className="flex items-center gap-3">
@@ -227,7 +227,7 @@ const foodSections = [
   {
     title: "Book Your Table Now!",
     desc: "Ready to reserve your spot? Secure your table in seconds and look forward to a memorable meal.",
-    icon: "https://www.svgrepo.com/show/530375/calendar.svg",
+
     content: (
       <div
         className="w-full flex flex-col items-center justify-center py-8"
@@ -310,15 +310,8 @@ const TableBooking = () => {
             key={i}
             className="py-14 px-4   mx-auto flex flex-col items-center text-center gap-6"
           >
-            {sec.icon && (
+            {sec.title && (
               <div className="flex flex-col items-center mb-4">
-                <Image
-                  src={sec?.icon}
-                  alt={sec?.title}
-                  width={56}
-                  height={56}
-                  className="mb-2"
-                />
                 <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
                   {sec?.title}
                 </h2>

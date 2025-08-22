@@ -10,7 +10,7 @@ const foodSections = [
   {
     title: "How Our Catering Works",
     desc: "From your first inquiry to the last bite, our process ensures a seamless and memorable catering experience.",
-    icon: "/catering-process.svg",
+
     content: (
       <div className="w-full flex flex-col items-center">
         <div className="relative w-full max-w-2xl mx-auto py-8">
@@ -18,22 +18,22 @@ const foodSections = [
           <div className="relative z-10 flex flex-col gap-0">
             {[
               {
-                icon: "/inquiry.svg",
+                icon: "https://www.svgrepo.com/show/475307/tax-inquiry.svg",
                 label: "Send Inquiry",
                 desc: "Tell us about your event and requirements",
               },
               {
-                icon: "/menu.svg",
+                icon: "https://www.svgrepo.com/show/277641/menu.svg",
                 label: "Customize Menu",
                 desc: "Choose dishes and services to fit your occasion",
               },
               {
-                icon: "/planning.svg",
+                icon: "https://www.svgrepo.com/show/439316/service-workers.svg",
                 label: "Event Planning",
                 desc: "We coordinate logistics and details",
               },
               {
-                icon: "/serving-tray.svg",
+                icon: "https://www.svgrepo.com/show/397715/partying-face.svg",
                 label: "Enjoy the Event",
                 desc: "Relax while we serve and manage everything",
               },
@@ -42,7 +42,11 @@ const foodSections = [
               return (
                 <div
                   key={step.label}
-                  className={`relative flex w-full justify-${isLeft ? "start" : "end"} md:justify-${isLeft ? "start" : "end"} max-[495px]:justify-center max-[495px]:my-4 group`}
+                  className={`relative flex w-full justify-${
+                    isLeft ? "start" : "end"
+                  } md:justify-${
+                    isLeft ? "start" : "end"
+                  } max-[495px]:justify-center max-[495px]:my-4 group`}
                   style={{
                     animationDelay: `${0.1 + idx * 0.12}s`,
                     animationDuration: "1.1s",
@@ -52,7 +56,11 @@ const foodSections = [
                     <span className="absolute left-1/2 top-0 w-1 h-10 bg-gradient-to-b from-orange-300 via-yellow-200 to-orange-200 dark:from-yellow-800 dark:via-yellow-700 dark:to-yellow-900 opacity-70 z-0 -translate-x-1/2 animate-pulse" />
                   )}
                   <div
-                    className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${isLeft ? "ml-0 md:-ml-32 md:self-start" : "mr-0 md:-mr-32 md:self-end"}`}
+                    className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${
+                      isLeft
+                        ? "ml-0 md:-ml-32 md:self-start"
+                        : "mr-0 md:-mr-32 md:self-end"
+                    }`}
                   >
                     <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700 shadow-lg border-2 border-orange-200 dark:border-yellow-800 mb-2 relative animate-bounce-slow">
                       <Image
@@ -83,7 +91,7 @@ const foodSections = [
   {
     title: "Catering Styles & Setups",
     desc: "Select the perfect catering style and setup to match your event’s vibe and needs.",
-    icon: "/table.svg",
+
     content: (
       <div className="flex flex-wrap gap-8 justify-center items-center py-4">
         {[
@@ -129,13 +137,13 @@ const foodSections = [
   {
     title: "Why Choose Our Catering?",
     desc: "Discover the benefits of choosing our catering services for your next event.",
-    icon: "/success.svg",
+
     content: (
       <ul className="flex flex-col gap-4 text-zinc-700 dark:text-zinc-200 text-left max-w-xl mx-auto">
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/chef-hat.svg"
+              src="https://www.svgrepo.com/show/336953/chef-hat-one.svg"
               alt="Expert Chefs"
               width={20}
               height={20}
@@ -146,7 +154,7 @@ const foodSections = [
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/event-planner.svg"
+              src="https://www.svgrepo.com/show/439316/service-workers.svg"
               alt="Event Planning"
               width={20}
               height={20}
@@ -157,7 +165,7 @@ const foodSections = [
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/serving-tray.svg"
+              src="https://www.svgrepo.com/show/235681/tray-plate.svg"
               alt="Full Service"
               width={20}
               height={20}
@@ -168,7 +176,7 @@ const foodSections = [
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
             <Image
-              src="/party.svg"
+              src="https://www.svgrepo.com/show/397713/party-popper.svg"
               alt="Memorable Events"
               width={20}
               height={20}
@@ -184,30 +192,30 @@ const foodSections = [
   {
     title: "Catering Experiences",
     desc: "See what our clients are saying about our catering for their special events.",
-    icon: "/user1.jpg",
+
     content: (
       <div className="flex flex-wrap gap-6 justify-center">
         {[
           {
-            name: "Amit K.",
+            name: " Sneha R.",
             feedback:
               "The catering was flawless—delicious food and impeccable service! Our guests were truly impressed.",
             img: "/user1.jpg",
           },
           {
-            name: "Sneha R.",
+            name: "Amit K.",
             feedback:
               "Thank you for making our wedding reception so memorable. The menu was creative and the staff attentive.",
             img: "/user2.jpg",
           },
           {
-            name: "Vikram S.",
+            name: "Divya P.",
             feedback:
               "Professional, punctual, and the food was a hit at our corporate event. Highly recommended!",
             img: "/user3.jpg",
           },
           {
-            name: "Divya P.",
+            name: "Vikram S.",
             feedback:
               "From planning to execution, everything was seamless. Our family loved the variety and taste!",
             img: "/user4.jpg",
@@ -278,6 +286,17 @@ const Catering = () => {
         <Headder />
         {/* Hero Section */}
         <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 py-16 md:py-24 mx-auto gap-8 min-h-[100vh]">
+          {/* Background Video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/catering-hero-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               Exceptional Catering for Every Occasion
@@ -313,15 +332,8 @@ const Catering = () => {
             key={i}
             className="py-14 px-4   mx-auto flex flex-col items-center text-center gap-6"
           >
-            {sec.icon && (
+            {sec.title && (
               <div className="flex flex-col items-center mb-4">
-                <Image
-                  src={sec?.icon}
-                  alt={sec?.title}
-                  width={56}
-                  height={56}
-                  className="mb-2"
-                />
                 <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
                   {sec?.title}
                 </h2>

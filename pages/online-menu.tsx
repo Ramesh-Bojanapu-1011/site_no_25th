@@ -331,8 +331,22 @@ const OnlineMenu = () => {
       </Head>
       <div className="bg-white dark:bg-zinc-900 min-h-screen transition-colors duration-300">
         <Headder />
-        {/* Hero Section */}
-        <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 py-16 md:py-24 mx-auto gap-8 min-h-[100vh]">
+        {/* Hero Section with Background Video */}
+        <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 py-16 md:py-24 mx-auto gap-8 min-h-[100vh] overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+             
+            className="absolute inset-0 w-full h-full object-cover z-0 brightness-95 dark:brightness-60 contrast-110 dark:contrast-90 pointer-events-none"
+          >
+            <source src="/ " type="video/mp4" />
+            {/* Fallback for browsers that don't support the video tag */}
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 via-yellow-100/30 to-white/0 dark:from-yellow-900/40 dark:via-orange-900/30 dark:to-zinc-900/0 z-0 pointer-events-none" />
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               Order Delicious Food Online
@@ -357,8 +371,6 @@ const OnlineMenu = () => {
               className="rounded-3xl shadow-2xl w-full md:max-w-md object-cover border-4 border-orange-200 dark:border-yellow-700"
             />
           </div>
-          {/* Decorative BG */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 via-yellow-100/30 to-white/0 dark:from-yellow-900/40 dark:via-orange-900/30 dark:to-zinc-900/0 z-0 pointer-events-none" />
         </section>
         {/* Menu Sections */}
         {menuSections.map((sec, i) => (

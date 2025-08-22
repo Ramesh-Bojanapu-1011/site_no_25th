@@ -10,7 +10,7 @@ const foodSections = [
   {
     title: "How Food Delivery Works",
     desc: "From browsing menus to doorstep delivery, experience a seamless process designed for your convenience.",
-    icon: "https://www.reshot.com/preview-assets/icons/YR6EWFPLB5/delivery-truck-YR6EWFPLB5.svg",
+
     content: (
       <div className="w-full flex flex-col items-center">
         {/* Modern floating card timeline with glowing connectors */}
@@ -101,7 +101,7 @@ const foodSections = [
   {
     title: "Featured Restaurants",
     desc: "Discover top-rated local favorites and trending new spots, all available for delivery.",
-    icon: "https://www.reshot.com/preview-assets/icons/HVA6XRGLSU/japanese-restaurant-HVA6XRGLSU.svg",
+
     content: (
       <div className="relative w-full  flex  items-center justify-center mx-auto  py-4">
         <div className="flex  justify-center items-center md:gap-16 flex-wrap gap-10 px-2 md:px-8     animate-fade-in-up">
@@ -161,7 +161,7 @@ const foodSections = [
   {
     title: "Real-Time Order Tracking",
     desc: "Track your food delivery in real time, from restaurant to your doorstep, with live updates and animated progress.",
-    icon: "https://cdn-icons-png.flaticon.com/128/5161/5161406.png",
+
     content: (
       <div className="relative w-full max-w-2xl mx-auto flex flex-col items-center py-8">
         {/* Route line */}
@@ -348,15 +348,8 @@ const FoodDelivery = () => {
             key={i}
             className="py-14 px-4   mx-auto flex flex-col items-center text-center gap-6"
           >
-            {sec.icon && (
+            {sec.title && (
               <div className="flex flex-col items-center mb-4">
-                <Image
-                  src={sec?.icon}
-                  alt={sec?.title}
-                  width={56}
-                  height={56}
-                  className="mb-2"
-                />
                 <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
                   {sec?.title}
                 </h2>
