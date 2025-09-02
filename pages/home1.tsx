@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // Carousel Component (must be outside Home1 and before export default)
 function CustomerCarousel() {
@@ -126,10 +126,10 @@ const Home1 = () => {
   return (
     <>
       <Head>
-        <title>{t('Home1')}</title>
+        <title>{t("Home1")}</title>
         <meta
           name="description"
-          content={t('Delicious food delivered to your door')}
+          content={t("Delicious food delivered to your door")}
         />
       </Head>
       <div className="bg-white dark:bg-zinc-900     transition-colors duration-300 caret-transparent">
@@ -151,16 +151,16 @@ const Home1 = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent dark:from-zinc-900/80 to-30% z-10 flex items-center justify-center" />
           <div className="flex-1 text-center md:text-left relative z-20">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-              {t('home1_hero_title')}
+              {t("home1_hero_title")}
             </h1>
             <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
-              {t('home1_hero_desc')}
+              {t("home1_hero_desc")}
             </p>
             <Link
               href="/menu"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700"
             >
-              {t('home1_hero_button')}
+              {t("home1_hero_button")}
             </Link>
           </div>
           <div className="flex-1 flex justify-center relative z-20">
@@ -187,10 +187,10 @@ const Home1 = () => {
           </div>
           <div className="flex-1 flex flex-col justify-center items-start">
             <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg">
-              {t('home1_story_title')}
+              {t("home1_story_title")}
             </h2>
             <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-2xl text-justify">
-              {t('home1_story_desc')}
+              {t("home1_story_desc")}
             </p>
             <ul className="mb-6 space-y-3">
               <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
@@ -207,7 +207,7 @@ const Home1 = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                {t('home1_story_point1')}
+                {t("home1_story_point1")}
               </li>
               <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
                 <svg
@@ -223,7 +223,7 @@ const Home1 = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                {t('home1_story_point2')}
+                {t("home1_story_point2")}
               </li>
               <li className="flex items-center gap-3 text-orange-600 dark:text-yellow-400 font-semibold text-lg">
                 <svg
@@ -239,23 +239,23 @@ const Home1 = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                {t('home1_story_point3')}
+                {t("home1_story_point3")}
               </li>
             </ul>
             <Link
               href={"/about-us"}
               className="inline-block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 hover:shadow-orange-300 dark:hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-600 text-lg transition-all duration-300 cursor-pointer"
             >
-              {t('home1_story_button')}
+              {t("home1_story_button")}
             </Link>
           </div>
         </section>
 
         {/* Section 3: Featured Restaurants - Modern Overlap Card Style */}
         <section className="  flex flex-col items-center mx-auto w-full max-w-screen relative">
-            <h2 className="text-4xl font-extrabold text-center text-orange-600 dark:text-yellow-400 mb-14 tracking-tight drop-shadow-lg">
-              {t('home1_featured_title')}
-            </h2>
+          <h2 className="text-4xl font-extrabold text-center text-orange-600 dark:text-yellow-400 mb-14 tracking-tight drop-shadow-lg">
+            {t("home1_featured_title")}
+          </h2>
           <div className="flex flex-col md:flex-row gap-12 justify-center items-stretch w-full relative ">
             {[
               {
@@ -287,7 +287,7 @@ const Home1 = () => {
               >
                 {/* Badge */}
                 <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-4 py-1 rounded-full font-bold text-xs shadow-lg border-2 border-orange-200 dark:border-yellow-600 z-20 animate-pop-in">
-                  {t(`home1_featured_badge_${idx+1}`)}
+                  {t(`home1_featured_badge_${idx + 1}`)}
                 </span>
                 {/* Overlapping Image */}
                 <div className="relative -mt-16 mb-4 z-10">
@@ -299,13 +299,13 @@ const Home1 = () => {
                   <div className="absolute inset-0 rounded-2xl ring-4 ring-yellow-200 dark:ring-yellow-700 opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none" />
                 </div>
                 <h3 className="font-extrabold text-2xl mb-2 text-orange-700 dark:text-yellow-300 tracking-tight group-hover:text-orange-600 dark:group-hover:text-yellow-400 transition-colors">
-                  {t(`home1_featured_name_${idx+1}`)}
+                  {t(`home1_featured_name_${idx + 1}`)}
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-300 text-base mb-2">
-                  {t(`home1_featured_desc_${idx+1}`)}
+                  {t(`home1_featured_desc_${idx + 1}`)}
                 </p>
                 <span className="inline-block mt-2 text-xs font-semibold text-orange-400 dark:text-yellow-400 opacity-80 group-hover:opacity-100 transition-opacity">
-                  {t('home1_featured_button')}
+                  {t("home1_featured_button")}
                 </span>
               </div>
             ))}
@@ -315,7 +315,7 @@ const Home1 = () => {
         {/* Section 4: How It Works - Modern Horizontal Stepper */}
         <section className="py-20 px-4 mx-auto w-full max-w-6xl">
           <h2 className="text-4xl font-extrabold text-center text-orange-600 dark:text-yellow-400 mb-16 drop-shadow-lg tracking-tight">
-            {t('home1_how_title')}
+            {t("home1_how_title")}
           </h2>
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-0">
             {/* Connecting line */}
@@ -365,10 +365,10 @@ const Home1 = () => {
                   />
                 </div>
                 <h4 className="font-bold text-xl text-orange-700 dark:text-yellow-300 mb-2 text-center group-hover:text-orange-600 dark:group-hover:text-yellow-400 transition-colors">
-                  {idx + 1}. {t(`home1_how_step_title_${idx+1}`)}
+                  {idx + 1}. {t(`home1_how_step_title_${idx + 1}`)}
                 </h4>
                 <p className="text-zinc-600 dark:text-zinc-300 text-center max-w-xs">
-                  {t(`home1_how_step_desc_${idx+1}`)}
+                  {t(`home1_how_step_desc_${idx + 1}`)}
                 </p>
                 {/* Stepper Dot */}
                 <span
@@ -383,7 +383,7 @@ const Home1 = () => {
         {/* Section 5: Customer Reviews - Modern Carousel/Slider Style */}
         <section className="py-20 px-4 w-full flex flex-col items-center mx-auto max-w-screen relative">
           <h2 className="text-4xl font-extrabold text-center text-orange-600 dark:text-yellow-400 mb-16 drop-shadow-lg tracking-tight">
-            {t('home1_reviews_title')}
+            {t("home1_reviews_title")}
           </h2>
           {/* Carousel/Slider */}
           <div className="relative w-full   flex items-center justify-center">
@@ -456,26 +456,26 @@ const Home1 = () => {
               </svg>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-              {t('home1_offers_title')}
+              {t("home1_offers_title")}
             </h2>
             <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-200 mb-8 max-w-lg mx-auto">
-              {t('home1_offers_desc')}
+              {t("home1_offers_desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center mb-4">
               <div className="flex-1 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-yellow-900 dark:to-orange-900 rounded-2xl p-4 shadow-md border border-orange-200 dark:border-yellow-800">
                 <h3 className="font-bold text-orange-700 dark:text-yellow-300 text-lg mb-1">
-                  {t('home1_offers_point1_title')}
+                  {t("home1_offers_point1_title")}
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-300 text-sm">
-                  {t('home1_offers_point1_desc')}
+                  {t("home1_offers_point1_desc")}
                 </p>
               </div>
               <div className="flex-1 bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-orange-900 dark:to-yellow-900 rounded-2xl p-4 shadow-md border border-yellow-200 dark:border-orange-800">
                 <h3 className="font-bold text-orange-700 dark:text-yellow-300 text-lg mb-1">
-                  {t('home1_offers_point2_title')}
+                  {t("home1_offers_point2_title")}
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-300 text-sm">
-                  {t('home1_offers_point2_desc')}
+                  {t("home1_offers_point2_desc")}
                 </p>
               </div>
             </div>
@@ -483,7 +483,7 @@ const Home1 = () => {
               href="/services"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700 mt-2"
             >
-              {t('home1_offers_button')}
+              {t("home1_offers_button")}
             </Link>
             {/* Decorative Gradient Border */}
             <span className="pointer-events-none absolute inset-0 rounded-3xl border-4 border-transparent bg-gradient-to-br from-orange-400 via-yellow-300 to-orange-600 opacity-30 blur-[2px] z-0" />

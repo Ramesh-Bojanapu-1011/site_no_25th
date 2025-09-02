@@ -1,26 +1,22 @@
-import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-import React, { useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
+import Headder from "@/components/Headder";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 
 const Home2 = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <>
       <Head>
-        <title>Home2</title>
-        <meta
-          name="description"
-          content="Delicious food delivered to your door"
-        />
-      </Head>{" "}
+        <title>{t("home2_hero_title")}</title>
+        <meta name="description" content={t("home2_hero_desc")} />
+      </Head>
       <Headder />
       {/* Hero Section: Fullscreen video with overlayed content and image */}
       <section
@@ -43,13 +39,10 @@ const Home2 = () => {
           data-aos="fade-right"
         >
           <h1 className="text-4xl md:text-7xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg">
-            Order. Eat. Enjoy.
+            {t("home2_hero_heading")}
           </h1>
           <p className="text-lg md:text-2xl text-black dark:text-zinc-200 mb-8 max-w-2xl">
-            Welcome to our food delivery platform, where taste meets
-            convenience. Explore a world of flavors, order from top restaurants,
-            and enjoy fast, fresh delivery right to your door. Your next meal is
-            just a click away!
+            {t("home2_hero_text")}
           </p>
         </div>
         <div className="relative z-20 flex-1 flex justify-center items-center pt-16 pb-8">
@@ -67,21 +60,18 @@ const Home2 = () => {
       >
         <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
-            Meet Our Chefs
+            {t("home2_chefs_title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg">
-            Our talented chefs bring a world of culinary expertise to your
-            table. From traditional recipes to modern fusion, they craft every
-            dish with passion and precision, ensuring a memorable dining
-            experience every time you order.
+            {t("home2_chefs_text")}
           </p>
         </div>
         <div className="flex-1 flex flex-wrap gap-6 justify-center">
           {[
-            { img: "/chef1.jpg", name: "Chef Arjun" },
-            { img: "/chef2.jpg", name: "Chef Mei" },
-            { img: "/chef3.jpg", name: "Chef Luca" },
-            { img: "/chef4.jpg", name: "Chef Sara" },
+            { img: "/chef1.jpg", name: t("home2_chefs_name_1") },
+            { img: "/chef2.jpg", name: t("home2_chefs_name_2") },
+            { img: "/chef3.jpg", name: t("home2_chefs_name_3") },
+            { img: "/chef4.jpg", name: t("home2_chefs_name_4") },
           ].map((chef) => (
             <div key={chef.name} className="w-32 flex flex-col items-center">
               <img
@@ -103,13 +93,10 @@ const Home2 = () => {
       >
         <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
-            Explore Our Menu
+            {t("home2_menu_title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg">
-            From classic favorites to new discoveries, our menu is designed to
-            delight every palate. Whether you crave pizza, sushi, burgers, or
-            desserts, we have something for everyone. Browse our highlights and
-            find your next craving!
+            {t("home2_menu_text")}
           </p>
         </div>
         <div
@@ -119,27 +106,27 @@ const Home2 = () => {
           {[
             {
               icon: "https://www.svgrepo.com/show/356622/pizza-01.svg",
-              title: "Pizza",
+              title: t("home2_menu_item_1"),
             },
             {
               icon: "https://www.svgrepo.com/show/356623/sandwich-burger.svg",
-              title: "Burgers",
+              title: t("home2_menu_item_2"),
             },
             {
               icon: "https://www.svgrepo.com/show/356579/sushi-03-nigiri-sake.svg",
-              title: "Sushi",
+              title: t("home2_menu_item_3"),
             },
             {
               icon: "https://www.svgrepo.com/show/356655/ice-cream-sundae-02.svg",
-              title: "Desserts",
+              title: t("home2_menu_item_4"),
             },
             {
               icon: "https://www.svgrepo.com/show/356651/strawberry-smoothie.svg",
-              title: "Drinks",
+              title: t("home2_menu_item_5"),
             },
             {
               icon: "https://www.svgrepo.com/show/356599/salad.svg",
-              title: "Salads",
+              title: t("home2_menu_item_6"),
             },
           ].map((cat) => (
             <div key={cat.title} className="flex flex-col items-center">
@@ -158,31 +145,29 @@ const Home2 = () => {
       >
         <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
-            How It Works
+            {t("home2_how_title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg">
-            Ordering is simple and seamless. Just choose your favorite dishes,
-            place your order, and relax while we deliver your meal hot and
-            fresh. Enjoy restaurant-quality food in the comfort of your home!
+            {t("home2_how_text")}
           </p>
         </div>
         <div className="flex-1 flex flex-col gap-6" data-aos="fade-up">
           {[
             {
               icon: "https://www.svgrepo.com/show/277641/menu.svg",
-              title: "Choose Menu",
+              title: t("home2_how_step_1"),
             },
             {
               icon: "https://www.svgrepo.com/show/503678/order-food.svg",
-              title: "Place Order",
+              title: t("home2_how_step_2"),
             },
             {
               icon: "https://www.svgrepo.com/show/269548/logistics-delivery-express.svg",
-              title: "Fast Delivery",
+              title: t("home2_how_step_3"),
             },
             {
               icon: "https://www.svgrepo.com/show/429373/chow-food-mein.svg",
-              title: "Enjoy!",
+              title: t("home2_how_step_4"),
             },
           ].map((step) => (
             <div key={step.title} className="flex items-center gap-4">
@@ -201,12 +186,10 @@ const Home2 = () => {
       >
         <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
-            Our Ambience
+            {t("home2_ambience_title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg">
-            Step into a world of comfort and style. Our partner restaurants
-            offer inviting spaces, perfect for every occasion. Whether dining in
-            or ordering out, we bring the ambience to you through every meal.
+            {t("home2_ambience_text")}
           </p>
         </div>
         <div className="flex-1 flex justify-center" data-aos="fade-up">
@@ -224,24 +207,22 @@ const Home2 = () => {
       >
         <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
-            Stay Updated!
+            {t("home2_newsletter_title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 mb-6">
-            Subscribe to our newsletter for exclusive offers, new menu items,
-            and more. Be the first to know about our latest updates and special
-            deals!
+            {t("home2_newsletter_text")}
           </p>
           <form className="flex w-full max-w-md bg-white/90 dark:bg-zinc-800/90 rounded-full shadow-lg overflow-hidden border-2 border-orange-200 dark:border-yellow-700">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("home2_newsletter_placeholder")}
               className="flex-1 px-6 py-4 bg-transparent outline-none text-zinc-800 dark:text-zinc-100"
             />
             <button
               type="submit"
               className="px-6 py-4 bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold hover:from-orange-600 hover:to-yellow-500 transition-all"
             >
-              Subscribe
+              {t("home2_newsletter_button")}
             </button>
           </form>
         </div>
