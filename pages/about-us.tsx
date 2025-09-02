@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-
 import Image from "next/image";
-
 import Head from "next/head";
+// ...existing code...
 
 const milestones = [
   { label: "Orders Delivered", value: 120000 },
@@ -13,10 +12,14 @@ const milestones = [
   { label: "Cities Served", value: 18 },
 ];
 
+import { useTranslation } from "react-i18next";
+
 function useCounterAnimation(target: number, end: number, duration = 1200) {
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
+  const { i18n } = useTranslation();
   useEffect(() => {
+    hasAnimated.current = false; // Reset on language change
     let observer: IntersectionObserver | null = null;
     let start = 0;
     let startTime: number | null = null;
@@ -35,22 +38,37 @@ function useCounterAnimation(target: number, end: number, duration = 1200) {
     }
     observer = new IntersectionObserver(handleIntersect, { threshold: 0.3 });
     if (ref.current) observer.observe(ref.current);
+    // If already visible, trigger animation immediately
+    setTimeout(() => {
+      if (
+        ref.current &&
+        ref.current.getBoundingClientRect().top < window.innerHeight &&
+        !hasAnimated.current
+      ) {
+        hasAnimated.current = true;
+        requestAnimationFrame(animateCounter);
+      }
+    }, 100);
     return () => {
       if (observer && ref.current) observer.unobserve(ref.current);
     };
-  }, [end]);
+  }, [end, i18n.language]);
   return ref;
 }
 
-export default function AboutUs() {
+const AboutUs = () => {
+  const { t } = useTranslation();
+  const aboutMilestones = [
+    { label: t("about_milestones_orders"), value: 120000 },
+    { label: t("about_milestones_customers"), value: 45000 },
+    { label: t("about_milestones_restaurants"), value: 120 },
+    { label: t("about_milestones_cities"), value: 18 },
+  ];
   return (
     <>
       <Head>
-        <title>About Us</title>
-        <meta
-          name="description"
-          content="Learn more about our journey and values."
-        />
+        <title>{t("about_hero_title")}</title>
+        <meta name="description" content={t("about_hero_desc")} />
       </Head>
       <div className="bg-white dark:bg-zinc-900 transition-colors duration-300">
         <Headder />
@@ -71,18 +89,16 @@ export default function AboutUs() {
 
           <div className="flex-1 flex flex-col justify-center items-start md:items-start z-20">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg">
-              About Us
+              {t("about_hero_title")}
             </h1>
             <p className="text-lg md:text-2xl   dark:text-zinc-200 mb-8 max-w-2xl">
-              Delivering happiness, one meal at a time. Learn more about our
-              journey, our values, and our commitment to serving you the best
-              food experience possible.
+              {t("about_hero_desc")}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center z-20">
             <img
               src="/about-hero.png"
-              alt="About Us"
+              alt={t("about_hero_title")}
               className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl"
             />
           </div>
@@ -92,42 +108,33 @@ export default function AboutUs() {
         <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-br max-w-screen from-yellow-50 to-orange-100 dark:from-yellow-900 dark:to-zinc-900   shadow-xl">
           <div className="flex-1 flex flex-col items-start">
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider  ">
-              Our Vision
+              {t("about_vision_title")}
             </h2>
             <p
               className="text-zinc-700 dark:text-zinc-200 mb-6   text-lg animate-fade-in-up text-justify"
               style={{ animationDelay: "0.2s", animationDuration: "1.2s" }}
             >
-              To revolutionize the way people experience food by connecting them
-              with the best restaurants and delivering delicious meals quickly,
-              safely, and sustainably. We envision a world where every meal is
-              an opportunity to bring people together, celebrate culture, and
-              create lasting memories. Our vision is to harness technology and
-              innovation to make food delivery more personal, enjoyable, and
-              eco-friendly. By fostering strong partnerships with local
-              businesses and embracing sustainable practices, we aim to inspire
-              positive change in the communities we serve and set new standards
-              for excellence in the food delivery industry.
+              {t("about_vision_desc")}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <div className="relative group">
               <img
                 src="/vision.jpg"
-                alt="Vision"
+                alt={t("about_vision_title")}
                 className="w-72 md:w-96 rounded-full shadow-2xl ring-8 ring-orange-200 dark:ring-yellow-400 scale-95 transition-all duration-700 ease-in-out blur-[1.5px] group-hover:blur-0"
                 style={{
                   filter: "drop-shadow(0 8px 32px rgba(255,180,0,0.15))",
                 }}
               />
               <span className="absolute -top-6 -right-6 bg-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-bounce">
-                Inspire
+                {t("about_vision_inspire")}
               </span>
               <span
                 className="absolute bottom-0 left-0 bg-yellow-400 text-zinc-900 px-3 py-1 rounded-full text-xs font-semibold shadow animate-fade-in-up"
                 style={{ animationDelay: "0.5s" }}
               >
-                Future
+                {t("about_vision_future")}
               </span>
             </div>
           </div>
@@ -141,13 +148,13 @@ export default function AboutUs() {
               <div className="relative w-72 md:w-96 h-72 md:h-96 flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:via-zinc-900 dark:to-zinc-800 shadow-2xl border-4 border-orange-200 dark:border-yellow-600 group-hover:scale-105 transition-transform duration-700">
                 <img
                   src="/mission.jpg"
-                  alt="Mission"
+                  alt={t("about_mission_title")}
                   className="w-48 md:w-64 h-48 md:h-64 object-contain drop-shadow-xl rounded-xl animate-pop-in"
                   style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
                 />
                 {/* Animated badge */}
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-orange-500 text-white px-6 py-2 rounded-full text-base font-bold shadow-lg animate-bounce z-20">
-                  Together
+                  {t("about_team_title")}
                 </span>
               </div>
               {/* Decorative sparkles */}
@@ -157,32 +164,23 @@ export default function AboutUs() {
           </div>
           <div className="flex-1 flex flex-col items-start z-10">
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider">
-              Our Mission
+              {t("about_mission_title")}
             </h2>
             <p
               className="text-zinc-700 dark:text-zinc-200 mb-6 text-lg animate-fade-in-up text-justify"
               style={{ animationDelay: "0.4s", animationDuration: "1.1s" }}
             >
-              To make great food accessible to everyone, everywhere. We strive
-              to support local restaurants, empower delivery partners, and
-              delight customers with every order. Our mission is to create a
-              seamless, joyful food experience for all, while uplifting the
-              communities we serve and driving positive change in the industry.
-              We are committed to innovation, quality, and sustainability at
-              every step. We believe that food is more than just
-              nourishment—it's a way to connect, celebrate, and care for one
-              another. Every meal delivered is an opportunity to make someone's
-              day better.
+              {t("about_mission_desc")}
             </p>
             <ul
               className="list-disc pl-6 mb-4 text-zinc-700 dark:text-zinc-200 animate-fade-in-up"
               style={{ animationDelay: "0.7s", animationDuration: "1.1s" }}
             >
-              <li>Champion local restaurants and small businesses</li>
-              <li>Empower delivery partners with fair opportunities</li>
-              <li>Ensure fast, safe, and reliable food delivery</li>
-              <li>Promote eco-friendly and sustainable practices</li>
-              <li>Deliver happiness and satisfaction with every order</li>
+              <li>{t("about_mission_point1")}</li>
+              <li>{t("about_mission_point2")}</li>
+              <li>{t("about_mission_point3")}</li>
+              <li>{t("about_mission_point4")}</li>
+              <li>{t("about_mission_point5")}</li>
             </ul>
           </div>
         </section>
@@ -192,10 +190,11 @@ export default function AboutUs() {
           {/* Animated gradient border ring */}
           <span className="hidden md:block absolute -top-16 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-30 animate-pulse-slow z-0"></span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-700 dark:from-yellow-300 dark:via-orange-400 dark:to-yellow-500 mb-12 animate-gradient-x z-10">
-            Our Milestones
+            {t("about_milestones_title")}
           </h2>
           <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 w-full z-10">
-            {milestones.map((m, idx) => {
+            {aboutMilestones.map((m, idx) => {
+              const { i18n } = useTranslation();
               const ref = useCounterAnimation(idx, m.value, 1200 + idx * 200);
               return (
                 <div
@@ -275,6 +274,7 @@ export default function AboutUs() {
                   {/* Counter */}
                   <span
                     ref={ref}
+                    key={i18n.language + "-" + idx}
                     className="text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-3 mt-8 animate-fade-in-up"
                   >
                     0
@@ -296,7 +296,7 @@ export default function AboutUs() {
         {/* 5. Our Team */}
         <section className="relative py-20 px-4 w-full   md:flex-row items-center gap-16  mx-auto bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-t-8 border-orange-200 dark:border-yellow-700 max-w-screen">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">
-            Our Team
+            {t("about_team_title")}
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-12 w-full">
             {/* Left: Animated team member cards */}
@@ -355,7 +355,7 @@ export default function AboutUs() {
                 className="mt-8 text-orange-700 dark:text-yellow-300 italic text-lg animate-fade-in-up"
                 style={{ animationDelay: "0.8s", animationDuration: "1.1s" }}
               >
-                “Alone we can do so little; together we can do so much.”
+                {t("about_team_quote")}
               </blockquote>
             </div>
             {/* Right: Team story and values content */}
@@ -365,37 +365,55 @@ export default function AboutUs() {
                 style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
               >
                 <h3 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2">
-                  Meet the People Behind the Magic
+                  {t(
+                    "about_team_meet_title",
+                    "Meet the People Behind the Magic",
+                  )}
                 </h3>
                 <p className="text-zinc-700 dark:text-zinc-200 text-lg mb-2 text-justify">
-                  Our team is a vibrant blend of foodies, techies, creatives,
-                  and community champions. We come from diverse backgrounds, but
-                  share a single passion: making every meal memorable for you.
+                  {t(
+                    "about_team_meet_desc",
+                    "Our team is a vibrant blend of foodies, techies, creatives, and community champions. We come from diverse backgrounds, but share a single passion: making every meal memorable for you.",
+                  )}
                 </p>
                 <ul className="list-disc pl-6 text-zinc-700 dark:text-zinc-200 mb-2">
-                  <li>Driven by purpose and innovation</li>
-                  <li>United by a love for great food and service</li>
-                  <li>Always learning, growing, and celebrating together</li>
+                  <li>
+                    {t("about_team_point1", "Driven by purpose and innovation")}
+                  </li>
+                  <li>
+                    {t(
+                      "about_team_point2",
+                      "United by a love for great food and service",
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "about_team_point3",
+                      "Always learning, growing, and celebrating together",
+                    )}
+                  </li>
                 </ul>
                 <div className="w-full flex flex-col md:flex-row gap-4 mt-2">
                   <div className="flex-1 bg-gradient-to-r from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-xl p-4 shadow border-l-4 border-orange-300 dark:border-yellow-500">
                     <span className="block text-orange-700 dark:text-yellow-300 font-semibold mb-1">
-                      Team Value
+                      {t("about_team_value_title", "Team Value")}
                     </span>
                     <span className="text-zinc-700 dark:text-zinc-200 text-sm">
-                      We believe in open communication, mutual respect, and
-                      supporting each other’s growth—because together, we
-                      achieve more.
+                      {t(
+                        "about_team_value_desc",
+                        "We believe in open communication, mutual respect, and supporting each other’s growth—because together, we achieve more.",
+                      )}
                     </span>
                   </div>
                   <div className="flex-1 bg-gradient-to-r from-yellow-100 via-orange-50 to-white dark:from-orange-900 dark:via-yellow-900 dark:to-zinc-900 rounded-xl p-4 shadow border-l-4 border-yellow-400 dark:border-orange-400">
                     <span className="block text-yellow-700 dark:text-orange-300 font-semibold mb-1">
-                      Our Promise
+                      {t("about_team_promise_title", "Our Promise")}
                     </span>
                     <span className="text-zinc-700 dark:text-zinc-200 text-sm">
-                      Every member is empowered to make a difference, inspire
-                      others, and help create a positive impact for our
-                      customers and community.
+                      {t(
+                        "about_team_promise_desc",
+                        "Every member is empowered to make a difference, inspire others, and help create a positive impact for our customers and community.",
+                      )}
                     </span>
                   </div>
                 </div>
@@ -411,7 +429,7 @@ export default function AboutUs() {
             <div className="relative w-72 md:w-96 h-72 md:h-96 flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:to-zinc-900 shadow-2xl border-4 border-orange-200 dark:border-yellow-700 group-hover:scale-105 transition-transform duration-700">
               <img
                 src="/sustainability.jpg"
-                alt="Sustainability"
+                alt={t("about_community_title")}
                 className="w-48 md:w-64 h-48 md:h-64 object-contain drop-shadow-xl rounded-xl animate-pop-in"
                 style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
               />
@@ -430,7 +448,7 @@ export default function AboutUs() {
                     d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"
                   />
                 </svg>
-                Impact
+                {t("about_community_impact")}
               </span>
               {/* Decorative sparkles */}
               <span className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
@@ -446,27 +464,48 @@ export default function AboutUs() {
           >
             <div className="relative w-full bg-white/80 dark:bg-zinc-900/90 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-700 px-8 py-10 animate-fade-in-up">
               <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">
-                Community & Sustainability
+                {t("about_community_title")}
               </h2>
               <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg text-lg animate-fade-in-up">
-                We believe in giving back and building a better future. Our
-                initiatives support local communities, reduce food waste, and
-                promote eco-friendly packaging and delivery practices.
-                <br />
-                <br />
-                Sustainability is at the heart of everything we do—from sourcing
-                responsibly to minimizing our carbon footprint and empowering
-                our partners to do the same.
+                {t(
+                  "about_community_desc",
+                  "We believe in giving back and building a better future. Our initiatives support local communities, reduce food waste, and promote eco-friendly packaging and delivery practices.\n\nSustainability is at the heart of everything we do—from sourcing responsibly to minimizing our carbon footprint and empowering our partners to do the same.",
+                )}
               </p>
               <ul
                 className="list-disc pl-6 mb-4 text-zinc-700 dark:text-zinc-200 animate-fade-in-up"
                 style={{ animationDelay: "0.5s", animationDuration: "1.1s" }}
               >
-                <li>Supporting local farmers and food producers</li>
-                <li>Championing zero-waste and recycling initiatives</li>
-                <li>Using biodegradable, eco-friendly packaging</li>
-                <li>Partnering with green delivery services</li>
-                <li>Hosting community food drives and events</li>
+                <li>
+                  {t(
+                    "about_community_point1",
+                    "Supporting local farmers and food producers",
+                  )}
+                </li>
+                <li>
+                  {t(
+                    "about_community_point2",
+                    "Championing zero-waste and recycling initiatives",
+                  )}
+                </li>
+                <li>
+                  {t(
+                    "about_community_point3",
+                    "Using biodegradable, eco-friendly packaging",
+                  )}
+                </li>
+                <li>
+                  {t(
+                    "about_community_point4",
+                    "Partnering with green delivery services",
+                  )}
+                </li>
+                <li>
+                  {t(
+                    "about_community_point5",
+                    "Hosting community food drives and events",
+                  )}
+                </li>
               </ul>
               {/* <div className="mt-4 w-full flex justify-end">
               <button className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-xl animate-bounce transition-all duration-300 hover:scale-105 hover:shadow-orange-300 dark:hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-700 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700">
@@ -479,9 +518,10 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
-
         <Footer />
       </div>
     </>
   );
-}
+};
+
+export default AboutUs;
