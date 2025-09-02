@@ -19,7 +19,7 @@ const AuthPage = () => {
   const now = new Date().toISOString();
   const router = useRouter();
   useEffect(() => {
-    AOS.init( );
+    AOS.init();
   }, []);
 
   const handleLogin = (e: React.FormEvent) => {

@@ -35,7 +35,7 @@ const blogs = [
 
 export default function Blog() {
   useEffect(() => {
-    AOS.init( );
+    AOS.init();
   }, []);
 
   return (

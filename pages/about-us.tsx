@@ -44,7 +44,7 @@ function useCounterAnimation(target: number, end: number, duration = 1200) {
 
 export default function AboutUs() {
   useEffect(() => {
-    AOS.init( );
+    AOS.init();
   }, []);
 
   return (
@@ -158,7 +158,6 @@ export default function AboutUs() {
           <div
             className="flex-1 flex justify-center items-center z-10"
             data-aos="zoom-in"
-          
           >
             <div className="relative group">
               {/* Card with shadow and animated border */}
@@ -182,7 +181,6 @@ export default function AboutUs() {
           <div
             className="flex-1 flex flex-col items-start z-10"
             data-aos="fade-right"
-            
           >
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider">
               Our Mission
@@ -338,7 +336,6 @@ export default function AboutUs() {
             <div
               className="flex-1 flex flex-col gap-6 z-10"
               data-aos="fade-right"
-            
             >
               <div className="flex flex-col gap-4">
                 {/* Example team members, replace with real data if available */}
@@ -401,7 +398,6 @@ export default function AboutUs() {
             <div
               className="flex-1 flex justify-center items-center z-10"
               data-aos="zoom-in"
-             
             >
               <div
                 className="relative w-full max-w-xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-10 flex flex-col gap-6 items-start animate-fade-in-up"

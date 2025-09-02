@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const ContactUs = () => {
   useEffect(() => {
-    AOS.init( );
+    AOS.init();
   }, []);
   const formRef = React.useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = React.useState(false);

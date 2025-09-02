@@ -339,7 +339,6 @@ const OnlineMenu = () => {
             loop
             muted
             playsInline
-             
             className="absolute inset-0 w-full h-full object-cover z-0 brightness-95 dark:brightness-60 contrast-110 dark:contrast-90 pointer-events-none"
           >
             <source src="/ " type="video/mp4" />

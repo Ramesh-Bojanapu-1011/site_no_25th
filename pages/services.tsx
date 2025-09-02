@@ -54,7 +54,7 @@ const services = [
 
 export default function Services() {
   useEffect(() => {
-    AOS.init( );
+    AOS.init();
   }, []);
 
   return (
