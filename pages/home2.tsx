@@ -10,7 +10,7 @@ import Head from "next/head";
 
 const Home2 = () => {
   useEffect(() => {
-    AOS.init({ once: true, duration: 900, offset: 60 });
+    AOS.init( );
   }, []);
   return (
     <>

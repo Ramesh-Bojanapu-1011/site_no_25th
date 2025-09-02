@@ -54,7 +54,7 @@ const services = [
 
 export default function Services() {
   useEffect(() => {
-    AOS.init({ once: true, duration: 900, offset: 60 });
+    AOS.init( );
   }, []);
 
   return (

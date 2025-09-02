@@ -35,7 +35,7 @@ const blogs = [
 
 export default function Blog() {
   useEffect(() => {
-    AOS.init({ once: true, duration: 900, offset: 60 });
+    AOS.init( );
   }, []);
 
   return (
