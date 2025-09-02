@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-import AOS from "aos";
+
 import Link from "next/link";
 import Image from "next/image";
-import "aos/dist/aos.css";
 
 const blogs = [
   {
@@ -34,19 +33,12 @@ const blogs = [
 ];
 
 export default function Blog() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div className="bg-white dark:bg-zinc-900 transition-colors duration-300">
       <Headder />
 
       {/* 1. Hero Section */}
-      <section
-        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
@@ -73,7 +65,6 @@ export default function Blog() {
             src="/blog-hero-illus.svg"
             alt="Blog Hero"
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[350px] object-center object-cover "
-            data-aos="zoom-in"
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={350}
             height={350}
@@ -82,10 +73,7 @@ export default function Blog() {
       </section>
 
       {/* 2. Featured Blogs Section */}
-      <section
-        className="py-16 px-4 w-full max-w-7xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
           Latest Blog Posts
         </h2>
@@ -94,7 +82,6 @@ export default function Blog() {
             <div
               key={blog.title}
               className="group relative flex flex-col items-center bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-500 cursor-pointer animate-fade-in-up"
-              data-aos="zoom-in"
               style={{
                 animationDelay: `${0.1 + idx * 0.1}s`,
                 animationDuration: "1.1s",
@@ -129,10 +116,7 @@ export default function Blog() {
       </section>
 
       {/* 3. About the Blog Section */}
-      <section
-        className="py-20 px-4 w-full flex justify-center items-center bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
+      <section className="py-20 px-4 w-full flex justify-center items-center bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         <div className="relative flex flex-col md:flex-row items-center gap-10   w-full bg-white/80 dark:bg-zinc-900/80 rounded-3xl shadow-2xl border-l-8 border-gradient-to-b from-orange-400 via-yellow-400 to-orange-600 dark:from-yellow-800 dark:via-orange-700 dark:to-orange-900 p-10 md:p-16 backdrop-blur-xl">
           {/* Icon */}
           <div className="flex-shrink-0 flex flex-col items-center justify-center">
@@ -164,10 +148,7 @@ export default function Blog() {
       </section>
 
       {/* 4. Tips & Resources Section */}
-      <section
-        className="relative py-20 px-4 w-full flex flex-col items-center justify-center bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 overflow-hidden"
-        data-aos="fade-up"
-      >
+      <section className="relative py-20 px-4 w-full flex flex-col items-center justify-center bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 overflow-hidden">
         <h2 className="text-3xl md:text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up drop-shadow-lg z-10">
           Tips & Resources
         </h2>
@@ -220,10 +201,7 @@ export default function Blog() {
       </section>
 
       {/* 5. Community Stories Section */}
-      <section
-        className="py-16 px-4 w-full max-w-4xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
           Community Stories
         </h2>
@@ -234,10 +212,7 @@ export default function Blog() {
       </section>
 
       {/* 6. Call to Action Section */}
-      <section
-        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8  mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8  mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl">
         <div className="w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-12 flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-4 text-center animate-fade-in-up">
             Want More Insights?

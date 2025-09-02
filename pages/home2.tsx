@@ -2,15 +2,11 @@ import Footer from "@/components/Footer";
 import Headder from "@/components/Headder";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import Head from "next/head";
 
 const Home2 = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <>
       <Head>
@@ -19,10 +15,7 @@ const Home2 = () => {
       </Head>
       <Headder />
       {/* Hero Section: Fullscreen video with overlayed content and image */}
-      <section
-        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-0 min-h-screen w-full"
-        data-aos="fade-up"
-      >
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-0 min-h-screen w-full">
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-70 dark:opacity-50 pointer-events-none"
           autoPlay
@@ -34,10 +27,7 @@ const Home2 = () => {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-b  to-transparent   to-30% z-10" />
-        <div
-          className="relative z-20 flex-1 flex flex-col justify-center items-start md:items-start pt-32 pb-16"
-          data-aos="fade-right"
-        >
+        <div className="relative z-20 flex-1 flex flex-col justify-center items-start md:items-start pt-32 pb-16">
           <h1 className="text-4xl md:text-7xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg">
             {t("home2_hero_heading")}
           </h1>
@@ -54,11 +44,8 @@ const Home2 = () => {
         </div>
       </section>
       {/* Section 2: About Our Chefs */}
-      <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900"
-        data-aos="fade-up"
-      >
-        <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
+      <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900">
+        <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
             {t("home2_chefs_title")}
           </h2>
@@ -87,10 +74,7 @@ const Home2 = () => {
         </div>
       </section>
       {/* Section 3: Our Menu Highlights */}
-      <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto">
         <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
             {t("home2_menu_title")}
@@ -99,10 +83,7 @@ const Home2 = () => {
             {t("home2_menu_text")}
           </p>
         </div>
-        <div
-          className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-6"
-          data-aos="fade-left"
-        >
+        <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-6">
           {[
             {
               icon: "https://www.svgrepo.com/show/356622/pizza-01.svg",
@@ -139,11 +120,8 @@ const Home2 = () => {
         </div>
       </section>
       {/* Section 4: How It Works */}
-      <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 bg-gradient-to-l from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
-        <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
+      <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 bg-gradient-to-l from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-zinc-900">
+        <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
             {t("home2_how_title")}
           </h2>
@@ -151,7 +129,7 @@ const Home2 = () => {
             {t("home2_how_text")}
           </p>
         </div>
-        <div className="flex-1 flex flex-col gap-6" data-aos="fade-up">
+        <div className="flex-1 flex flex-col gap-6">
           {[
             {
               icon: "https://www.svgrepo.com/show/277641/menu.svg",
@@ -180,10 +158,7 @@ const Home2 = () => {
         </div>
       </section>
       {/* Section 5: Our Ambience */}
-      <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12 mx-auto">
         <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
             {t("home2_ambience_title")}
@@ -192,7 +167,7 @@ const Home2 = () => {
             {t("home2_ambience_text")}
           </p>
         </div>
-        <div className="flex-1 flex justify-center" data-aos="fade-up">
+        <div className="flex-1 flex justify-center">
           <img
             src="/ambience.jpg"
             alt="Ambience"
@@ -201,11 +176,8 @@ const Home2 = () => {
         </div>
       </section>
       {/* Section 6: Stay Updated */}
-      <section
-        className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-l from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
-        <div className="flex-1 flex flex-col items-start" data-aos="fade-right">
+      <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-l from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-zinc-900">
+        <div className="flex-1 flex flex-col items-start">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6">
             {t("home2_newsletter_title")}
           </h2>

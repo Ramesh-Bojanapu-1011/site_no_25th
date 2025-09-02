@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-import AOS from "aos";
+
 import Image from "next/image";
 import Link from "next/link";
-import "aos/dist/aos.css";
+
 import Head from "next/head";
 
 const services = [
@@ -53,10 +53,6 @@ const services = [
 ];
 
 export default function Services() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <>
       <Head>
@@ -69,10 +65,7 @@ export default function Services() {
       <Headder />
 
       {/* 1. Hero Section */}
-      <section
-        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
@@ -98,7 +91,6 @@ export default function Services() {
             src="https://i.pinimg.com/736x/c9/6a/62/c96a62d98b654fffb855265c082e30d0.jpg"
             alt="Services"
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[500px] object-center object-cover "
-            data-aos="zoom-in"
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={500}
             height={500}
@@ -107,10 +99,7 @@ export default function Services() {
       </section>
 
       {/* 2. Services Grid Section */}
-      <section
-        className="py-16 px-4 w-full max-w-7xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
           What We Offer
         </h2>
@@ -118,7 +107,6 @@ export default function Services() {
           {services.map((service, idx) => (
             <div
               className={`group relative flex flex-col items-center justify-between bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-500 cursor-pointer animate-fade-in-up`}
-              data-aos="zoom-in"
               style={{
                 animationDelay: `${0.1 + idx * 0.1}s`,
                 animationDuration: "1.1s",
@@ -152,20 +140,14 @@ export default function Services() {
       </section>
 
       {/* 3. Why Choose Us Section */}
-      <section
-        className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible"
-        data-aos="fade-up"
-      >
+      <section className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible">
         {/* Diagonal split background */}
         <span
           className="absolute inset-0 w-full h-full bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl -z-10"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 100%)" }}
         ></span>
         {/* Left: Glassmorphism card with frosted border and floating badges */}
-        <div
-          className="flex-1 flex flex-col items-start z-10"
-          data-aos="fade-right"
-        >
+        <div className="flex-1 flex flex-col items-start z-10">
           <div className="relative w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-10 py-12 animate-fade-in-up overflow-visible">
             <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 tracking-tight animate-slide-in-left">
               Why Choose Us?
@@ -313,10 +295,7 @@ export default function Services() {
           </div>
         </div>
         {/* Right: Layered image card with glowing border and floating sparkles */}
-        <div
-          className="flex-1 flex justify-center items-center z-10"
-          data-aos="zoom-in"
-        >
+        <div className="flex-1 flex justify-center items-center z-10">
           <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible">
             {/* Glowing border ring */}
             <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
@@ -337,10 +316,7 @@ export default function Services() {
       </section>
 
       {/* 4. How It Works Section */}
-      <section
-        className="relative py-24 px-4 w-full mx-auto overflow-visible"
-        data-aos="fade-up"
-      >
+      <section className="relative py-24 px-4 w-full mx-auto overflow-visible">
         {/* Decorative background gradient */}
         <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   shadow-2xl -z-10"></span>
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-20 text-center animate-fade-in-up relative z-10">
@@ -442,10 +418,7 @@ export default function Services() {
       </section>
 
       {/* 5. Testimonials Section */}
-      <section
-        className="relative py-20 px-4 w-full mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 shadow-xl overflow-visible"
-        data-aos="fade-up"
-      >
+      <section className="relative py-20 px-4 w-full mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 shadow-xl overflow-visible">
         {/* Decorative background and floating badge */}
         <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   shadow-2xl -z-10"></span>
 
@@ -524,10 +497,7 @@ export default function Services() {
       </section>
 
       {/* 6. Call to Action Section */}
-      <section
-        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   "
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900   ">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-4 text-center animate-fade-in-up">
           Ready to Experience the Best?
         </h2>

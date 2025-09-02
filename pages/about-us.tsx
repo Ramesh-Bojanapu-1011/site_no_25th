@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-import AOS from "aos";
+
 import Image from "next/image";
-import "aos/dist/aos.css";
+
 import Head from "next/head";
 
 const milestones = [
@@ -43,10 +43,6 @@ function useCounterAnimation(target: number, end: number, duration = 1200) {
 }
 
 export default function AboutUs() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <>
       <Head>
@@ -60,10 +56,7 @@ export default function AboutUs() {
         <Headder />
 
         {/* 1. Hero Section */}
-        <section
-          className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen"
-          data-aos="fade-up"
-        >
+        <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
@@ -91,20 +84,13 @@ export default function AboutUs() {
               src="/about-hero.png"
               alt="About Us"
               className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl"
-              data-aos="zoom-in"
             />
           </div>
         </section>
 
         {/* 2. Our Vision */}
-        <section
-          className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-br max-w-screen from-yellow-50 to-orange-100 dark:from-yellow-900 dark:to-zinc-900   shadow-xl"
-          data-aos="fade-up"
-        >
-          <div
-            className="flex-1 flex flex-col items-start"
-            data-aos="fade-right"
-          >
+        <section className="py-16 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-gradient-to-br max-w-screen from-yellow-50 to-orange-100 dark:from-yellow-900 dark:to-zinc-900   shadow-xl">
+          <div className="flex-1 flex flex-col items-start">
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider  ">
               Our Vision
             </h2>
@@ -124,10 +110,7 @@ export default function AboutUs() {
               for excellence in the food delivery industry.
             </p>
           </div>
-          <div
-            className="flex-1 flex justify-center items-center"
-            data-aos="zoom-in"
-          >
+          <div className="flex-1 flex justify-center items-center">
             <div className="relative group">
               <img
                 src="/vision.jpg"
@@ -151,14 +134,8 @@ export default function AboutUs() {
         </section>
 
         {/* 3. Our Mission */}
-        <section
-          className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-white dark:bg-zinc-800  shadow-2xl max-w-screen border-0 border-t-8 border-orange-200 dark:border-yellow-700"
-          data-aos="fade-up"
-        >
-          <div
-            className="flex-1 flex justify-center items-center z-10"
-            data-aos="zoom-in"
-          >
+        <section className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-12   mx-auto bg-white dark:bg-zinc-800  shadow-2xl max-w-screen border-0 border-t-8 border-orange-200 dark:border-yellow-700">
+          <div className="flex-1 flex justify-center items-center z-10">
             <div className="relative group">
               {/* Card with shadow and animated border */}
               <div className="relative w-72 md:w-96 h-72 md:h-96 flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:via-zinc-900 dark:to-zinc-800 shadow-2xl border-4 border-orange-200 dark:border-yellow-600 group-hover:scale-105 transition-transform duration-700">
@@ -178,10 +155,7 @@ export default function AboutUs() {
               <span className="absolute bottom-0 right-0 w-6 h-6 bg-orange-200 rounded-full blur-sm opacity-50 animate-float-slow"></span>
             </div>
           </div>
-          <div
-            className="flex-1 flex flex-col items-start z-10"
-            data-aos="fade-right"
-          >
+          <div className="flex-1 flex flex-col items-start z-10">
             <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider">
               Our Mission
             </h2>
@@ -214,10 +188,7 @@ export default function AboutUs() {
         </section>
 
         {/* 4. Our Milestones - with animated counters */}
-        <section
-          className="relative py-20 px-4 w-full flex flex-col items-center gap-16   mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen"
-          data-aos="fade-up"
-        >
+        <section className="relative py-20 px-4 w-full flex flex-col items-center gap-16   mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen">
           {/* Animated gradient border ring */}
           <span className="hidden md:block absolute -top-16 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-30 animate-pulse-slow z-0"></span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-700 dark:from-yellow-300 dark:via-orange-400 dark:to-yellow-500 mb-12 animate-gradient-x z-10">
@@ -230,7 +201,6 @@ export default function AboutUs() {
                 <div
                   key={m.label}
                   className="relative flex flex-col items-center justify-center bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border-2 border-orange-100 dark:border-yellow-900 group hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-500 overflow-visible"
-                  data-aos="zoom-in"
                   style={{ minHeight: "220px" }}
                 >
                   {/* Icon overlay */}
@@ -324,19 +294,13 @@ export default function AboutUs() {
         </section>
 
         {/* 5. Our Team */}
-        <section
-          className="relative py-20 px-4 w-full   md:flex-row items-center gap-16  mx-auto bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-t-8 border-orange-200 dark:border-yellow-700 max-w-screen"
-          data-aos="fade-up"
-        >
+        <section className="relative py-20 px-4 w-full   md:flex-row items-center gap-16  mx-auto bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-t-8 border-orange-200 dark:border-yellow-700 max-w-screen">
           <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">
             Our Team
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-12 w-full">
             {/* Left: Animated team member cards */}
-            <div
-              className="flex-1 flex flex-col gap-6 z-10"
-              data-aos="fade-right"
-            >
+            <div className="flex-1 flex flex-col gap-6 z-10">
               <div className="flex flex-col gap-4">
                 {/* Example team members, replace with real data if available */}
                 {[
@@ -395,10 +359,7 @@ export default function AboutUs() {
               </blockquote>
             </div>
             {/* Right: Team story and values content */}
-            <div
-              className="flex-1 flex justify-center items-center z-10"
-              data-aos="zoom-in"
-            >
+            <div className="flex-1 flex justify-center items-center z-10">
               <div
                 className="relative w-full max-w-xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-10 flex flex-col gap-6 items-start animate-fade-in-up"
                 style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
@@ -444,15 +405,9 @@ export default function AboutUs() {
         </section>
 
         {/* 6. Community & Sustainability */}
-        <section
-          className="py-20 px-4 w-full flex flex-col-reverse md:flex-row items-center gap-16 mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:to-zinc-900   border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen"
-          data-aos="fade-up"
-        >
+        <section className="py-20 px-4 w-full flex flex-col-reverse md:flex-row items-center gap-16 mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:to-zinc-900   border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen">
           {/* Left: Image with new accent and floating badge */}
-          <div
-            className="flex-1 flex justify-center items-center z-10"
-            data-aos="zoom-in"
-          >
+          <div className="flex-1 flex justify-center items-center z-10">
             <div className="relative w-72 md:w-96 h-72 md:h-96 flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:to-zinc-900 shadow-2xl border-4 border-orange-200 dark:border-yellow-700 group-hover:scale-105 transition-transform duration-700">
               <img
                 src="/sustainability.jpg"
@@ -487,7 +442,7 @@ export default function AboutUs() {
           {/* Right: Content in glassmorphism card */}
           <div
             className="flex-1 flex flex-col items-start z-10"
-            // data-aos="fade-left"
+            //
           >
             <div className="relative w-full bg-white/80 dark:bg-zinc-900/90 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-700 px-8 py-10 animate-fade-in-up">
               <h2 className="text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-6 tracking-wider text-center">

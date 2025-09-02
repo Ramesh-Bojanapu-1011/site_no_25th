@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-import AOS from "aos";
+
 import Image from "next/image";
 import Link from "next/link";
-import "aos/dist/aos.css";
 
 const ContactUs = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   const formRef = React.useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = React.useState(false);
 
@@ -55,10 +51,7 @@ const ContactUs = () => {
       <Headder />
 
       {/* 1. Hero Section */}
-      <section
-        className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
@@ -84,7 +77,6 @@ const ContactUs = () => {
             src="/contact-hero-illus.svg"
             alt="Contact Hero"
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[350px] object-center object-cover "
-            data-aos="zoom-in"
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={350}
             height={350}
@@ -93,7 +85,7 @@ const ContactUs = () => {
       </section>
 
       {/* 2. Contact Form Section */}
-      <section className="py-16 px-4 w-full   mx-auto" data-aos="fade-up">
+      <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up caret-transparent">
           Get in Touch
         </h2>
@@ -163,7 +155,7 @@ const ContactUs = () => {
       </section>
 
       {/* 3. Meet Our Agents Section */}
-      <section className="py-16 px-4 w-full   mx-auto" data-aos="fade-up">
+      <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
           Meet Our Agents
         </h2>
@@ -237,10 +229,7 @@ const ContactUs = () => {
       </section>
 
       {/* 4. Delivery Partner Section */}
-      <section
-        className="py-16 px-4 w-full max-w-4xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
           Delivery Partners
         </h2>
@@ -274,7 +263,7 @@ const ContactUs = () => {
       </section>
 
       {/* 5. FAQ Section */}
-      <section className="py-16 px-4 w-full   mx-auto" data-aos="fade-up">
+      <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
           Frequently Asked Questions
         </h2>
@@ -310,10 +299,7 @@ const ContactUs = () => {
       </section>
 
       {/* 6. Customer Support & Feedback Section */}
-      <section
-        className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         <div className="w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-12 flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-4 text-center animate-fade-in-up">
             Customer Support & Feedback

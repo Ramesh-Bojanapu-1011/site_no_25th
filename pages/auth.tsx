@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import { Eye, EyeOff } from "lucide-react";
 
 const AuthPage = () => {
@@ -18,9 +17,6 @@ const AuthPage = () => {
   const [showRegisterPassword, setShowRegisterPassword] = useState(false);
   const now = new Date().toISOString();
   const router = useRouter();
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,7 +116,7 @@ const AuthPage = () => {
           {/* Image Side */}
           <div className="   md:w-1/2 items-center justify-center">
             {isLogin ? (
-              <div key="login-img" data-aos="fade-left">
+              <div key="login-img">
                 <Image
                   src="/login-restaurant.jpg"
                   alt="Login"
@@ -130,7 +126,7 @@ const AuthPage = () => {
                 />
               </div>
             ) : (
-              <div key="register-img" data-aos="fade-left">
+              <div key="register-img">
                 <Image
                   src="/register-restaurant.jpg"
                   alt="Register"
@@ -148,7 +144,6 @@ const AuthPage = () => {
                 onSubmit={handleLogin}
                 className="min-w-full"
                 key="login-form"
-                data-aos="fade-right"
               >
                 <h2 className="text-2xl font-bold mb-6 text-orange-600 dark:text-yellow-400 text-center">
                   Login
@@ -226,7 +221,6 @@ const AuthPage = () => {
                 onSubmit={handleRegister}
                 className="min-w-full"
                 key="register-form"
-                data-aos="fade-right"
               >
                 <h2 className="text-2xl font-bold mb-6 text-orange-600 dark:text-yellow-400 text-center">
                   Register
