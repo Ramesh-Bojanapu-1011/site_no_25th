@@ -123,21 +123,21 @@ const Headder = () => {
                 onClick={() => handleDropdown("home")}
                 className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors w-full md:w-auto justify-between md:justify-center"
               >
-                {t("Home")} <span className="ml-1">&#9662;</span>
+                {t("Header_Home")} <span className="ml-1">&#9662;</span>
               </button>
               {openDropdown === "home" && (
                 <ul className="md:absolute left-0 mt-2 w-full md:w-44 bg-white dark:bg-zinc-800 rounded-lg shadow-lg py-2 z-30 md:z-20">
                   <li>
                     <Link href="/home1">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Home")} 1
+                        {t("Header_Home")} 1
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/home2">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Home")} 2
+                        {t("Header_Home")} 2
                       </span>
                     </Link>
                   </li>
@@ -147,7 +147,7 @@ const Headder = () => {
             <li className="relative w-full md:w-auto">
               <Link href="/about-us">
                 <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
-                  {t("About Us")}
+                  {t("Header_About_Us")}
                 </span>
               </Link>
             </li>
@@ -156,56 +156,56 @@ const Headder = () => {
                 onClick={() => handleDropdown("services")}
                 className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors w-full md:w-auto justify-between md:justify-center"
               >
-                {t("Services")} <span className="ml-1">&#9662;</span>
+                {t("Header_Services")} <span className="ml-1">&#9662;</span>
               </button>
               {openDropdown === "services" && (
                 <ul className="md:absolute left-0 mt-2 w-full md:w-56 bg-white dark:bg-zinc-800 rounded-lg shadow-lg py-2 z-30 md:z-20">
                   <li>
                     <Link href="/services">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Services")}
+                        {t("Header_Services")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/food-delivery">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Food Delivery")}
+                        {t("Header_Food_Delivery")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/table-booking">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Table Booking")}
+                        {t("Header_Table_Booking")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/catering">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Catering")}
+                        {t("Header_Catering")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/online-menu">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Online Menu")}
+                        {t("Header_Online_Menu")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/party-orders">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Party Orders")}
+                        {t("Header_Party_Orders")}
                       </span>
                     </Link>
                   </li>
                   <li>
                     <Link href="/reservation-management">
                       <span className="block px-4 py-2 hover:bg-orange-50 dark:hover:bg-zinc-700 rounded transition-colors cursor-pointer">
-                        {t("Reservation Management")}
+                        {t("Header_Reservation_Management")}
                       </span>
                     </Link>
                   </li>
@@ -215,14 +215,14 @@ const Headder = () => {
             <li className="relative w-full md:w-auto">
               <Link href="/blog">
                 <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
-                  {t("Blog")}
+                  {t("Header_Blog")}
                 </span>
               </Link>
             </li>
             <li className="relative w-full md:w-auto">
               <Link href="/contact-us">
                 <span className="px-4 py-2 rounded-lg hover:bg-orange-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer">
-                  {t("Contact Us")}
+                  {t("Header_Contact_Us")}
                 </span>
               </Link>
             </li>
