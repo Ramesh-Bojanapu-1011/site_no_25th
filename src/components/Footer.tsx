@@ -28,9 +28,7 @@ const Footer = (props: Props) => {
             height={28}
           />
           <p className="mb-4 text-sm text-zinc-700 dark:text-zinc-300">
-            {t(
-              "footer_logo_description",
-            )}
+            {t("footer_logo_description")}
           </p>
           <div className="flex gap-3 mt-2">
             <Link
@@ -171,7 +169,7 @@ const Footer = (props: Props) => {
         {/* Contact Us */}
         <div>
           <h3 className="font-bold text-lg mb-4 text-orange-600 dark:text-yellow-400">
-            {t("Contact Us")}
+            {t("footer_contact_us")}
           </h3>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
