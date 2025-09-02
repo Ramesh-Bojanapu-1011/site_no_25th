@@ -15,5 +15,8 @@
   "Header_Catering": "تموين",
   "Header_Online_Menu": "قائمة الطعام عبر الإنترنت",
   "Header_Party_Orders": "طلبات الحفلات",
-  "Header_Reservation_Management": "إدارة الحجوزات"
+  "Header_Reservation_Management": "إدارة الحجوزات",
+  "footer_location": "شارع 123، مدينة الطعام",
+  "Footer_Quick_Links": "روابط سريعة",
+  "footer_logo_description": "طعام لذيذ يتم توصيله إلى باب منزلك. تجربة أفضل خدمات المطاعم وتوصيل الطعام معنا."
 }

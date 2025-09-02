@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import {
   FacebookIcon,
@@ -13,6 +14,7 @@ import Link from "next/link";
 type Props = {};
 
 const Footer = (props: Props) => {
+  const { t } = useTranslation();
   return (
     <footer className="w-full bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-t border-orange-200 dark:border-yellow-700   transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -26,8 +28,9 @@ const Footer = (props: Props) => {
             height={28}
           />
           <p className="mb-4 text-sm text-zinc-700 dark:text-zinc-300">
-            Delicious food delivered to your door. Experience the best of
-            restaurant and food delivery services with us!
+            {t(
+              "footer_logo_description",
+            )}
           </p>
           <div className="flex gap-3 mt-2">
             <Link
@@ -56,7 +59,7 @@ const Footer = (props: Props) => {
         {/* Quick Links */}
         <div>
           <h3 className="font-bold text-lg mb-4 text-orange-600 dark:text-yellow-400">
-            Quick Links
+            {t("Footer_Quick_Links")}
           </h3>
           <ul className="space-y-2">
             <li>
@@ -64,7 +67,7 @@ const Footer = (props: Props) => {
                 href="/home1"
                 className="hover:text-orange-500 transition-colors"
               >
-                Home 1
+                {t("Header_Home")} 1
               </Link>
             </li>
             <li>
@@ -72,7 +75,7 @@ const Footer = (props: Props) => {
                 href="/home2"
                 className="hover:text-orange-500 transition-colors"
               >
-                Home 2
+                {t("Header_Home")} 2
               </Link>
             </li>
             <li>
@@ -80,7 +83,7 @@ const Footer = (props: Props) => {
                 href="/about-us"
                 className="hover:text-orange-500 transition-colors"
               >
-                About Us
+                {t("Header_About_Us")}
               </Link>
             </li>
             <li>
@@ -88,7 +91,7 @@ const Footer = (props: Props) => {
                 href="/services"
                 className="hover:text-orange-500 transition-colors"
               >
-                Services
+                {t("Header_Services")}
               </Link>
             </li>
             <li>
@@ -96,7 +99,7 @@ const Footer = (props: Props) => {
                 href="/blog"
                 className="hover:text-orange-500 transition-colors"
               >
-                Blog
+                {t("Header_Blog")}
               </Link>
             </li>
             <li>
@@ -104,7 +107,7 @@ const Footer = (props: Props) => {
                 href="/contact-us"
                 className="hover:text-orange-500 transition-colors"
               >
-                Contact Us
+                {t("Header_Contact_Us")}
               </Link>
             </li>
           </ul>
@@ -112,7 +115,7 @@ const Footer = (props: Props) => {
         {/* Services */}
         <div>
           <h3 className="font-bold text-lg mb-4 text-orange-600 dark:text-yellow-400">
-            Services
+            {t("Header_Services")}
           </h3>
           <ul className="space-y-2">
             <li>
@@ -120,7 +123,7 @@ const Footer = (props: Props) => {
                 href="/food-delivery"
                 className="hover:text-orange-500 transition-colors"
               >
-                Food Delivery
+                {t("Header_Food_Delivery")}
               </Link>
             </li>
             <li>
@@ -128,7 +131,7 @@ const Footer = (props: Props) => {
                 href="/table-booking"
                 className="hover:text-orange-500 transition-colors"
               >
-                Table Booking
+                {t("Header_Table_Booking")}
               </Link>
             </li>
             <li>
@@ -136,7 +139,7 @@ const Footer = (props: Props) => {
                 href="/catering"
                 className="hover:text-orange-500 transition-colors"
               >
-                Catering
+                {t("Header_Catering")}
               </Link>
             </li>
             <li>
@@ -144,7 +147,7 @@ const Footer = (props: Props) => {
                 href="/online-menu"
                 className="hover:text-orange-500 transition-colors"
               >
-                Online Menu
+                {t("Header_Online_Menu")}
               </Link>
             </li>
             <li>
@@ -152,7 +155,7 @@ const Footer = (props: Props) => {
                 href="/party-orders"
                 className="hover:text-orange-500 transition-colors"
               >
-                Party Orders
+                {t("Header_Party_Orders")}
               </Link>
             </li>
             <li>
@@ -160,7 +163,7 @@ const Footer = (props: Props) => {
                 href="/reservation-management"
                 className="hover:text-orange-500 transition-colors"
               >
-                Reservation Management
+                {t("Header_Reservation_Management")}
               </Link>
             </li>
           </ul>
@@ -168,14 +171,14 @@ const Footer = (props: Props) => {
         {/* Contact Us */}
         <div>
           <h3 className="font-bold text-lg mb-4 text-orange-600 dark:text-yellow-400">
-            Contact Us
+            {t("Contact Us")}
           </h3>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <span className="text-orange-500">
                 <Locate />
               </span>
-              123 Main St, Food City
+              {t("footer_location")}
             </li>
             <li className="flex items-center gap-2">
               <span className="text-orange-500">
@@ -204,7 +207,8 @@ const Footer = (props: Props) => {
       </div>
       <div className="text-center py-4 border-t border-orange-200 dark:border-yellow-700 text-sm bg-white/80 dark:bg-zinc-900/90 transition-colors duration-300">
         <p className="text-zinc-700 dark:text-yellow-100">
-          © {new Date().getFullYear()} Restaurant. All rights reserved.
+          © {new Date().getFullYear()} {t("Restaurant")}.{" "}
+          {t("All rights reserved.")}
         </p>
       </div>
     </footer>
