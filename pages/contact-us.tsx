@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
-
+import Headder from "@/components/Headder";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ContactUs = () => {
+  const { t } = useTranslation();
   const formRef = React.useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = React.useState(false);
 
@@ -61,21 +62,20 @@ const ContactUs = () => {
           playsInline
         >
           <source src="/contact-hero-bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          {t("Contact_Video_Fallback")}
         </video>
         <div className="flex-1 flex flex-col justify-center items-start z-20">
           <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg animate-slide-in-left">
-            Contact Us
+            {t("Contact_Hero_Title")}
           </h1>
           <p className="text-lg md:text-2xl dark:text-zinc-200 mb-8 max-w-2xl animate-fade-in-up">
-            Have a question, feedback, or want to partner with us? Reach out and
-            our team will get back to you as soon as possible!
+            {t("Contact_Hero_Desc")}
           </p>
         </div>
         <div className="flex-1 flex justify-center items-center z-20">
           <Image
-            src="/contact-hero-illus.svg"
-            alt="Contact Hero"
+            src="/contact-hero-illus.jpg"
+            alt={t("Contact_Hero_Image_Alt")}
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[350px] object-center object-cover "
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={350}
@@ -87,7 +87,7 @@ const ContactUs = () => {
       {/* 2. Contact Form Section */}
       <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up caret-transparent">
-          Get in Touch
+          {t("Contact_Form_Title")}
         </h2>
         {success && (
           <div
@@ -110,9 +110,7 @@ const ContactUs = () => {
               </svg>
             </div>
             <p className="text-green-700 dark:text-green-300 font-bold text-lg text-center">
-              Thank you! Your message has been sent.
-              <br />
-              We appreciate your feedback and will get back to you soon.
+              {t("Contact_Form_Success")}
             </p>
           </div>
         )}
@@ -127,21 +125,21 @@ const ContactUs = () => {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t("Contact_Form_Name")}
               className="flex-1 px-5 py-3 rounded-xl border-2 border-orange-200 dark:border-yellow-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-400"
               required
             />
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder={t("Contact_Form_Email")}
               className="flex-1 px-5 py-3 rounded-xl border-2 border-orange-200 dark:border-yellow-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-400"
               required
             />
           </div>
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder={t("Contact_Form_Message")}
             className="px-5 py-3 rounded-xl border-2 border-orange-200 dark:border-yellow-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-400 min-h-[120px]"
             required
           />
@@ -149,7 +147,7 @@ const ContactUs = () => {
             type="submit"
             className="bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-10 py-3 rounded-full font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-orange-300 dark:hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-600 text-lg animate-pop-in"
           >
-            Send Message
+            {t("Contact_Form_Button")}
           </button>
         </form>
       </section>
@@ -157,72 +155,67 @@ const ContactUs = () => {
       {/* 3. Meet Our Agents Section */}
       <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
-          Meet Our Agents
+          {t("Contact_Agents_Title")}
         </h2>
         <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-10 animate-fade-in-up">
-          Our friendly customer support and delivery agents are here to help you
-          with every step of your dining and delivery experience. Get to know
-          the people who make your orders possible!
+          {t("Contact_Agents_Desc")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-up">
           {/* Agent 1 */}
           <div className="flex flex-col items-center bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <Image
               src="/agent1.jpg"
-              alt="Agent Priya"
+              alt={t("Contact_Agents_1_Alt")}
               width={120}
               height={120}
-              className="rounded-full mb-4 shadow-lg object-cover h-28 w-28"
+              className="rounded-full object-top  mb-4 shadow-lg object-cover h-28 w-28"
             />
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 text-lg mb-1">
-              Priya Singh
+              {t("Contact_Agents_1_Name")}
             </h3>
             <p className="text-zinc-500 dark:text-zinc-400 mb-2">
-              Customer Support Lead
+              {t("Contact_Agents_1_Role")}
             </p>
             <p className="text-zinc-700 dark:text-zinc-200 text-center text-sm">
-              Always ready to answer your questions and make your experience
-              smooth and enjoyable.
+              {t("Contact_Agents_1_Desc")}
             </p>
           </div>
           {/* Agent 2 */}
           <div className="flex flex-col items-center bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <Image
               src="/agent2.jpg"
-              alt="Agent Rohan"
+              alt={t("Contact_Agents_2_Alt")}
               width={120}
               height={120}
-              className="rounded-full mb-4 shadow-lg object-cover h-28 w-28"
+              className="rounded-full mb-4 shadow-lg object-top object-cover h-28 w-28"
             />
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 text-lg mb-1">
-              Rohan Mehta
+              {t("Contact_Agents_2_Name")}
             </h3>
             <p className="text-zinc-500 dark:text-zinc-400 mb-2">
-              Delivery Specialist
+              {t("Contact_Agents_2_Role")}
             </p>
             <p className="text-zinc-700 dark:text-zinc-200 text-center text-sm">
-              Ensures your food arrives hot, fresh, and on time—every single
-              order.
+              {t("Contact_Agents_2_Desc")}
             </p>
           </div>
           {/* Agent 3 */}
           <div className="flex flex-col items-center bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <Image
               src="/agent3.jpg"
-              alt="Agent Aisha"
+              alt={t("Contact_Agents_3_Alt")}
               width={120}
               height={120}
-              className="rounded-full mb-4 shadow-lg object-cover h-28 w-28"
+              className="rounded-full mb-4 object-top  shadow-lg object-cover h-28 w-28"
             />
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 text-lg mb-1">
-              Aisha Khan
+              {t("Contact_Agents_3_Name")}
             </h3>
             <p className="text-zinc-500 dark:text-zinc-400 mb-2">
-              Order Manager
+              {t("Contact_Agents_3_Role")}
             </p>
             <p className="text-zinc-700 dark:text-zinc-200 text-center text-sm">
-              Coordinates your orders and keeps everything running smoothly
-              behind the scenes.
+              {t("Contact_Agents_3_Desc")}
             </p>
           </div>
         </div>
@@ -231,68 +224,64 @@ const ContactUs = () => {
       {/* 4. Delivery Partner Section */}
       <section className="py-16 px-4 w-full max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
-          Delivery Partners
+          {t("Contact_Partners_Title")}
         </h2>
         <div className="flex flex-wrap gap-8 justify-center items-center animate-fade-in-up">
           <Image
-            src="/partner1.svg"
-            alt="Partner 1"
+            src="/partner1.jpg"
+            alt={t("Contact_Partners_1_Alt")}
             width={100}
             height={60}
-            className="h-12 w-auto"
+            className="h-20 w-20 rounded-full object-cover object-top"
           />
           <Image
-            src="/partner2.svg"
-            alt="Partner 2"
+            src="/partner2.jpg"
+            alt={t("Contact_Partners_2_Alt")}
             width={100}
             height={60}
-            className="h-12 w-auto"
+            className="h-20 w-20 rounded-full object-cover object-top"
           />
           <Image
-            src="/partner3.svg"
-            alt="Partner 3"
+            src="/partner3.jpg"
+            alt={t("Contact_Partners_3_Alt")}
             width={100}
             height={60}
-            className="h-12 w-auto"
+            className="h-20 w-20 rounded-full object-cover object-top"
           />
         </div>
         <p className="text-center text-zinc-700 dark:text-zinc-200 mt-6 animate-fade-in-up">
-          We proudly deliver with top partners to ensure your food arrives fresh
-          and fast.
+          {t("Contact_Partners_Desc")}
         </p>
       </section>
 
       {/* 5. FAQ Section */}
       <section className="py-16 px-4 w-full   mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-8 text-center animate-fade-in-up">
-          Frequently Asked Questions
+          {t("Contact_FAQ_Title")}
         </h2>
         <div className="space-y-6 animate-fade-in-up">
           <div className="bg-white/80 dark:bg-zinc-900/80 rounded-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 mb-2">
-              How do I place an order?
+              {t("Contact_FAQ_1_Q")}
             </h3>
             <p className="text-zinc-700 dark:text-zinc-200">
-              You can order online through our website or via our delivery
-              partners’ apps.
+              {t("Contact_FAQ_1_A")}
             </p>
           </div>
           <div className="bg-white/80 dark:bg-zinc-900/80 rounded-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 mb-2">
-              Do you offer catering services?
+              {t("Contact_FAQ_2_Q")}
             </h3>
             <p className="text-zinc-700 dark:text-zinc-200">
-              Yes! Contact us for custom catering options for your event or
-              office.
+              {t("Contact_FAQ_2_A")}
             </p>
           </div>
           <div className="bg-white/80 dark:bg-zinc-900/80 rounded-xl p-6 border-2 border-orange-100 dark:border-yellow-900">
             <h3 className="font-bold text-orange-600 dark:text-yellow-400 mb-2">
-              Can I make a reservation?
+              {t("Contact_FAQ_3_Q")}
             </h3>
             <p className="text-zinc-700 dark:text-zinc-200">
-              Absolutely! Call us or use our online reservation form to book
-              your table.
+              {t("Contact_FAQ_3_A")}
             </p>
           </div>
         </div>
@@ -302,13 +291,10 @@ const ContactUs = () => {
       <section className="py-16 px-4 w-full flex flex-col items-center justify-center gap-8   mx-auto bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900">
         <div className="w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-xl border-2 border-orange-100 dark:border-yellow-900 px-8 py-12 flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-4 text-center animate-fade-in-up">
-            Customer Support & Feedback
+            {t("Contact_Support_Title")}
           </h2>
           <p className="text-zinc-700 dark:text-zinc-200 text-lg text-center mb-8 animate-fade-in-up">
-            Need help with an order, want to share your experience, or have
-            suggestions for us? Our support team is here for you 24/7. We value
-            your feedback and strive to make every dining and delivery
-            experience better!
+            {t("Contact_Support_Desc")}
           </p>
           <div className="flex flex-col gap-4 w-full max-w-md">
             <div className="flex items-center gap-3 bg-white dark:bg-zinc-800 rounded-xl shadow p-4 border border-orange-100 dark:border-yellow-900 animate-fade-in-up">
@@ -316,7 +302,7 @@ const ContactUs = () => {
                 📞
               </span>
               <span className="text-zinc-700 dark:text-zinc-200">
-                Support Hotline:{" "}
+                {t("Contact_Support_Hotline_Label")}{" "}
                 <a
                   href="tel:+1234567890"
                   className="text-orange-600 dark:text-yellow-400 font-bold"
@@ -330,7 +316,7 @@ const ContactUs = () => {
                 ✉
               </span>
               <span className="text-zinc-700 dark:text-zinc-200">
-                Email:{" "}
+                {t("Contact_Support_Email_Label")}{" "}
                 <a
                   href="mailto:support@enkonixrestaurant.com"
                   className="text-orange-600 dark:text-yellow-400 font-bold"
@@ -345,12 +331,12 @@ const ContactUs = () => {
                 ⭐
               </span>
               <span className="text-zinc-700 dark:text-zinc-200">
-                Leave Feedback:{" "}
+                {t("Contact_Support_Feedback_Label")}{" "}
                 <Link
                   href="/feedback"
                   className="text-orange-600 dark:text-yellow-400 font-bold underline"
                 >
-                  Share Now
+                  {t("Contact_Support_Feedback_Button")}
                 </Link>
               </span>
             </div>

@@ -13,6 +13,8 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
+
+import { useTranslation } from "react-i18next";
 import Headder from "@/components/Headder";
 
 const defaultLoginUser = {
@@ -62,10 +64,7 @@ type User = {
 };
 
 // For new user structure, count by domain or just count all as 'User'
-function getPieData(
-  users: User[],
-  // currentUser?: User
-): { name: string; value: number }[] {
+function getPieData(users: User[]): { name: string; value: number }[] {
   try {
     const currentUser = localStorage.getItem("Current User");
     let currentUserCount = 0;
@@ -147,13 +146,14 @@ const AdminDashboardPage = () => {
     }
   }, []);
 
+  const { t } = useTranslation();
   return (
     <>
       <Headder />
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 py-10 px-4">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 text-center drop-shadow-lg">
-            Admin Dashboard
+            {t("AdminDashboard_Title")}
           </h1>
 
           {/* Login User Details */}
@@ -161,7 +161,7 @@ const AdminDashboardPage = () => {
             {/* Pie Chart */}
             <div className="flex-1 flex flex-col items-center">
               <h3 className="text-lg font-bold text-orange-500 dark:text-yellow-300 mb-2">
-                Number of Login and Other Users
+                {t("AdminDashboard_Pie_Title")}
               </h3>
               <ResponsiveContainer width={220} height={220}>
                 <PieChart>
@@ -190,26 +190,26 @@ const AdminDashboardPage = () => {
           {/* All Users Table */}
           <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 mb-10 border-2 border-orange-100 dark:border-yellow-900 overflow-x-auto">
             <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
-              All Users
+              {t("AdminDashboard_Users_Title")}
             </h2>
             <table className="min-w-full text-left border-collapse">
               <thead>
                 <tr>
                   <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                    Name
+                    {t("AdminDashboard_Users_Col_Name")}
                   </th>
                   <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                    Email
+                    {t("AdminDashboard_Users_Col_Email")}
                   </th>
 
                   <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                    Registered At
+                    {t("AdminDashboard_Users_Col_RegisteredAt")}
                   </th>
                   <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                    Last Login
+                    {t("AdminDashboard_Users_Col_LastLogin")}
                   </th>
                   <th className="py-2 px-4 font-semibold text-orange-500 dark:text-yellow-300">
-                    Log Out
+                    {t("AdminDashboard_Users_Col_Logout")}
                   </th>
                 </tr>
               </thead>
@@ -226,7 +226,9 @@ const AdminDashboardPage = () => {
                     <td className="py-2 px-4">{user.registeredAt}</td>
                     <td className="py-2 px-4">{user.lastLoginAt}</td>
                     <td className="py-2 px-4">
-                      {user.lastLoginOut ? user.lastLoginOut : "N/A"}
+                      {user.lastLoginOut
+                        ? user.lastLoginOut
+                        : t("AdminDashboard_Users_NA")}
                     </td>
                   </tr>
                 ))}
@@ -237,7 +239,7 @@ const AdminDashboardPage = () => {
           {/* Dual Bar Graph */}
           <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 border-2 border-orange-100 dark:border-yellow-900 mb-10">
             <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
-              Login vs Logout Activity
+              {t("AdminDashboard_Bar_Title")}
             </h2>
             <ResponsiveContainer width="100%" height={320}>
               <BarChart
@@ -252,14 +254,14 @@ const AdminDashboardPage = () => {
                 <Bar
                   dataKey="login"
                   fill="#f59e42"
-                  name="Login Users"
+                  name={t("AdminDashboard_Bar_Login")}
                   barSize={32}
                   radius={[8, 8, 0, 0]}
                 />
                 <Bar
                   dataKey="logout"
                   fill="#f87171"
-                  name="Logout Users"
+                  name={t("AdminDashboard_Bar_Logout")}
                   barSize={32}
                   radius={[8, 8, 0, 0]}
                 />
