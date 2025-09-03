@@ -1,5 +1,7 @@
 
 
+
+
 {
   "Order Delicious Food Online": "اطلب الطعام اللذيذ عبر الإنترنت",
   "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!": "استكشف قائمتنا، خصص طلبك، واستمتع بالتوصيل السريع إلى باب منزلك. طعام بجودة المطاعم بنقرة واحدة فقط!",
@@ -160,5 +162,31 @@
   "Services_Online_Menu_Desc": "تصفح واطلب من قائمتنا الرقمية، المحدثة في الوقت الفعلي.",
   "Services_Party_Orders_Desc": "اطلب بكميات كبيرة للحفلات والمناسبات مع خصومات وعروض خاصة.",
   "Services_Reservation_Management_Desc": "إدارة الحجوزات الخاصة بك بسهولة عبر الإنترنت.",
-  "Services_Learn_More": "اعرف المزيد"
+  "Services_Learn_More": "اعرف المزيد",
+    "Services_Why_Choose_Us_Title": "لماذا تختارنا؟",
+  "Services_Why_Choose_Us_Point1": "توصيل سريع وموثوق وبدون تلامس",
+  "Services_Why_Choose_Us_Point2": "مجموعة واسعة من المطابخ والمطاعم",
+  "Services_Why_Choose_Us_Point3": "حجوزات وإدارة سهلة عبر الإنترنت",
+  "Services_Why_Choose_Us_Point4": "تموين مخصص لكل مناسبة",
+  "Services_Why_Choose_Us_Point5": "عروض حصرية للطلبات الجماعية والحفلات",
+  "Services_Why_Choose_Us_Point6": "دعم العملاء على مدار الساعة",  "Services_How_Title": "كيف يعمل",
+  "Services_How_Step1_Title": "تصفح واختر",
+  "Services_How_Step1_Desc": "استكشف مجموعة واسعة من المطاعم والمأكولات والخدمات. استخدم الفلاتر والتوصيات للعثور على ما ترغب به بالضبط.",
+  "Services_How_Step2_Title": "اطلب واحجز",
+  "Services_How_Step2_Desc": "قدم طلب الطعام، احجز طاولة، أو اطلب تموين ببضع نقرات فقط. استمتع بتحديثات فورية وتأكيدات مباشرة.",
+  "Services_How_Step3_Title": "استمتع واحتفل",
+  "Services_How_Step3_Desc": "استرخ واستمتع! يصل طعامك ساخناً، طاولتك جاهزة، أو مناسبتك ممونة بشكل مثالي. استمتع بكل لحظة معنا.",
+  "Services_Testimonials_Title": "ماذا يقول عملاؤنا",
+  "Services_Testimonial1_Review": "توصيل الطعام دائماً في الوقت المحدد والجودة ممتازة.",
+  "Services_Testimonial1_Name": "برية س.",
+  "Services_Testimonial1_Role": "مدونة الطعام",
+  "Services_Testimonial2_Review": "حجز الطاولة أصبح سهلاً جداً الآن. التطبيق سهل الاستخدام والطاقم رائع!",
+  "Services_Testimonial2_Name": "راهول م.",
+  "Services_Testimonial2_Role": "رجل أعمال",
+  "Services_Testimonial3_Review": "طلبنا تموين لمناسبتنا والجميع أحب الطعام. سنستخدمه مرة أخرى!",
+  "Services_Testimonial3_Name": "عائشة ك.",
+  "Services_Testimonial3_Role": "منظمة فعاليات",
+  "Services_CTA_Title": "جاهز لتجربة الأفضل؟",
+  "Services_CTA_Desc": "ابدأ مع خدمات المطاعم وتوصيل الطعام لدينا. نقرة واحدة فقط تفصلك عن وجبتك الرائعة التالية!",
+  "Services_CTA_Button": "اتصل بنا"
 }

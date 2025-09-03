@@ -1,4 +1,6 @@
 
+
+
 {
   "Order Delicious Food Online": "הזמן אוכל טעים אונליין",
   "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!": "גלה את התפריט שלנו, התאם אישית את ההזמנה שלך ותהנה ממשלוח מהיר עד הבית. אוכל באיכות מסעדה בלחיצה אחת!",
@@ -157,5 +159,32 @@
   "Services_Online_Menu_Desc": "עיין והזמן מהתפריט הדיגיטלי שלנו, מתעדכן בזמן אמת.",
   "Services_Party_Orders_Desc": "הזמן בכמויות גדולות למסיבות ואירועים, עם הנחות ומבצעים מיוחדים.",
   "Services_Reservation_Management_Desc": "נהל את ההזמנות שלך בקלות אונליין.",
-  "Services_Learn_More": "למידע נוסף"
+  "Services_Learn_More": "למידע נוסף",
+    "Services_Why_Choose_Us_Title": "למה לבחור בנו?",
+  "Services_Why_Choose_Us_Point1": "משלוח מהיר, אמין וללא מגע",
+  "Services_Why_Choose_Us_Point2": "מגוון רחב של מטבחים ומסעדות",
+  "Services_Why_Choose_Us_Point3": "הזמנות וניהול קל אונליין",
+  "Services_Why_Choose_Us_Point4": "קייטרינג מותאם אישית לכל אירוע",
+  "Services_Why_Choose_Us_Point5": "מבצעים בלעדיים להזמנות קבוצתיות ומסיבות",
+  "Services_Why_Choose_Us_Point6": "שירות לקוחות 24/7",
+    "Services_How_Title": "איך זה עובד",
+  "Services_How_Step1_Title": "דפדף ובחר",
+  "Services_How_Step1_Desc": "גלה מגוון רחב של מסעדות, מטבחים ושירותים. השתמש במסננים ובהמלצות כדי למצוא בדיוק את מה שאתה רוצה.",
+  "Services_How_Step2_Title": "הזמן ושמור מקום",
+  "Services_How_Step2_Desc": "הזמן אוכל, שמור שולחן או בקש קייטרינג בכמה קליקים בלבד. תהנה מעדכונים בזמן אמת ואישורים מיידיים.",
+  "Services_How_Step3_Title": "תהנה וחגוג",
+  "Services_How_Step3_Desc": "שב בנחת! האוכל שלך מגיע חם, השולחן שלך מוכן, או האירוע שלך מקוטרן בצורה מושלמת. תהנה מכל רגע איתנו.",
+  "Services_Testimonials_Title": "מה הלקוחות שלנו אומרים",
+  "Services_Testimonial1_Review": "משלוח האוכל תמיד בזמן והאיכות מעולה.",
+  "Services_Testimonial1_Name": "פריה ס.",
+  "Services_Testimonial1_Role": "בלוגרית אוכל",
+  "Services_Testimonial2_Review": "הזמנת שולחן כל כך קלה עכשיו. האפליקציה ידידותית לצרכן והצוות נהדר!",
+  "Services_Testimonial2_Name": "רהול מ.",
+  "Services_Testimonial2_Role": "איש עסקים",
+  "Services_Testimonial3_Review": "הזמנו קייטרינג לאירוע שלנו וכולם אהבו את האוכל. נשתמש שוב!",
+  "Services_Testimonial3_Name": "עאישה ק.",
+  "Services_Testimonial3_Role": "מתכננת אירועים",
+  "Services_CTA_Title": "מוכן לחוות את הטוב ביותר?",
+  "Services_CTA_Desc": "התחל עם שירותי המסעדות והמשלוחים שלנו. קליק אחד מהארוחה הבאה שלך!",
+  "Services_CTA_Button": "צור קשר"
 }
