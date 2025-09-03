@@ -1,4 +1,5 @@
 
+
 {
   "Order Delicious Food Online": "اطلب الطعام اللذيذ عبر الإنترنت",
   "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!": "استكشف قائمتنا، خصص طلبك، واستمتع بالتوصيل السريع إلى باب منزلك. طعام بجودة المطاعم بنقرة واحدة فقط!",
@@ -148,5 +149,16 @@
   "home2_newsletter_title": "ابقَ على اطلاع!",
   "home2_newsletter_text": "اشترك في نشرتنا البريدية للحصول على عروض حصرية، وأطباق جديدة في القائمة والمزيد. كن أول من يعرف عن التحديثات والعروض الخاصة!",
   "home2_newsletter_placeholder": "أدخل بريدك الإلكتروني",
-  "home2_newsletter_button": "اشترك"
+  "home2_newsletter_button": "اشترك",
+    "Services_Page_Title": "خدماتنا",
+  "Services_Page_Description": "استكشف مجموعة خدماتنا بما في ذلك توصيل الطعام، حجز الطاولات، والمزيد.",
+  "Services_Hero_Desc": "اختبر أفضل خدمات توصيل الطعام، تناول الطعام، وخدمات المناسبات. اكتشف ما نقدمه لجعل كل وجبة لا تُنسى.",
+  "Services_Grid_Title": "ماذا نقدم",
+  "Services_Food_Delivery_Desc": "احصل على وجباتك المفضلة ساخنة وطازجة إلى باب منزلك بسرعة وبدون عناء.",
+  "Services_Table_Booking_Desc": "احجز طاولتك في أفضل المطاعم فوراً وتجنب الانتظار.",
+  "Services_Catering_Desc": "تموين لذيذ لجميع المناسبات، مصمم حسب احتياجاتك وتفضيلاتك.",
+  "Services_Online_Menu_Desc": "تصفح واطلب من قائمتنا الرقمية، المحدثة في الوقت الفعلي.",
+  "Services_Party_Orders_Desc": "اطلب بكميات كبيرة للحفلات والمناسبات مع خصومات وعروض خاصة.",
+  "Services_Reservation_Management_Desc": "إدارة الحجوزات الخاصة بك بسهولة عبر الإنترنت.",
+  "Services_Learn_More": "اعرف المزيد"
 }

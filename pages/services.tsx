@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
 
@@ -7,59 +8,60 @@ import Link from "next/link";
 
 import Head from "next/head";
 
-const services = [
+const servicesData = [
   {
-    title: "Food Delivery",
-    desc: "Get your favorite meals delivered hot and fresh to your doorstep, fast and hassle-free.",
+    titleKey: "Header_Food_Delivery",
+    descKey: "Services_Food_Delivery_Desc",
     icon: "https://www.svgrepo.com/show/401385/delivery-truck.svg",
     link: "/food-delivery",
     color: "from-orange-400 via-yellow-300 to-orange-600",
   },
   {
-    title: "Table Booking",
-    desc: "Reserve your table at top restaurants instantly and skip the wait.",
+    titleKey: "Header_Table_Booking",
+    descKey: "Services_Table_Booking_Desc",
     icon: "https://www.svgrepo.com/show/265562/table.svg",
-    link: " /table-booking",
+    link: "/table-booking",
     color: "from-yellow-400 via-orange-200 to-yellow-600",
   },
   {
-    title: "Catering",
-    desc: "Delicious catering for all occasions, tailored to your needs and preferences.",
+    titleKey: "Header_Catering",
+    descKey: "Services_Catering_Desc",
     icon: "https://www.svgrepo.com/show/251535/catering-buffet.svg",
-    link: " /catering",
+    link: "/catering",
     color: "from-green-400 via-yellow-200 to-green-600",
   },
   {
-    title: "Online Menu",
-    desc: "Browse and order from our digital menu, updated in real-time.",
+    titleKey: "Header_Online_Menu",
+    descKey: "Services_Online_Menu_Desc",
     icon: "https://www.svgrepo.com/show/277641/menu.svg",
-    link: " /online-menu",
+    link: "/online-menu",
     color: "from-pink-400 via-yellow-200 to-orange-400",
   },
   {
-    title: "Party Orders",
-    desc: "Order in bulk for parties and events, with special discounts and combos.",
+    titleKey: "Header_Party_Orders",
+    descKey: "Services_Party_Orders_Desc",
     icon: "https://www.svgrepo.com/show/401329/confetti-ball.svg",
-    link: " /party-orders",
+    link: "/party-orders",
     color: "from-purple-400 via-yellow-200 to-pink-500",
   },
   {
-    title: "Reservation Management",
-    desc: "Seamlessly manage your reservations and bookings online.",
+    titleKey: "Header_Reservation_Management",
+    descKey: "Services_Reservation_Management_Desc",
     icon: "https://www.svgrepo.com/show/428761/management-check-gear.svg",
-    link: " /reservation-management",
+    link: "/reservation-management",
     color: "from-blue-400 via-yellow-200 to-blue-600",
   },
 ];
 
 export default function Services() {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Our Services</title>
+        <title>{t("Services_Page_Title")}</title>
         <meta
           name="description"
-          content="Explore our range of services including food delivery, table booking, and more."
+          content={t("Services_Page_Description")}
         />
       </Head>
       <Headder />
@@ -79,17 +81,16 @@ export default function Services() {
         </video>
         <div className="flex-1 flex flex-col justify-center items-start z-20">
           <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-6 drop-shadow-lg animate-slide-in-left">
-            Our Services
+            {t("Services_Page_Title")}
           </h1>
           <p className="text-lg md:text-2xl dark:text-zinc-200 mb-8 max-w-2xl animate-fade-in-up">
-            Experience the best in food delivery, dining, and event services.
-            Explore what we offer to make every meal memorable.
+            {t("Services_Hero_Desc")}
           </p>
         </div>
         <div className="flex-1 flex justify-center items-center z-20">
           <Image
             src="https://i.pinimg.com/736x/c9/6a/62/c96a62d98b654fffb855265c082e30d0.jpg"
-            alt="Services"
+            alt={t("Services_Page_Title")}
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[500px] object-center object-cover "
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={500}
@@ -101,10 +102,10 @@ export default function Services() {
       {/* 2. Services Grid Section */}
       <section className="py-16 px-4 w-full max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-yellow-400 mb-12 text-center animate-fade-in-up">
-          What We Offer
+          {t("Services_Grid_Title")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((service, idx) => (
+          {servicesData.map((service, idx) => (
             <div
               className={`group relative flex flex-col items-center justify-between bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 transition-all duration-500 cursor-pointer animate-fade-in-up`}
               style={{
@@ -117,28 +118,28 @@ export default function Services() {
               >
                 <Image
                   src={service.icon}
-                  alt={service.title}
+                  alt={t(service.titleKey)}
                   className="w-12 h-12 object-cover"
                   width={48}
                   height={48}
                 />
               </div>
               <h3 className="text-xl font-bold text-orange-600 dark:text-yellow-400 mb-2 text-center">
-                {service.title}
+                {t(service.titleKey)}
               </h3>
               <p className="text-zinc-700 dark:text-zinc-200 text-center mb-4">
-                {service.desc}
+                {t(service.descKey)}
               </p>
-              <Link href={service.link} key={service.title}>
+              <Link href={service.link} key={service.titleKey}>
                 <span className="inline-block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-6 py-2 rounded-full font-bold shadow-lg  transition-all duration-300 group-hover:scale-105 group-hover:shadow-orange-300 dark:group-hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-600">
-                  Learn More
+                  {t("Services_Learn_More")}
                 </span>
               </Link>
             </div>
           ))}
         </div>
       </section>
-
+       
       {/* 3. Why Choose Us Section */}
       <section className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible">
         {/* Diagonal split background */}

@@ -1,3 +1,4 @@
+
 {
   "Order Delicious Food Online": "הזמן אוכל טעים אונליין",
   "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!": "גלה את התפריט שלנו, התאם אישית את ההזמנה שלך ותהנה ממשלוח מהיר עד הבית. אוכל באיכות מסעדה בלחיצה אחת!",
@@ -145,5 +146,16 @@
   "about_community_point2": "קידום יוזמות אפס פסולת ומחזור",
   "about_community_point3": "שימוש באריזות מתכלות וידידותיות לסביבה",
   "about_community_point4": "שיתוף פעולה עם שירותי משלוח ירוקים",
-  "about_community_point5": "אירוח מבצעי מזון ואירועי קהילה"
+  "about_community_point5": "אירוח מבצעי מזון ואירועי קהילה",
+    "Services_Page_Title": "השירותים שלנו",
+  "Services_Page_Description": "גלה את מגוון השירותים שלנו כולל משלוחי אוכל, הזמנת שולחנות ועוד.",
+  "Services_Hero_Desc": "חווה את הטוב ביותר במשלוחי אוכל, מסעדות ושירותי אירועים. גלה מה אנו מציעים כדי להפוך כל ארוחה לבלתי נשכחת.",
+  "Services_Grid_Title": "מה אנו מציעים",
+  "Services_Food_Delivery_Desc": "קבל את הארוחות האהובות עליך חמות וטריות עד הבית, במהירות וללא מאמץ.",
+  "Services_Table_Booking_Desc": "הזמן שולחן במסעדות מובילות מיד וללא המתנה.",
+  "Services_Catering_Desc": "קייטרינג טעים לכל אירוע, מותאם לצרכים ולהעדפות שלך.",
+  "Services_Online_Menu_Desc": "עיין והזמן מהתפריט הדיגיטלי שלנו, מתעדכן בזמן אמת.",
+  "Services_Party_Orders_Desc": "הזמן בכמויות גדולות למסיבות ואירועים, עם הנחות ומבצעים מיוחדים.",
+  "Services_Reservation_Management_Desc": "נהל את ההזמנות שלך בקלות אונליין.",
+  "Services_Learn_More": "למידע נוסף"
 }

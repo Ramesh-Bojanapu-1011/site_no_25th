@@ -1,4 +1,5 @@
 
+
 {
   "home1_hero_title": "Delicious Food Delivered Fast",
   "home1_hero_desc": "Order from your favorite restaurants and get your meal delivered to your door, hot and fresh. Experience the best of food delivery and restaurant services!",
@@ -145,5 +146,16 @@
   "about_community_point2":"Championing zero-waste and recycling initiatives",
   "about_community_point3":"Using biodegradable, eco-friendly packaging",
   "about_community_point4":"Partnering with green delivery services",
-  "about_community_point5":"Hosting community food drives and events"
+  "about_community_point5":"Hosting community food drives and events",
+    "Services_Page_Title": "Our Services",
+  "Services_Page_Description": "Explore our range of services including food delivery, table booking, and more.",
+  "Services_Hero_Desc": "Experience the best in food delivery, dining, and event services. Explore what we offer to make every meal memorable.",
+  "Services_Grid_Title": "What We Offer",
+  "Services_Food_Delivery_Desc": "Get your favorite meals delivered hot and fresh to your doorstep, fast and hassle-free.",
+  "Services_Table_Booking_Desc": "Reserve your table at top restaurants instantly and skip the wait.",
+  "Services_Catering_Desc": "Delicious catering for all occasions, tailored to your needs and preferences.",
+  "Services_Online_Menu_Desc": "Browse and order from our digital menu, updated in real-time.",
+  "Services_Party_Orders_Desc": "Order in bulk for parties and events, with special discounts and combos.",
+  "Services_Reservation_Management_Desc": "Seamlessly manage your reservations and bookings online.",
+  "Services_Learn_More": "Learn More"
 }
