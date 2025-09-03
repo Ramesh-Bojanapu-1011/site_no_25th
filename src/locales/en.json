@@ -471,5 +471,50 @@
   "Catering_Hero_Title": "Exceptional Catering for Every Occasion",
   "Catering_Hero_Desc": "From intimate gatherings to grand celebrations, our catering team delivers delicious food, flawless service, and unforgettable experiences. Let us handle the details—so you can enjoy your event stress-free.",
   "Catering_Hero_Book": "Get a Catering Quote",
-  "Catering_Hero_Image_Alt": "Catering Service"
+  "Catering_Hero_Image_Alt": "Catering Service",
+  "Blog_Blog1_Title": "5 Ways to Boost Your Restaurant's Delivery Experience",
+  "Blog_Blog1_Desc": "Discover proven strategies to enhance your food delivery service and delight your customers every time.",
+  "Blog_Blog1_Date": "August 2025",
+  "Blog_Blog1_Author": "Chef Riya",
+
+  "Blog_Blog2_Title": "The Future of Online Food Ordering: Trends to Watch",
+  "Blog_Blog2_Desc": "Explore the latest trends in online food ordering and how restaurants can stay ahead in a digital world.",
+  "Blog_Blog2_Date": "August 2025",
+  "Blog_Blog2_Author": "Sandeep Kumar",
+
+  "Blog_Blog3_Title": "From Local Farms to Your Table: The Rise of Farm-to-Fork Delivery",
+  "Blog_Blog3_Desc": "Discover how restaurants are partnering with local farmers to offer fresher, healthier meals delivered straight to your door.",
+  "Blog_Blog3_Date": "August 2025",
+  "Blog_Blog3_Author": "Priya Singh",
+
+  "Blog_Video_Fallback": "Your browser does not support the video tag.",
+  "Blog_Hero_Title": "Restaurant & Food Delivery Blog",
+  "Blog_Hero_Desc": "Insights, tips, and trends for restaurant owners, foodies, and delivery lovers. Stay updated with the latest in the food service world!",
+  "Blog_Hero_Image_Alt": "Blog Hero",
+
+  "Blog_Latest_Title": "Latest Blog Posts",
+  "Blog_ReadMore": "Read More",
+
+  "Blog_About_Icon_Alt": "About Blog",
+  "Blog_About_Title": "About Our Blog",
+  "Blog_About_Desc": "Our blog is dedicated to sharing the latest insights, expert tips, and inspiring stories from the world of restaurants and food delivery. Whether you’re a business owner, chef, or food lover, you’ll find something valuable here.",
+  "Blog_About_Quote": "\"Great food brings people together—so does great knowledge.\"",
+
+  "Blog_Tips_Title": "Tips & Resources",
+  "Blog_Tips_Card1_Icon_Alt": "Delivery Partner",
+  "Blog_Tips_Card1_Title": "How to Choose the Right Delivery Partner",
+  "Blog_Tips_Card1_Desc": "Learn what to look for in a delivery partner to ensure your food arrives fresh and on time, every time.",
+  "Blog_Tips_Card1_Tag": "Delivery Tips",
+
+  "Blog_Tips_Card2_Icon_Alt": "Marketing",
+  "Blog_Tips_Card2_Title": "Marketing Your Restaurant Online",
+  "Blog_Tips_Card2_Desc": "Discover digital marketing strategies to attract new customers and keep your regulars coming back for more.",
+  "Blog_Tips_Card2_Tag": "Marketing Tips",
+
+  "Blog_Community_Title": "Community Stories",
+  "Blog_Community_Desc": "Read inspiring stories from restaurant owners, delivery partners, and foodies who are making a difference in their cities.",
+
+  "Blog_CTA_Title": "Want More Insights?",
+  "Blog_CTA_Desc": "Subscribe to our newsletter for the latest updates, tips, and exclusive offers from the world of food delivery and restaurants.",
+  "Blog_CTA_Button": "Contact Us"
 }
