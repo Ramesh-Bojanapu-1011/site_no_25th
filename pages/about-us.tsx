@@ -305,23 +305,23 @@ const AboutUs = () => {
                 {/* Example team members, replace with real data if available */}
                 {[
                   {
-                    name: "Priya Sharma",
-                    role: "Founder & CEO",
+                    name: t("about_team_member1_name"),
+                    role: t("about_team_member1_role"),
                     img: "/avatar1.png",
                   },
                   {
-                    name: "Rahul Mehta",
-                    role: "Head of Operations",
+                    name: t("about_team_member2_name"),
+                    role: t("about_team_member2_role"),
                     img: "/avatar2.png",
                   },
                   {
-                    name: "Aisha Khan",
-                    role: "Lead Designer",
+                    name: t("about_team_member3_name"),
+                    role: t("about_team_member3_role"),
                     img: "/avatar3.png",
                   },
                   {
-                    name: "Vikram Patel",
-                    role: "Tech Lead",
+                    name: t("about_team_member4_name"),
+                    role: t("about_team_member4_role"),
                     img: "/avatar4.png",
                   },
                 ].map((member, i) => (
@@ -365,55 +365,31 @@ const AboutUs = () => {
                 style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
               >
                 <h3 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2">
-                  {t(
-                    "about_team_meet_title",
-                    "Meet the People Behind the Magic",
-                  )}
+                  {t("about_team_meet_title")}
                 </h3>
                 <p className="text-zinc-700 dark:text-zinc-200 text-lg mb-2 text-justify">
-                  {t(
-                    "about_team_meet_desc",
-                    "Our team is a vibrant blend of foodies, techies, creatives, and community champions. We come from diverse backgrounds, but share a single passion: making every meal memorable for you.",
-                  )}
+                  {t("about_team_meet_desc")}
                 </p>
                 <ul className="list-disc pl-6 text-zinc-700 dark:text-zinc-200 mb-2">
-                  <li>
-                    {t("about_team_point1", "Driven by purpose and innovation")}
-                  </li>
-                  <li>
-                    {t(
-                      "about_team_point2",
-                      "United by a love for great food and service",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "about_team_point3",
-                      "Always learning, growing, and celebrating together",
-                    )}
-                  </li>
+                  <li>{t("about_team_point1")}</li>
+                  <li>{t("about_team_point2")}</li>
+                  <li>{t("about_team_point3")}</li>
                 </ul>
                 <div className="w-full flex flex-col md:flex-row gap-4 mt-2">
                   <div className="flex-1 bg-gradient-to-r from-orange-100 via-yellow-50 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-xl p-4 shadow border-l-4 border-orange-300 dark:border-yellow-500">
                     <span className="block text-orange-700 dark:text-yellow-300 font-semibold mb-1">
-                      {t("about_team_value_title", "Team Value")}
+                      {t("about_team_value_title")}
                     </span>
                     <span className="text-zinc-700 dark:text-zinc-200 text-sm">
-                      {t(
-                        "about_team_value_desc",
-                        "We believe in open communication, mutual respect, and supporting each other’s growth—because together, we achieve more.",
-                      )}
+                      {t("about_team_value_desc")}
                     </span>
                   </div>
                   <div className="flex-1 bg-gradient-to-r from-yellow-100 via-orange-50 to-white dark:from-orange-900 dark:via-yellow-900 dark:to-zinc-900 rounded-xl p-4 shadow border-l-4 border-yellow-400 dark:border-orange-400">
                     <span className="block text-yellow-700 dark:text-orange-300 font-semibold mb-1">
-                      {t("about_team_promise_title", "Our Promise")}
+                      {t("about_team_promise_title")}
                     </span>
                     <span className="text-zinc-700 dark:text-zinc-200 text-sm">
-                      {t(
-                        "about_team_promise_desc",
-                        "Every member is empowered to make a difference, inspire others, and help create a positive impact for our customers and community.",
-                      )}
+                      {t("about_team_promise_desc")}
                     </span>
                   </div>
                 </div>
@@ -467,45 +443,17 @@ const AboutUs = () => {
                 {t("about_community_title")}
               </h2>
               <p className="text-zinc-700 dark:text-zinc-200 mb-6 max-w-lg text-lg animate-fade-in-up">
-                {t(
-                  "about_community_desc",
-                  "We believe in giving back and building a better future. Our initiatives support local communities, reduce food waste, and promote eco-friendly packaging and delivery practices.\n\nSustainability is at the heart of everything we do—from sourcing responsibly to minimizing our carbon footprint and empowering our partners to do the same.",
-                )}
+                {t("about_community_desc")}
               </p>
               <ul
                 className="list-disc pl-6 mb-4 text-zinc-700 dark:text-zinc-200 animate-fade-in-up"
                 style={{ animationDelay: "0.5s", animationDuration: "1.1s" }}
               >
-                <li>
-                  {t(
-                    "about_community_point1",
-                    "Supporting local farmers and food producers",
-                  )}
-                </li>
-                <li>
-                  {t(
-                    "about_community_point2",
-                    "Championing zero-waste and recycling initiatives",
-                  )}
-                </li>
-                <li>
-                  {t(
-                    "about_community_point3",
-                    "Using biodegradable, eco-friendly packaging",
-                  )}
-                </li>
-                <li>
-                  {t(
-                    "about_community_point4",
-                    "Partnering with green delivery services",
-                  )}
-                </li>
-                <li>
-                  {t(
-                    "about_community_point5",
-                    "Hosting community food drives and events",
-                  )}
-                </li>
+                <li>{t("about_community_point1")}</li>
+                <li>{t("about_community_point2")}</li>
+                <li>{t("about_community_point3")}</li>
+                <li>{t("about_community_point4")}</li>
+                <li>{t("about_community_point5")}</li>
               </ul>
               {/* <div className="mt-4 w-full flex justify-end">
               <button className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-xl animate-bounce transition-all duration-300 hover:scale-105 hover:shadow-orange-300 dark:hover:shadow-yellow-700 border-2 border-orange-200 dark:border-yellow-700 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700">

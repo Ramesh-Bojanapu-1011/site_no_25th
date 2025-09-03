@@ -1,3 +1,4 @@
+
 {
   "home1_hero_title": "Delicious Food Delivered Fast",
   "home1_hero_desc": "Order from your favorite restaurants and get your meal delivered to your door, hot and fresh. Experience the best of food delivery and restaurant services!",
@@ -122,5 +123,27 @@
   "about_team_title": "Our Team",
   "about_team_quote": "Alone we can do so little; together we can do so much.",
   "about_community_title": "Community & Sustainability",
-  "about_community_impact": "Impact"
+  "about_community_impact": "Impact",
+    "about_team_member1_name": "Priya Sharma",
+  "about_team_member1_role": "Founder & CEO",
+  "about_team_member2_name": "Rahul Mehta",
+  "about_team_member2_role": "Head of Operations",
+  "about_team_member3_name": "Aisha Khan",
+  "about_team_member3_role": "Lead Designer",
+  "about_team_member4_name": "Vikram Patel",
+  "about_team_member4_role": "Tech Lead",
+  "about_team_meet_title": "Meet Our Team",
+  "about_team_meet_desc": "Our team is a vibrant blend of foodies, techies, creatives, and community champions. We come from diverse backgrounds, but share a single passion: making every meal memorable for you.",
+  "about_team_point1": "Driven by purpose and innovation",
+  "about_team_point2": "United by a love for great food and service",
+  "about_team_value_title": "Team Value",
+  "about_team_value_desc": "We believe in open communication, mutual respect, and supporting each other’s growth—because together, we achieve more.",
+  "about_team_promise_title":"Our Promise",
+  "about_team_promise_desc":"Every member is empowered to make a difference, inspire others, and help create a positive impact for our customers and community.",
+  "about_community_desc": "We believe in giving back and building a better future. Our initiatives support local communities, reduce food waste, and promote eco-friendly packaging and delivery practices.\n\nSustainability is at the heart of everything we do—from sourcing responsibly to minimizing our carbon footprint and empowering our partners to do the same.",
+  "about_community_point1":"Supporting local farmers and food producers",
+  "about_community_point2":"Championing zero-waste and recycling initiatives",
+  "about_community_point3":"Using biodegradable, eco-friendly packaging",
+  "about_community_point4":"Partnering with green delivery services",
+  "about_community_point5":"Hosting community food drives and events"
 }
