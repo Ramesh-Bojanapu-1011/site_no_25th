@@ -1,16 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
 
-const foodSections = [
+const getFoodSections = (t: any) => [
   // Section 2: How It Works
   {
-    title: "How Food Delivery Works",
-    desc: "From browsing menus to doorstep delivery, experience a seamless process designed for your convenience.",
-
+    title: t("FoodDelivery_How_Title"),
+    desc: t("FoodDelivery_How_Desc"),
     content: (
       <div className="w-full flex flex-col items-center">
         {/* Modern floating card timeline with glowing connectors */}
@@ -21,23 +21,23 @@ const foodSections = [
             {[
               {
                 icon: "https://www.svgrepo.com/show/277641/menu.svg",
-                label: "Browse Menus",
-                desc: "Explore restaurants and dishes",
+                label: t("FoodDelivery_How_Step1_Label"),
+                desc: t("FoodDelivery_How_Step1_Desc"),
               },
               {
                 icon: "https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/order-placed-purchased-icon.svg",
-                label: "Place Order",
-                desc: "Select your favorites & checkout",
+                label: t("FoodDelivery_How_Step2_Label"),
+                desc: t("FoodDelivery_How_Step2_Desc"),
               },
               {
                 icon: "https://cdn-icons-png.flaticon.com/128/5161/5161406.png",
-                label: "Track Order",
-                desc: "Real-time delivery updates",
+                label: t("FoodDelivery_How_Step3_Label"),
+                desc: t("FoodDelivery_How_Step3_Desc"),
               },
               {
                 icon: "https://www.svgrepo.com/show/283358/delivery-truck-delivery.svg",
-                label: "Enjoy Delivery",
-                desc: "Contactless, fast, and fresh",
+                label: t("FoodDelivery_How_Step4_Label"),
+                desc: t("FoodDelivery_How_Step4_Desc"),
               },
             ].map((step, idx, arr) => {
               // Stagger left/right for desktop, center for mobile
@@ -99,30 +99,29 @@ const foodSections = [
   },
   // Section 3: Featured Restaurants
   {
-    title: "Featured Restaurants",
-    desc: "Discover top-rated local favorites and trending new spots, all available for delivery.",
-
+    title: t("FoodDelivery_Featured_Title"),
+    desc: t("FoodDelivery_Featured_Desc"),
     content: (
       <div className="relative w-full  flex  items-center justify-center mx-auto  py-4">
         <div className="flex  justify-center items-center md:gap-16 flex-wrap gap-10 px-2 md:px-8     animate-fade-in-up">
           {[
             {
-              name: "Spicy Spoon",
+              name: t("FoodDelivery_Featured_Name1"),
               img: "/restaurant1.jpg",
               color: "from-orange-400 to-yellow-300",
             },
             {
-              name: "Urban Bites",
+              name: t("FoodDelivery_Featured_Name2"),
               img: "/restaurant2.jpg",
               color: "from-green-400 to-lime-300",
             },
             {
-              name: "Green Garden",
+              name: t("FoodDelivery_Featured_Name3"),
               img: "/restaurant3.jpg",
               color: "from-emerald-400 to-green-200",
             },
             {
-              name: "Royal Tadka",
+              name: t("FoodDelivery_Featured_Name4"),
               img: "/restaurant1.jpg",
               color: "from-yellow-400 to-orange-300",
             },
@@ -149,7 +148,7 @@ const foodSections = [
               </span>
               {/* Animated Top Choice badge */}
               <span className="absolute -top-4 right-1/2 translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-orange-400 to-yellow-300 dark:from-yellow-900 dark:to-yellow-700 text-white text-xs font-semibold shadow animate-fade-in-up">
-                Top Choice
+                {t("FoodDelivery_Featured_Badge")}
               </span>
             </div>
           ))}
@@ -159,9 +158,8 @@ const foodSections = [
   },
   // Section 4: Delivery Partners
   {
-    title: "Real-Time Order Tracking",
-    desc: "Track your food delivery in real time, from restaurant to your doorstep, with live updates and animated progress.",
-
+    title: t("FoodDelivery_Tracking_Title"),
+    desc: t("FoodDelivery_Tracking_Desc"),
     content: (
       <div className="relative w-full max-w-2xl mx-auto flex flex-col items-center py-8">
         {/* Route line */}
@@ -178,7 +176,7 @@ const foodSections = [
               />
             </div>
             <span className="mt-2 text-xs font-bold text-orange-600 dark:text-yellow-400">
-              Restaurant
+              {t("FoodDelivery_Tracking_Restaurant")}
             </span>
           </div>
           {/* Animated route */}
@@ -209,7 +207,7 @@ const foodSections = [
               <Image src="/window.svg" alt="Home" width={36} height={36} />
             </div>
             <span className="mt-2 text-xs font-bold text-green-700 dark:text-lime-300">
-              Your Home
+              {t("FoodDelivery_Tracking_Home")}
             </span>
           </div>
         </div>
@@ -225,42 +223,47 @@ const foodSections = [
           }
         `}</style>
         <div className="mt-6 text-sm text-zinc-600 dark:text-zinc-300 text-center max-w-md">
-          Your order is on the way! Watch as your delivery moves from the
-          restaurant to your doorstep in real time.
+          {t("FoodDelivery_Tracking_Desc2")}
         </div>
       </div>
     ),
   },
   // Section 5: Customer Reviews
   {
+    title: t("FoodDelivery_Reviews_Title"),
+    desc: t("FoodDelivery_Reviews_Desc"),
     content: (
       <div className="flex flex-col items-center">
         <h2 className="text-2xl md:text-3xl font-bold text-orange-600 dark:text-yellow-400 mb-2 drop-shadow-lg">
-          Customer Reviews
+          {t("FoodDelivery_Reviews_Title")}
         </h2>
         <p className="text-zinc-700 dark:text-zinc-200 mb-2 max-w-2xl">
-          See what our happy customers are saying about their food delivery
-          experience.
+          {t("FoodDelivery_Reviews_Desc")}
         </p>
 
         <div className="flex flex-wrap gap-6 justify-center">
-          {["Priya S.", "Rahul M.", "Anjali T.", "Arjun D."].map((name, i) => (
+          {[
+            "FoodDelivery_Review_Name1",
+            "FoodDelivery_Review_Name2",
+            "FoodDelivery_Review_Name3",
+            "FoodDelivery_Review_Name4",
+          ].map((key, i) => (
             <div
-              key={name}
+              key={key}
               className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-zinc-800 dark:to-yellow-900 rounded-2xl p-4 w-56 flex flex-col items-center shadow border border-orange-100 dark:border-yellow-900"
             >
               <Image
                 src={`/user${(i % 4) + 1}.jpg`}
-                alt={name}
+                alt={t(key)}
                 width={48}
                 height={48}
                 className="rounded-full w-20 h-20 object-cover object-top mb-2"
               />
               <span className="italic text-zinc-700 dark:text-zinc-200 text-sm mb-1">
-                “Amazing service and delicious food!”
+                {t("FoodDelivery_Review_Text")}
               </span>
               <span className="font-bold text-orange-600 dark:text-yellow-400 text-xs">
-                {name}
+                {t(key)}
               </span>
             </div>
           ))}
@@ -270,20 +273,21 @@ const foodSections = [
   },
   // Section 6: Safety & Hygiene
   {
+    title: t("FoodDelivery_CTA_Title"),
+    desc: t("FoodDelivery_CTA_Desc"),
     content: (
       <div className="w-full flex flex-col items-center justify-center py-8">
         <h3 className="text-2xl md:text-3xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-          Let’s Make Your Next Meal Unforgettable!
+          {t("FoodDelivery_CTA_Title")}
         </h3>
         <p className="text-lg text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
-          Contact us for bulk, party, or corporate orders and enjoy personalized
-          service, special pricing, and delicious food delivered to your door.
+          {t("FoodDelivery_CTA_Desc")}
         </p>
         <Link
           href="/contact-us"
           className="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-xl shadow-xl hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 animate-bounce-slow"
         >
-          Contact Us Now
+          {t("FoodDelivery_CTA_Button")}
         </Link>
       </div>
     ),
@@ -291,14 +295,13 @@ const foodSections = [
 ];
 
 const FoodDelivery = () => {
+  const { t } = useTranslation();
+  const foodSections = getFoodSections(t);
   return (
     <>
       <Head>
-        <title>Food Delivery | Fast & Fresh</title>
-        <meta
-          name="description"
-          content="Order food online and get it delivered fast and fresh to your door."
-        />
+        <title>{t("FoodDelivery_Page_Title")}</title>
+        <meta name="description" content={t("FoodDelivery_Page_Desc")} />
       </Head>
       <div className="bg-white dark:bg-zinc-900 min-h-screen transition-colors duration-300">
         <Headder />
@@ -317,23 +320,22 @@ const FoodDelivery = () => {
           </video>
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-              Food Delivery, Fast & Fresh
+              {t("FoodDelivery_Hero_Title")}
             </h1>
             <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
-              Craving something delicious? Order from your favorite restaurants
-              and enjoy quick, reliable delivery to your doorstep.
+              {t("FoodDelivery_Hero_Desc")}
             </p>
             <Link
               href="/contact-us"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300"
             >
-              View Menu
+              {t("FoodDelivery_Hero_Button")}
             </Link>
           </div>
           <div className="flex-1 flex w-[70%] h-auto justify-center z-10">
             <Image
               src="/food-delivery-hero.png"
-              alt="Food Delivery"
+              alt={t("FoodDelivery_Hero_Title")}
               width={420}
               height={420}
               className="rounded-3xl shadow-2xl w-full   md:max-w-md object-cover border-4 border-orange-200 dark:border-yellow-700"

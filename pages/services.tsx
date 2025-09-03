@@ -59,10 +59,7 @@ export default function Services() {
     <>
       <Head>
         <title>{t("Services_Page_Title")}</title>
-        <meta
-          name="description"
-          content={t("Services_Page_Description")}
-        />
+        <meta name="description" content={t("Services_Page_Description")} />
       </Head>
       <Headder />
 
@@ -139,7 +136,7 @@ export default function Services() {
           ))}
         </div>
       </section>
-       
+
       {/* 3. Why Choose Us Section */}
       <section className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible">
         {/* Diagonal split background */}
@@ -154,13 +151,21 @@ export default function Services() {
               {t("Services_Why_Choose_Us_Title")}
             </h2>
             <ul className="flex flex-col gap-7">
-              {["Services_Why_Choose_Us_Point1", "Services_Why_Choose_Us_Point2", "Services_Why_Choose_Us_Point3", "Services_Why_Choose_Us_Point4", "Services_Why_Choose_Us_Point5", "Services_Why_Choose_Us_Point6"].map((key, idx) => (
+              {[
+                "Services_Why_Choose_Us_Point1",
+                "Services_Why_Choose_Us_Point2",
+                "Services_Why_Choose_Us_Point3",
+                "Services_Why_Choose_Us_Point4",
+                "Services_Why_Choose_Us_Point5",
+                "Services_Why_Choose_Us_Point6",
+              ].map((key, idx) => (
                 <li
                   key={key}
                   className="flex items-center gap-5 animate-fade-in-up"
                   style={{ animationDelay: `${0.1 + idx * 0.1}s` }}
                 >
-                  <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900"
+                  <span
+                    className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900"
                     style={{
                       background: [
                         "linear-gradient(to bottom right, #fb923c, #fde68a, #ea580c)",
@@ -168,18 +173,93 @@ export default function Services() {
                         "linear-gradient(to bottom right, #4ade80, #fde68a, #22c55e)",
                         "linear-gradient(to bottom right, #f472b6, #fde68a, #fb923c)",
                         "linear-gradient(to bottom right, #a78bfa, #fde68a, #ec4899)",
-                        "linear-gradient(to bottom right, #60a5fa, #fde68a, #2563eb)"
-                      ][idx]
+                        "linear-gradient(to bottom right, #60a5fa, #fde68a, #2563eb)",
+                      ][idx],
                     }}
                   >
                     {/* Keep SVGs as is for each point */}
-                    {[<svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>,
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>,
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V5m0 11v3m7-7h3m-17 0H2" /></svg>,
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2z" /></svg>,
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-1.414 1.414M6.343 17.657l-1.414 1.414M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 7.364l-1.414-1.414M6.343 6.343L4.929 4.929" /></svg>
-                    ][idx]}
+                    {
+                      [
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
+                          />
+                        </svg>,
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>,
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>,
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V5m0 11v3m7-7h3m-17 0H2"
+                          />
+                        </svg>,
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2z"
+                          />
+                        </svg>,
+                        <svg
+                          className="w-7 h-7"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M18.364 5.636l-1.414 1.414M6.343 17.657l-1.414 1.414M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 7.364l-1.414-1.414M6.343 6.343L4.929 4.929"
+                          />
+                        </svg>,
+                      ][idx]
+                    }
                   </span>
                   <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
                     {t(key)}
