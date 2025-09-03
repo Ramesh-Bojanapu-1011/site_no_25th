@@ -204,7 +204,12 @@ const getFoodSections = (t: any) => [
           {/* End (Home) */}
           <div className="flex flex-col items-center z-10">
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-lime-300 flex items-center justify-center shadow-lg border-4 border-white dark:border-zinc-900">
-              <Image src="https://www.svgrepo.com/show/508300/home.svg" alt="Home" width={36} height={36} />
+              <Image
+                src="https://www.svgrepo.com/show/508300/home.svg"
+                alt="Home"
+                width={36}
+                height={36}
+              />
             </div>
             <span className="mt-2 text-xs font-bold text-green-700 dark:text-lime-300">
               {t("FoodDelivery_Tracking_Home")}
