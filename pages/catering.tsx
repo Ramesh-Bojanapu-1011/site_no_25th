@@ -1,15 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
 
-const foodSections = [
+const Catering = () => {
+  const { t } = useTranslation();
+  const foodSections = [
   // Section 1: How Our Catering Works
   {
-    title: "How Our Catering Works",
-    desc: "From your first inquiry to the last bite, our process ensures a seamless and memorable catering experience.",
+  title: t("Catering_How_Title", "How Our Catering Works"),
+  desc: t("Catering_How_Desc", "From your first inquiry to the last bite, our process ensures a seamless and memorable catering experience."),
 
     content: (
       <div className="w-full flex flex-col items-center">
@@ -19,23 +22,23 @@ const foodSections = [
             {[
               {
                 icon: "https://www.svgrepo.com/show/475307/tax-inquiry.svg",
-                label: "Send Inquiry",
-                desc: "Tell us about your event and requirements",
+                label: t("Catering_Step1_Label", "Send Inquiry"),
+                desc: t("Catering_Step1_Desc", "Tell us about your event and requirements"),
               },
               {
                 icon: "https://www.svgrepo.com/show/277641/menu.svg",
-                label: "Customize Menu",
-                desc: "Choose dishes and services to fit your occasion",
+                label: t("Catering_Step2_Label", "Customize Menu"),
+                desc: t("Catering_Step2_Desc", "Choose dishes and services to fit your occasion"),
               },
               {
                 icon: "https://www.svgrepo.com/show/439316/service-workers.svg",
-                label: "Event Planning",
-                desc: "We coordinate logistics and details",
+                label: t("Catering_Step3_Label", "Event Planning"),
+                desc: t("Catering_Step3_Desc", "We coordinate logistics and details"),
               },
               {
                 icon: "https://www.svgrepo.com/show/397715/partying-face.svg",
-                label: "Enjoy the Event",
-                desc: "Relax while we serve and manage everything",
+                label: t("Catering_Step4_Label", "Enjoy the Event"),
+                desc: t("Catering_Step4_Desc", "Relax while we serve and manage everything"),
               },
             ].map((step, idx) => {
               const isLeft = idx % 2 === 0;
@@ -89,26 +92,26 @@ const foodSections = [
   },
   // Section 2: Catering Styles & Setups
   {
-    title: "Catering Styles & Setups",
-    desc: "Select the perfect catering style and setup to match your event’s vibe and needs.",
+  title: t("Catering_Types_Title", "Catering Styles & Setups"),
+  desc: t("Catering_Types_Desc", "Select the perfect catering style and setup to match your event’s vibe and needs."),
 
     content: (
       <div className="flex flex-wrap gap-8 justify-center items-center py-4">
         {[
           {
-            name: "Buffet",
+            name: t("Catering_Type_Buffet", "Buffet"),
             img: "/buffet.jpg",
-            desc: "A wide variety of dishes for guests to choose from",
+            desc: t("Catering_Type_Buffet_Desc", "A wide variety of dishes for guests to choose from"),
           },
           {
-            name: "Plated Service",
+            name: t("Catering_Type_Plated", "Plated Service"),
             img: "/plated.jpg",
-            desc: "Elegant, individually served meals at each table",
+            desc: t("Catering_Type_Plated_Desc", "Elegant, individually served meals at each table"),
           },
           {
-            name: "Live Counters",
+            name: t("Catering_Type_Live", "Live Counters"),
             img: "/live-counter.jpg",
-            desc: "Interactive stations with chefs preparing food live",
+            desc: t("Catering_Type_Live_Desc", "Interactive stations with chefs preparing food live"),
           },
         ].map((type) => (
           <div
@@ -135,89 +138,64 @@ const foodSections = [
   },
   // Section 3: Why Reserve a Table?
   {
-    title: "Why Choose Our Catering?",
-    desc: "Discover the benefits of choosing our catering services for your next event.",
+  title: t("Catering_Why_Title", "Why Choose Our Catering?"),
+  desc: t("Catering_Why_Desc", "Discover the benefits of choosing our catering services for your next event."),
 
     content: (
       <ul className="flex flex-col gap-4 text-zinc-700 dark:text-zinc-200 text-left max-w-xl mx-auto">
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
-            <Image
-              src="https://www.svgrepo.com/show/336953/chef-hat-one.svg"
-              alt="Expert Chefs"
-              width={20}
-              height={20}
-            />
+            <Image src="https://www.svgrepo.com/show/336953/chef-hat-one.svg" alt="Expert Chefs" width={20} height={20} />
           </span>
-          Expert chefs crafting delicious, customized menus
+          {t("Catering_Why_ExpertChefs", "Expert chefs crafting delicious, customized menus")}
         </li>
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
-            <Image
-              src="https://www.svgrepo.com/show/439316/service-workers.svg"
-              alt="Event Planning"
-              width={20}
-              height={20}
-            />
+            <Image src="https://www.svgrepo.com/show/439316/service-workers.svg" alt="Event Planning" width={20} height={20} />
           </span>
-          Complete event planning and coordination support
+          {t("Catering_Why_EventPlanning", "Complete event planning and coordination support")}
         </li>
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
-            <Image
-              src="https://www.svgrepo.com/show/235681/tray-plate.svg"
-              alt="Full Service"
-              width={20}
-              height={20}
-            />
+            <Image src="https://www.svgrepo.com/show/235681/tray-plate.svg" alt="Full Service" width={20} height={20} />
           </span>
-          Full-service staff for setup, serving, and cleanup
+          {t("Catering_Why_FullService", "Full-service staff for setup, serving, and cleanup")}
         </li>
         <li className="flex items-center gap-3">
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700">
-            <Image
-              src="https://www.svgrepo.com/show/397713/party-popper.svg"
-              alt="Memorable Events"
-              width={20}
-              height={20}
-            />
+            <Image src="https://www.svgrepo.com/show/397713/party-popper.svg" alt="Memorable Events" width={20} height={20} />
           </span>
-          Make your celebration memorable—relax and enjoy, we’ll handle the
-          rest!
+          {t("Catering_Why_Memorable", "Make your celebration memorable—relax and enjoy, we’ll handle the rest!")}
         </li>
       </ul>
     ),
   },
   // Section 4: Customer Experiences
   {
-    title: "Catering Experiences",
-    desc: "See what our clients are saying about our catering for their special events.",
+  title: t("Catering_Experiences_Title", "Catering Experiences"),
+  desc: t("Catering_Experiences_Desc", "See what our clients are saying about our catering for their special events."),
 
     content: (
       <div className="flex flex-wrap gap-6 justify-center">
         {[
           {
-            name: " Sneha R.",
-            feedback:
-              "The catering was flawless—delicious food and impeccable service! Our guests were truly impressed.",
+            name: t("Catering_Experiences_Name1", "Sneha R."),
+            feedback: t("Catering_Experiences_Review1", "The catering was flawless—delicious food and impeccable service! Our guests were truly impressed."),
             img: "/user1.jpg",
           },
           {
-            name: "Amit K.",
-            feedback:
-              "Thank you for making our wedding reception so memorable. The menu was creative and the staff attentive.",
+            name: t("Catering_Experiences_Name2", "Amit K."),
+            feedback: t("Catering_Experiences_Review2", "Thank you for making our wedding reception so memorable. The menu was creative and the staff attentive."),
             img: "/user2.jpg",
           },
           {
-            name: "Divya P.",
-            feedback:
-              "Professional, punctual, and the food was a hit at our corporate event. Highly recommended!",
+            name: t("Catering_Experiences_Name3", "Divya P."),
+            feedback: t("Catering_Experiences_Review3", "Professional, punctual, and the food was a hit at our corporate event. Highly recommended!"),
             img: "/user3.jpg",
           },
           {
-            name: "Vikram S.",
-            feedback:
-              "From planning to execution, everything was seamless. Our family loved the variety and taste!",
+            name: t("Catering_Experiences_Name4", "Vikram S."),
+            feedback: t("Catering_Experiences_Review4", "From planning to execution, everything was seamless. Our family loved the variety and taste!"),
             img: "/user4.jpg",
           },
         ].map((item, i) => (
@@ -245,41 +223,38 @@ const foodSections = [
   },
   // Section 5: Book Your Table CTA
   {
-    title: "Catering for Your Special Event!",
-    desc: "Make your next celebration unforgettable with our expert catering services—perfect for parties, weddings, and corporate events.",
-    icon: "/calendar.svg",
+  title: t("Catering_CTA_Title", "Catering for Your Special Event!"),
+  desc: t("Catering_CTA_Desc", "Make your next celebration unforgettable with our expert catering services—perfect for parties, weddings, and corporate events."),
+  icon: "/calendar.svg",
     content: (
       <div
         className="w-full flex flex-col items-center justify-center py-8"
         id="book-table"
       >
         <h3 className="text-2xl md:text-3xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-          Plan Your Event With Us!
+          {t("Catering_CTA_Reserve", "Plan Your Event With Us!")}
         </h3>
         <p className="text-lg text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
-          From menu design to on-site service, our catering team will work with
-          you to create a delicious, stress-free event. Reach out for a custom
-          quote and let’s make your occasion truly special.
+          {t("Catering_CTA_Reserve_Desc", "From menu design to on-site service, our catering team will work with you to create a delicious, stress-free event. Reach out for a custom quote and let’s make your occasion truly special.")}
         </p>
         <Link
           href="/contact-us"
           className="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-xl shadow-xl hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 animate-bounce-slow"
         >
-          Get a Catering Quote
+          {t("Catering_CTA_BookNow", "Get a Catering Quote")}
         </Link>
       </div>
     ),
   },
 ];
 
-const Catering = () => {
   return (
     <>
       <Head>
-        <title>Catering Services | Reserve Your Spot</title>
+        <title>{t("Catering_Meta_Title", "Catering Services | Reserve Your Spot")}</title>
         <meta
           name="description"
-          content="Reserve your table online for a seamless dining experience."
+          content={t("Catering_Meta_Desc", "Reserve your table online for a seamless dining experience.")}
         />
       </Head>
       <div className="bg-white dark:bg-zinc-900 min-h-screen transition-colors duration-300">
@@ -295,29 +270,26 @@ const Catering = () => {
             playsInline
           >
             <source src="/catering-hero-bg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            {t("Catering_Video_Fallback", "Your browser does not support the video tag.")}
           </video>
           <div className="flex-1 text-center md:text-left z-10">
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
-              Exceptional Catering for Every Occasion
+              {t("Catering_Hero_Title", "Exceptional Catering for Every Occasion")}
             </h1>
             <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
-              From intimate gatherings to grand celebrations, our catering team
-              delivers delicious food, flawless service, and unforgettable
-              experiences. Let us handle the details—so you can enjoy your event
-              stress-free.
+              {t("Catering_Hero_Desc", "From intimate gatherings to grand celebrations, our catering team delivers delicious food, flawless service, and unforgettable experiences. Let us handle the details—so you can enjoy your event stress-free.")}
             </p>
             <Link
               href="#book-table"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300"
             >
-              Get a Catering Quote
+              {t("Catering_Hero_Book", "Get a Catering Quote")}
             </Link>
           </div>
           <div className="flex-1 flex w-[70%] h-auto justify-center z-10">
             <Image
               src="/catering-hero.png"
-              alt="Catering Service"
+              alt={t("Catering_Hero_Image_Alt", "Catering Service")}
               width={420}
               height={420}
               className="rounded-3xl shadow-2xl w-full md:max-w-md object-cover border-4 border-orange-200 dark:border-yellow-700"
