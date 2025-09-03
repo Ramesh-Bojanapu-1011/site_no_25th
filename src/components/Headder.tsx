@@ -1,19 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 import i18n from "../i18n";
 import Link from "next/link";
 import Image from "next/image";
 
-import { useRouter } from "next/navigation";
 import { ModeToggle } from "./theme/ModeToggle";
 
 const Headder = () => {
-  const router = useRouter();
+  // removed duplicate router declaration
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const [userInitials, setUserInitials] = React.useState(""); // Default initials
   const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const [langReady, setLangReady] = useState(false);
+  const router = useRouter();
   const { t } = useTranslation();
 
   // Logout handler
@@ -27,7 +29,7 @@ const Headder = () => {
         const users = JSON.parse(usersData);
         const now = new Date().toISOString();
         const updatedUsers = users.map((u: any) =>
-          u.email === user.email ? { ...u, lastLoginOut: now } : u,
+          u.email === user.email ? { ...u, lastLoginOut: now } : u
         );
         localStorage.setItem("Users", JSON.stringify(updatedUsers));
       } catch (e) {
@@ -71,7 +73,50 @@ const Headder = () => {
     if (lang === "English") i18n.changeLanguage("en");
     else if (lang === "Arabic") i18n.changeLanguage("ar");
     else if (lang === "Hebrew") i18n.changeLanguage("he");
+    // Persist language selection
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selectedLanguage", lang);
+      if (lang === "Arabic" || lang === "Hebrew") {
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.dir = "ltr";
+      }
+    }
   };
+
+  // Restore language from localStorage on mount and on route change
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const setLangFromStorage = () => {
+        const savedLang = localStorage.getItem("selectedLanguage");
+        if (savedLang) {
+          setSelectedLanguage(savedLang);
+          if (savedLang === "English" && i18n.language !== "en")
+            i18n.changeLanguage("en");
+          else if (savedLang === "Arabic" && i18n.language !== "ar")
+            i18n.changeLanguage("ar");
+          else if (savedLang === "Hebrew" && i18n.language !== "he")
+            i18n.changeLanguage("he");
+          // Set document direction
+          if (savedLang === "Arabic" || savedLang === "Hebrew") {
+            document.documentElement.dir = "rtl";
+          } else {
+            document.documentElement.dir = "ltr";
+          }
+        }
+      };
+      setLangFromStorage();
+      setLangReady(true);
+      // Listen for route changes to re-apply language
+      const handleRouteChange = () => {
+        setLangFromStorage();
+      };
+      router.events.on("routeChangeComplete", handleRouteChange);
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
+    }
+  }, [router.events, i18n.language]);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -86,6 +131,8 @@ const Headder = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  if (!langReady) return null;
 
   return (
     <header className="w-full sticky caret-transparent top-0 z-50 bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-b border-orange-200 dark:border-yellow-700 transition-colors duration-300 shadow-none">
