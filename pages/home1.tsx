@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
+ 
 
 // Carousel Component (must be outside Home1 and before export default)
 function CustomerCarousel() {
@@ -71,6 +74,10 @@ function CustomerCarousel() {
     );
     return () => clearInterval(timer);
   }, [slides.length]);
+  React.useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
   return (
     <div className="w-full flex flex-col items-center relative">
       {/* Cards with glassmorphism and animated transitions */}
@@ -279,6 +286,8 @@ const Home1 = () => {
             ].map((r, idx) => (
               <div
                 key={idx}
+                data-aos="fade-up"
+
                 className={`relative group flex-1 min-w-[200px] max-w-xs mx-auto bg-white/90 dark:bg-zinc-900/90 rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center text-center transition-transform duration-500 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 cursor-pointer overflow-visible animate-fade-in-up`}
                 style={{
                   animationDelay: `${0.1 + idx * 0.15}s`,

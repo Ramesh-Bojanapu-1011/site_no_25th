@@ -5,7 +5,6 @@ import Image from "next/image";
 import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
- 
 
 const milestones = [
   { label: "Orders Delivered", value: 120000 },
@@ -79,8 +78,9 @@ const AboutUs = () => {
         <Headder />
 
         {/* 1. Hero Section */}
-        <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen"
-        data-aos="fade-up"
+        <section
+          className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen"
+           
         >
           {/* Background Video */}
           <video
