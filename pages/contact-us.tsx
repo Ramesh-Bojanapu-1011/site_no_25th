@@ -228,21 +228,21 @@ const ContactUs = () => {
         </h2>
         <div className="flex flex-wrap gap-8 justify-center items-center animate-fade-in-up">
           <Image
-            src="/partner1.jpg"
+            src="/Contact_Partners_1.jpg"
             alt={t("Contact_Partners_1_Alt")}
             width={100}
             height={60}
             className="h-20 w-20 rounded-full object-cover object-top"
           />
           <Image
-            src="/partner2.jpg"
+            src="/Contact_Partners_2.jpg"
             alt={t("Contact_Partners_2_Alt")}
             width={100}
             height={60}
             className="h-20 w-20 rounded-full object-cover object-top"
           />
           <Image
-            src="/partner3.jpg"
+            src="/Contact_Partners_3.jpg"
             alt={t("Contact_Partners_3_Alt")}
             width={100}
             height={60}

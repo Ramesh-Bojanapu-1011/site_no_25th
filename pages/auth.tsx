@@ -5,6 +5,45 @@ import { useRouter } from "next/router";
 import { Eye, EyeOff } from "lucide-react";
 
 const AuthPage = () => {
+  const [showForgotModal, setShowForgotModal] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotNewPassword, setForgotNewPassword] = useState("");
+  const [forgotError, setForgotError] = useState("");
+  const [forgotSuccess, setForgotSuccess] = useState("");
+  const handleForgotPassword = (e: React.FormEvent) => {
+    e.preventDefault();
+    setForgotError("");
+    setForgotSuccess("");
+    if (!forgotEmail || !forgotNewPassword) {
+      setForgotError("Please enter your email and new password.");
+      return;
+    }
+    const usersStr =
+      typeof window !== "undefined" ? localStorage.getItem("Users") : null;
+
+    let users = [];
+    if (usersStr) {
+      try {
+        users = JSON.parse(usersStr);
+        console.log(users);
+      } catch {
+        users = [];
+      }
+    }
+    const foundUserIdx = users.findIndex((u: any) => u.email === forgotEmail);
+    if (foundUserIdx === -1) {
+      setForgotError("No user found with this email.");
+      setShowForgotModal(true);
+      return;
+    }
+    users[foundUserIdx].password = forgotNewPassword;
+    if (typeof window !== "undefined") {
+      localStorage.setItem("Users", JSON.stringify(users));
+    }
+    setShowForgotModal(true);
+    setForgotSuccess("Password reset successfully. You can now login.");
+    setShowForgotModal(false);
+  };
   const [isLogin, setIsLogin] = useState(true);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -39,7 +78,7 @@ const AuthPage = () => {
       router.push("/admin-dashbord");
     }
     const foundUserIdx = users.findIndex(
-      (u: any) => u.email === loginEmail && u.password === loginPassword,
+      (u: any) => u.email === loginEmail && u.password === loginPassword
     );
     if (foundUserIdx === -1) {
       setError("Invalid email or password.");
@@ -112,6 +151,13 @@ const AuthPage = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br   from-orange-50 to-yellow-100 dark:from-zinc-900  dark:to-zinc-800 transition-colors duration-300 px-2 py-8">
       <div className="w-full max-w-4xl bg-white dark:bg-zinc-900 rounded-2xl shadow-xl p-8 flex flex-col items-center">
+        <Image
+          src="/logo-stackly.png"
+          alt="Auth"
+          width={100}
+          height={100}
+          className="cursor-pointer caret-transparent"
+        />
         <div className="w-full flex flex-row-reverse not-md:flex-col items-center gap-2.5">
           {/* Image Side */}
           <div className="   md:w-1/2 items-center justify-center">
@@ -140,82 +186,173 @@ const AuthPage = () => {
           {/* Form Side */}
           <div className="w-full md:w-1/2">
             {isLogin ? (
-              <form
-                onSubmit={handleLogin}
-                className="min-w-full"
-                key="login-form"
-              >
-                <h2 className="text-2xl font-bold mb-6 text-orange-600 dark:text-yellow-400 text-center">
-                  Login
-                </h2>
-                <div className="mb-4">
-                  <label
-                    htmlFor="loginEmail"
-                    className="block mb-1 font-medium"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="loginEmail"
-                    type="email"
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                    autoComplete="email"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    htmlFor="loginPassword"
-                    className="block mb-1 font-medium"
-                  >
-                    Password
-                  </label>
-                  <div className="relative">
+              <>
+                <form
+                  onSubmit={handleLogin}
+                  className="min-w-full"
+                  key="login-form"
+                >
+                  <h2 className="text-2xl font-bold mb-6 text-orange-600 dark:text-yellow-400 text-center">
+                    Login
+                  </h2>
+                  <div className="mb-4">
+                    <label
+                      htmlFor="loginEmail"
+                      className="block mb-1 font-medium"
+                    >
+                      Email
+                    </label>
                     <input
-                      id="loginPassword"
-                      type={showLoginPassword ? "text" : "password"}
-                      value={loginPassword}
-                      onChange={(e) => setLoginPassword(e.target.value)}
-                      className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400 pr-10"
-                      autoComplete="current-password"
+                      id="loginEmail"
+                      type="email"
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
+                      className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      autoComplete="email"
                     />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      htmlFor="loginPassword"
+                      className="block mb-1 font-medium"
+                    >
+                      Password
+                    </label>
+                    <div className="relative">
+                      <input
+                        id="loginPassword"
+                        type={showLoginPassword ? "text" : "password"}
+                        value={loginPassword}
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                        className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400 pr-10"
+                        autoComplete="current-password"
+                      />
+                      <button
+                        type="button"
+                        tabIndex={-1}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-orange-500 dark:text-yellow-400 text-lg focus:outline-none"
+                        onClick={() => setShowLoginPassword((prev) => !prev)}
+                        aria-label={
+                          showLoginPassword ? "Hide password" : "Show password"
+                        }
+                      >
+                        {showLoginPassword ? <EyeOff /> : <Eye />}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="mb-2 text-right">
                     <button
                       type="button"
-                      tabIndex={-1}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 text-orange-500 dark:text-yellow-400 text-lg focus:outline-none"
-                      onClick={() => setShowLoginPassword((prev) => !prev)}
-                      aria-label={
-                        showLoginPassword ? "Hide password" : "Show password"
-                      }
+                      className="text-orange-600 dark:text-yellow-400 font-semibold hover:underline text-sm"
+                      onClick={() => {
+                        setShowForgotModal(true);
+                        setForgotError("");
+                        setForgotSuccess("");
+                      }}
                     >
-                      {showLoginPassword ? <EyeOff /> : <Eye />}
+                      Forgot password?
                     </button>
                   </div>
-                </div>
-                {error && (
-                  <div className="mb-4 text-red-600 text-sm">{error}</div>
-                )}
-                <button
-                  type="submit"
-                  className="w-full py-2 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-md hover:scale-105 transition-all duration-300"
-                >
-                  Login
-                </button>
-                <div className="mt-4 text-center text-sm">
-                  Don't have an account?{" "}
+                  {error && (
+                    <div className="mb-4 text-red-600 text-sm">{error}</div>
+                  )}
                   <button
-                    type="button"
-                    className="text-orange-600 dark:text-yellow-400 font-semibold hover:underline"
-                    onClick={() => {
-                      setIsLogin(false);
-                      setError("");
-                    }}
+                    type="submit"
+                    className="w-full py-2 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-md hover:scale-105 transition-all duration-300"
                   >
-                    Register
+                    Login
                   </button>
-                </div>
-              </form>
+                  <div className="mt-4 text-center text-sm">
+                    Don't have an account?{" "}
+                    <button
+                      type="button"
+                      className="text-orange-600 dark:text-yellow-400 font-semibold hover:underline"
+                      onClick={() => {
+                        setIsLogin(false);
+                        setError("");
+                      }}
+                    >
+                      Register
+                    </button>
+                  </div>
+                </form>
+                {/* Forgot Password Modal */}
+                {showForgotModal && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+                    <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+                      <button
+                        type="button"
+                        className="absolute top-2 right-2 text-zinc-500 dark:text-zinc-400 text-xl font-bold"
+                        onClick={() => {
+                          setShowForgotModal(false);
+                          setForgotEmail("");
+                          setForgotNewPassword("");
+                          setForgotError("");
+                          setForgotSuccess("");
+                        }}
+                        aria-label="Close"
+                      >
+                        ×
+                      </button>
+                      <h3 className="text-xl font-bold mb-4 text-orange-600 dark:text-yellow-400 text-center">
+                        Reset Password
+                      </h3>
+                      <form onSubmit={handleForgotPassword}>
+                        <div className="mb-4">
+                          <label
+                            htmlFor="forgotEmail"
+                            className="block mb-1 font-medium"
+                          >
+                            Email
+                          </label>
+                          <input
+                            id="forgotEmail"
+                            type="email"
+                            value={forgotEmail}
+                            onChange={(e) => setForgotEmail(e.target.value)}
+                            className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                            autoComplete="email"
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <label
+                            htmlFor="forgotNewPassword"
+                            className="block mb-1 font-medium"
+                          >
+                            New Password
+                          </label>
+                          <input
+                            id="forgotNewPassword"
+                            type="password"
+                            value={forgotNewPassword}
+                            onChange={(e) =>
+                              setForgotNewPassword(e.target.value)
+                            }
+                            className="w-full px-4 py-2 rounded-lg border border-orange-200 dark:border-zinc-700 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                            autoComplete="new-password"
+                          />
+                        </div>
+                        {forgotError && (
+                          <div className="mb-2 text-red-600 text-sm">
+                            {forgotError}
+                          </div>
+                        )}
+                        {forgotSuccess && (
+                          <div className="mb-2 text-green-600 text-sm">
+                            {forgotSuccess}
+                          </div>
+                        )}
+                        <button
+                          type="submit"
+                          className="w-full py-2 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-md hover:scale-105 transition-all duration-300"
+                        >
+                          Reset Password
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
+              </>
             ) : (
               <form
                 onSubmit={handleRegister}

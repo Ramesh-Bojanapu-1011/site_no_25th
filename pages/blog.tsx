@@ -64,7 +64,7 @@ export default function Blog() {
           <Image
             src="/blog-hero-illus.png"
             alt={t("Blog_Hero_Image_Alt")}
-            className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[350px] object-center object-cover "
+            className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl h-[500px] object-center object-cover "
             style={{ animationDelay: "0.5s", animationDuration: "1.2s" }}
             width={350}
             height={350}

@@ -73,7 +73,7 @@ function getPieData(users: User[]): { name: string; value: number }[] {
     if (currentUser) {
       const parsedUser = JSON.parse(currentUser);
       currentUserCount = users.filter(
-        (u) => u.email === parsedUser.email,
+        (u) => u.email === parsedUser.email
       ).length;
     }
 
@@ -93,6 +93,7 @@ const AdminDashboardPage = () => {
   const [allUsers, setAllUsers] = useState(defaultAllUsers);
   const [barData, setBarData] = useState(defaultBarData);
   const [pieData, setPieData] = useState(getPieData(defaultAllUsers));
+  const [selectedPieIndex, setSelectedPieIndex] = useState<number | null>(null);
   // console.log("Pie Data:", pieData);
 
   useEffect(() => {
@@ -152,7 +153,7 @@ const AdminDashboardPage = () => {
       <Headder />
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 py-10 px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 text-center drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10   drop-shadow-lg">
             {t("AdminDashboard_Title")}
           </h1>
 
@@ -163,7 +164,7 @@ const AdminDashboardPage = () => {
               <h3 className="text-lg font-bold text-orange-500 dark:text-yellow-300 mb-2">
                 {t("AdminDashboard_Pie_Title")}
               </h3>
-              <ResponsiveContainer width={220} height={220}>
+              <ResponsiveContainer width={600} height={300}>
                 <PieChart>
                   <Pie
                     data={pieData}
@@ -171,8 +172,10 @@ const AdminDashboardPage = () => {
                     nameKey="name"
                     cx="50%"
                     cy="50%"
-                    outerRadius={80}
-                    label
+                    // outerRadius={80}
+                    label={({ name, percent }) =>
+                      `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`
+                    }
                   >
                     {pieData.map((entry, index) => (
                       <Cell
@@ -237,36 +240,38 @@ const AdminDashboardPage = () => {
           </div>
 
           {/* Dual Bar Graph */}
-          <div className="bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 border-2 border-orange-100 dark:border-yellow-900 mb-10">
-            <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
-              {t("AdminDashboard_Bar_Title")}
-            </h2>
-            <ResponsiveContainer width="100%" height={320}>
-              <BarChart
-                data={barData}
-                margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Bar
-                  dataKey="login"
-                  fill="#f59e42"
-                  name={t("AdminDashboard_Bar_Login")}
-                  barSize={32}
-                  radius={[8, 8, 0, 0]}
-                />
-                <Bar
-                  dataKey="logout"
-                  fill="#f87171"
-                  name={t("AdminDashboard_Bar_Logout")}
-                  barSize={32}
-                  radius={[8, 8, 0, 0]}
-                />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="bg-white/80 flex justify-center  items-center max-w-4xl dark:bg-zinc-900/80 rounded-2xl shadow-lg p-8 border-2 border-orange-100 dark:border-yellow-900 mb-10">
+            <div className="w-full  ">
+              <h2 className="text-2xl font-bold text-orange-600 dark:text-yellow-400 mb-4">
+                {t("AdminDashboard_Bar_Title")}
+              </h2>
+              <ResponsiveContainer width="100%" height={320}>
+                <BarChart
+                  data={barData}
+                  margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar
+                    dataKey="login"
+                    fill="#f59e42"
+                    name={t("AdminDashboard_Bar_Login")}
+                    barSize={32}
+                    radius={[8, 8, 0, 0]}
+                  />
+                  <Bar
+                    dataKey="logout"
+                    fill="#f87171"
+                    name={t("AdminDashboard_Bar_Logout")}
+                    barSize={32}
+                    radius={[8, 8, 0, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
       </div>

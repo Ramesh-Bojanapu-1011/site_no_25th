@@ -5,9 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
-import "aos/dist/aos.css";
- 
 
 // Carousel Component (must be outside Home1 and before export default)
 function CustomerCarousel() {
@@ -74,10 +71,6 @@ function CustomerCarousel() {
     );
     return () => clearInterval(timer);
   }, [slides.length]);
-  React.useEffect(() => {
-      AOS.init();
-      AOS.refresh();
-    }, []);
   return (
     <div className="w-full flex flex-col items-center relative">
       {/* Cards with glassmorphism and animated transitions */}
@@ -164,7 +157,7 @@ const Home1 = () => {
               {t("home1_hero_desc")}
             </p>
             <Link
-              href="/menu"
+              href="#menu"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700"
             >
               {t("home1_hero_button")}
@@ -286,8 +279,6 @@ const Home1 = () => {
             ].map((r, idx) => (
               <div
                 key={idx}
-                data-aos="fade-up"
-
                 className={`relative group flex-1 min-w-[200px] max-w-xs mx-auto bg-white/90 dark:bg-zinc-900/90 rounded-3xl shadow-2xl border-2 border-orange-100 dark:border-yellow-900 p-8 flex flex-col items-center text-center transition-transform duration-500 hover:scale-105 hover:shadow-orange-200 dark:hover:shadow-yellow-900 cursor-pointer overflow-visible animate-fade-in-up`}
                 style={{
                   animationDelay: `${0.1 + idx * 0.15}s`,
@@ -381,8 +372,8 @@ const Home1 = () => {
                 </p>
                 {/* Stepper Dot */}
                 <span
-                  className="hidden md:block   absolute top-1/2 right-0 w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-yellow-400 dark:from-yellow-700 dark:to-yellow-500 border-4 border-white dark:border-zinc-900 shadow-lg -translate-y-1/2 translate-x-1/2 z-20 animate-pop "
-                  style={{ display: idx !== arr.length - 1 ? "block" : "none" }}
+                  className={` ${idx !== arr.length - 1 ? "md:block hidden " : "hidden"} absolute top-1/2 right-0 w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-yellow-400 dark:from-yellow-700 dark:to-yellow-500 border-4 border-white dark:border-zinc-900 shadow-lg -translate-y-1/2 translate-x-1/2 z-20 animate-pop `}
+                  style={{ display: idx !== arr.length - 1 ? "" : "none" }}
                 />
               </div>
             ))}
@@ -402,7 +393,7 @@ const Home1 = () => {
         </section>
 
         {/* Section 6: Special Offers & Loyalty Rewards - For Logged-in Users */}
-        <section className="py-16 px-4 flex justify-center items-center w-full bg-gradient-to-br from-yellow-50 via-orange-50 to-white dark:from-zinc-900 dark:via-yellow-900 dark:to-zinc-800">
+        <section id="menu" className="py-16 px-4 flex justify-center items-center w-full bg-gradient-to-br from-yellow-50 via-orange-50 to-white dark:from-zinc-900 dark:via-yellow-900 dark:to-zinc-800">
           <div className="w-full max-w-2xl mx-auto rounded-3xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-lg shadow-2xl border-4 border-orange-100 dark:border-yellow-900 p-8 sm:p-12 flex flex-col items-center text-center overflow-hidden relative">
             {/* Animated Gift Icon */}
             <div className="mb-6 animate-bounce-slow">
@@ -489,6 +480,7 @@ const Home1 = () => {
               </div>
             </div>
             <Link
+            
               href="/services"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700 mt-2"
             >

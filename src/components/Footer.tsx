@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import {
+  AlignVerticalSpaceBetween,
   FacebookIcon,
   InstagramIcon,
   Locate,
@@ -16,8 +17,8 @@ type Props = {};
 const Footer = (props: Props) => {
   const { t } = useTranslation();
   return (
-    <footer className="w-full bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-t border-orange-200 dark:border-yellow-700   transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="w-full flex flex-col items-center justify-center bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-t border-orange-200 dark:border-yellow-700   transition-colors duration-300">
+      <div className="max-w-345  py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & About */}
         <div className="flex flex-col items-start">
           <Image
@@ -203,7 +204,7 @@ const Footer = (props: Props) => {
           </ul>
         </div>
       </div>
-      <div className="text-center py-4 border-t border-orange-200 dark:border-yellow-700 text-sm bg-white/80 dark:bg-zinc-900/90 transition-colors duration-300">
+      <div className="text-center w-full py-4 border-t border-orange-200 dark:border-yellow-700 text-sm bg-white/80 dark:bg-zinc-900/90 transition-colors duration-300">
         <p className="text-zinc-700 dark:text-yellow-100">
           © {new Date().getFullYear()} {t("Restaurant")}.{" "}
           {t("All rights reserved.")}

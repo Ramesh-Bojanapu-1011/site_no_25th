@@ -10,9 +10,12 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("selectedLanguage");
-      if (savedLang === "English" && i18n.language !== "en") i18n.changeLanguage("en");
-      else if (savedLang === "Arabic" && i18n.language !== "ar") i18n.changeLanguage("ar");
-      else if (savedLang === "Hebrew" && i18n.language !== "he") i18n.changeLanguage("he");
+      if (savedLang === "English" && i18n.language !== "en")
+        i18n.changeLanguage("en");
+      else if (savedLang === "Arabic" && i18n.language !== "ar")
+        i18n.changeLanguage("ar");
+      else if (savedLang === "Hebrew" && i18n.language !== "he")
+        i18n.changeLanguage("he");
       setLangReady(true);
     }
   }, [i18n.language]);

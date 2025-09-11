@@ -138,19 +138,19 @@ export default function Services() {
       </section>
 
       {/* 3. Why Choose Us Section */}
-      <section className="relative py-20 px-4 w-full flex flex-col md:flex-row items-center gap-16   mx-auto overflow-visible">
-        {/* Diagonal split background */}
+      <section className="relative py-20 px-4 w-full flex flex-col items-center justify-center mx-auto overflow-visible">
+        {/* Modern diagonal background */}
         <span
-          className="absolute inset-0 w-full h-full bg-gradient-to-tr from-orange-50 via-yellow-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl -z-10"
-          style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 100%)" }}
+          className="absolute inset-0 w-full h-full bg-gradient-to-tr from-orange-100 via-yellow-200 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900 rounded-3xl shadow-2xl -z-10"
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)" }}
         ></span>
-        {/* Left: Glassmorphism card with frosted border and floating badges */}
-        <div className="flex-1 flex flex-col items-start z-10">
-          <div className="relative w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-10 py-12 animate-fade-in-up overflow-visible">
-            <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-10 tracking-tight animate-slide-in-left">
+        <div className="w-full   flex flex-col md:flex-row items-center gap-12 z-10">
+          {/* Left: Icon grid card */}
+          <div className="flex-1 flex flex-col items-center justify-center bg-white/90 dark:bg-zinc-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border-4 border-orange-200 dark:border-yellow-900 px-8 py-10 animate-fade-in-up">
+            <h2 className="text-4xl font-extrabold text-orange-600 dark:text-yellow-400 mb-8 tracking-tight animate-slide-in-left text-center">
               {t("Services_Why_Choose_Us_Title")}
             </h2>
-            <ul className="flex flex-col gap-7">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 "Services_Why_Choose_Us_Point1",
                 "Services_Why_Choose_Us_Point2",
@@ -159,29 +159,29 @@ export default function Services() {
                 "Services_Why_Choose_Us_Point5",
                 "Services_Why_Choose_Us_Point6",
               ].map((key, idx) => (
-                <li
+                <div
                   key={key}
-                  className="flex items-center gap-5 animate-fade-in-up"
+                  className="flex flex-col items-center gap-3 animate-fade-in-up"
                   style={{ animationDelay: `${0.1 + idx * 0.1}s` }}
                 >
                   <span
-                    className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br text-white text-2xl shadow-xl border-4 border-white dark:border-zinc-900"
+                    className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br text-white text-3xl shadow-xl border-4 border-white dark:border-zinc-900"
                     style={{
                       background: [
-                        "linear-gradient(to bottom right, #fb923c, #fde68a, #ea580c)",
-                        "linear-gradient(to bottom right, #fde68a, #fbbf24, #f59e42)",
-                        "linear-gradient(to bottom right, #4ade80, #fde68a, #22c55e)",
-                        "linear-gradient(to bottom right, #f472b6, #fde68a, #fb923c)",
-                        "linear-gradient(to bottom right, #a78bfa, #fde68a, #ec4899)",
-                        "linear-gradient(to bottom right, #60a5fa, #fde68a, #2563eb)",
+                        "linear-gradient(135deg, #fb923c 0%, #fde68a 60%, #ea580c 100%)",
+                        "linear-gradient(135deg, #fde68a 0%, #fbbf24 60%, #f59e42 100%)",
+                        "linear-gradient(135deg, #4ade80 0%, #fde68a 60%, #22c55e 100%)",
+                        "linear-gradient(135deg, #f472b6 0%, #fde68a 60%, #fb923c 100%)",
+                        "linear-gradient(135deg, #a78bfa 0%, #fde68a 60%, #ec4899 100%)",
+                        "linear-gradient(135deg, #60a5fa 0%, #fde68a 60%, #2563eb 100%)",
                       ][idx],
                     }}
                   >
-                    {/* Keep SVGs as is for each point */}
+                    {/* SVG icons remain unchanged */}
                     {
                       [
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -194,7 +194,7 @@ export default function Services() {
                           />
                         </svg>,
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -207,7 +207,7 @@ export default function Services() {
                           />
                         </svg>,
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -220,7 +220,7 @@ export default function Services() {
                           />
                         </svg>,
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -233,7 +233,7 @@ export default function Services() {
                           />
                         </svg>,
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -246,7 +246,7 @@ export default function Services() {
                           />
                         </svg>,
                         <svg
-                          className="w-7 h-7"
+                          className="w-8 h-8"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -261,31 +261,31 @@ export default function Services() {
                       ][idx]
                     }
                   </span>
-                  <span className="text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-semibold">
+                  <span className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-semibold text-center">
                     {t(key)}
                   </span>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        </div>
-        {/* Right: Layered image card with glowing border and floating sparkles */}
-        <div className="flex-1 flex justify-center items-center z-10">
-          <div className="relative w-80 md:w-96 h-80 md:h-96 flex items-center justify-center rounded-3xl bg-white/90 dark:bg-zinc-900/90 shadow-2xl border-4 border-orange-100 dark:border-yellow-900 overflow-visible">
-            {/* Glowing border ring */}
-            <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
-            <Image
-              src="/choose-us.png"
-              alt="Why Choose Us"
-              className="w-56 md:w-72 h-56 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
-              style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
-              width={500}
-              height={500}
-            />
-            {/* Floating sparkles */}
-            <span className="absolute -top-6 -right-6 w-10 h-10 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
-            <span className="absolute bottom-0 right-0 w-8 h-8 bg-orange-200 dark:bg-yellow-900 rounded-full blur-lg opacity-50 animate-float-slow"></span>
-            <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-4 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 rounded-full blur-md opacity-40 animate-fade-in-up"></span>
+          {/* Right: Modern image card */}
+          <div className="flex-1 flex justify-center items-center">
+            <div className="relative w-72 md:w-96 h-72 md:h-96 flex items-center justify-center rounded-3xl bg-white/95 dark:bg-zinc-900/95 shadow-2xl border-4 border-orange-200 dark:border-yellow-900 overflow-visible">
+              {/* Glowing border ring */}
+              <span className="absolute -inset-6 rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-40 animate-pulse-slow z-0"></span>
+              <Image
+                src="/choose-us.png"
+                alt="Why Choose Us"
+                className="w-48 md:w-72 h-48 md:h-72 object-contain rounded-2xl shadow-xl animate-pop-in relative z-10"
+                style={{ animationDelay: "0.7s", animationDuration: "1.2s" }}
+                width={400}
+                height={400}
+              />
+              {/* Floating sparkles */}
+              <span className="absolute -top-6 -right-6 w-10 h-10 bg-yellow-300 dark:bg-yellow-800 rounded-full blur-md opacity-60 animate-pulse-slow"></span>
+              <span className="absolute bottom-0 right-0 w-8 h-8 bg-orange-200 dark:bg-yellow-900 rounded-full blur-lg opacity-50 animate-float-slow"></span>
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-4 bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-600 rounded-full blur-md opacity-40 animate-fade-in-up"></span>
+            </div>
           </div>
         </div>
       </section>

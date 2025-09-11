@@ -23,7 +23,7 @@ const Home2 = () => {
           muted
           playsInline
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src="/home2-bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-b  to-transparent   to-30% z-10" />
@@ -37,7 +37,7 @@ const Home2 = () => {
         </div>
         <div className="relative z-20 flex-1 flex justify-center items-center pt-16 pb-8">
           <img
-            src="/hero-food.png"
+            src="/home2-bg.jpg"
             alt="Delicious Food"
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl"
           />

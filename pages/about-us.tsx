@@ -3,8 +3,7 @@ import Headder from "@/components/Headder";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Head from "next/head";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// ...existing code...
 
 const milestones = [
   { label: "Orders Delivered", value: 120000 },
@@ -65,9 +64,6 @@ const AboutUs = () => {
     { label: t("about_milestones_restaurants"), value: 120 },
     { label: t("about_milestones_cities"), value: 18 },
   ];
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <>
       <Head>
@@ -78,10 +74,7 @@ const AboutUs = () => {
         <Headder />
 
         {/* 1. Hero Section */}
-        <section
-          className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen"
-           
-        >
+        <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-20 min-h-[100vh] w-full max-w-screen">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 dark:opacity-50 pointer-events-none"
