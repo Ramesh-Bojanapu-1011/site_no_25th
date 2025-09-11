@@ -393,7 +393,10 @@ const Home1 = () => {
         </section>
 
         {/* Section 6: Special Offers & Loyalty Rewards - For Logged-in Users */}
-        <section id="menu" className="py-16 px-4 flex justify-center items-center w-full bg-gradient-to-br from-yellow-50 via-orange-50 to-white dark:from-zinc-900 dark:via-yellow-900 dark:to-zinc-800">
+        <section
+          id="menu"
+          className="py-16 px-4 flex justify-center items-center w-full bg-gradient-to-br from-yellow-50 via-orange-50 to-white dark:from-zinc-900 dark:via-yellow-900 dark:to-zinc-800"
+        >
           <div className="w-full max-w-2xl mx-auto rounded-3xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-lg shadow-2xl border-4 border-orange-100 dark:border-yellow-900 p-8 sm:p-12 flex flex-col items-center text-center overflow-hidden relative">
             {/* Animated Gift Icon */}
             <div className="mb-6 animate-bounce-slow">

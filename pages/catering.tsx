@@ -401,10 +401,10 @@ const Catering = () => {
             key={i}
             className={`py-14 px-4
               ${
-              i % 2 === 0
-                ? "bg-orange-200 dark:bg-zinc-800"
-                : "bg-yellow-50 dark:bg-zinc-900"
-            }   mx-auto flex flex-col items-center text-center gap-6`}
+                i % 2 === 0
+                  ? "bg-orange-200 dark:bg-zinc-800"
+                  : "bg-yellow-50 dark:bg-zinc-900"
+              }   mx-auto flex flex-col items-center text-center gap-6`}
           >
             {sec.title && (
               <div className="flex flex-col items-center mb-4">

@@ -14,7 +14,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_How_Title", "How Online Ordering Works"),
       desc: t(
         "OnlineMenu_How_Desc",
-        "Order your favorite dishes in just a few clicks and enjoy fast, contactless delivery."
+        "Order your favorite dishes in just a few clicks and enjoy fast, contactless delivery.",
       ),
       // icon: "/online-order.svg",
       content: (
@@ -28,7 +28,7 @@ const OnlineMenu = () => {
                   label: t("OnlineMenu_Step1_Label", "Browse Menu"),
                   desc: t(
                     "OnlineMenu_Step1_Desc",
-                    "Explore our delicious offerings"
+                    "Explore our delicious offerings",
                   ),
                 },
                 {
@@ -36,7 +36,7 @@ const OnlineMenu = () => {
                   label: t("OnlineMenu_Step2_Label", "Add to Cart"),
                   desc: t(
                     "OnlineMenu_Step2_Desc",
-                    "Select your favorites and customize"
+                    "Select your favorites and customize",
                   ),
                 },
                 {
@@ -44,7 +44,7 @@ const OnlineMenu = () => {
                   label: t("OnlineMenu_Step3_Label", "Checkout"),
                   desc: t(
                     "OnlineMenu_Step3_Desc",
-                    "Secure online payment options"
+                    "Secure online payment options",
                   ),
                 },
                 {
@@ -52,7 +52,7 @@ const OnlineMenu = () => {
                   label: t("OnlineMenu_Step4_Label", "Track & Enjoy"),
                   desc: t(
                     "OnlineMenu_Step4_Desc",
-                    "Real-time order tracking and fast delivery"
+                    "Real-time order tracking and fast delivery",
                   ),
                 },
               ].map((step, idx) => {
@@ -110,7 +110,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_Categories_Title", "Menu Categories"),
       desc: t(
         "OnlineMenu_Categories_Desc",
-        "Discover a variety of cuisines and dishes to satisfy every craving."
+        "Discover a variety of cuisines and dishes to satisfy every craving.",
       ),
       // icon: "/menu.svg",
       content: (
@@ -121,7 +121,7 @@ const OnlineMenu = () => {
               img: "/starters.jpg",
               desc: t(
                 "OnlineMenu_Category_Starters_Desc",
-                "Tasty beginnings to your meal"
+                "Tasty beginnings to your meal",
               ),
             },
             {
@@ -129,7 +129,7 @@ const OnlineMenu = () => {
               img: "/main-course.jpg",
               desc: t(
                 "OnlineMenu_Category_MainCourse_Desc",
-                "Hearty and flavorful dishes"
+                "Hearty and flavorful dishes",
               ),
             },
             {
@@ -137,7 +137,7 @@ const OnlineMenu = () => {
               img: "/desserts.jpg",
               desc: t(
                 "OnlineMenu_Category_Desserts_Desc",
-                "Sweet treats to finish"
+                "Sweet treats to finish",
               ),
             },
             {
@@ -145,7 +145,7 @@ const OnlineMenu = () => {
               img: "/beverages.jpg",
               desc: t(
                 "OnlineMenu_Category_Beverages_Desc",
-                "Refreshing drinks and more"
+                "Refreshing drinks and more",
               ),
             },
           ].map((cat) => (
@@ -176,7 +176,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_Featured_Title", "Featured Dishes"),
       desc: t(
         "OnlineMenu_Featured_Desc",
-        "Our chef’s top picks, loved by customers and perfect for any occasion."
+        "Our chef’s top picks, loved by customers and perfect for any occasion.",
       ),
       // icon: "/chef-hat.svg",
       content: (
@@ -187,7 +187,7 @@ const OnlineMenu = () => {
               img: "/paneer-tikka.jpg",
               desc: t(
                 "OnlineMenu_Featured_PaneerTikka_Desc",
-                "Grilled cottage cheese with spices"
+                "Grilled cottage cheese with spices",
               ),
             },
             {
@@ -195,7 +195,7 @@ const OnlineMenu = () => {
               img: "/butter-chicken.jpg",
               desc: t(
                 "OnlineMenu_Featured_ButterChicken_Desc",
-                "Creamy tomato-based chicken curry"
+                "Creamy tomato-based chicken curry",
               ),
             },
             {
@@ -203,7 +203,7 @@ const OnlineMenu = () => {
               img: "/veg-biryani.jpg",
               desc: t(
                 "OnlineMenu_Featured_VegBiryani_Desc",
-                "Aromatic rice with mixed vegetables"
+                "Aromatic rice with mixed vegetables",
               ),
             },
             {
@@ -211,7 +211,7 @@ const OnlineMenu = () => {
               img: "/gulab-jamun.jpg",
               desc: t(
                 "OnlineMenu_Featured_GulabJamun_Desc",
-                "Soft, syrupy dessert balls"
+                "Soft, syrupy dessert balls",
               ),
             },
           ].map((dish) => (
@@ -242,7 +242,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_Why_Title", "Why Order Online?"),
       desc: t(
         "OnlineMenu_Why_Desc",
-        "Enjoy exclusive benefits and a hassle-free experience when you order from our online menu."
+        "Enjoy exclusive benefits and a hassle-free experience when you order from our online menu.",
       ),
       // icon: "/success.svg",
       content: (
@@ -258,7 +258,7 @@ const OnlineMenu = () => {
             </span>
             {t(
               "OnlineMenu_Why_QuickDelivery",
-              "Quick and reliable delivery to your doorstep"
+              "Quick and reliable delivery to your doorstep",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -272,7 +272,7 @@ const OnlineMenu = () => {
             </span>
             {t(
               "OnlineMenu_Why_ExclusiveOffers",
-              "Exclusive online-only deals and discounts"
+              "Exclusive online-only deals and discounts",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -286,7 +286,7 @@ const OnlineMenu = () => {
             </span>
             {t(
               "OnlineMenu_Why_SecurePayment",
-              "Secure payment and easy checkout"
+              "Secure payment and easy checkout",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -300,7 +300,7 @@ const OnlineMenu = () => {
             </span>
             {t(
               "OnlineMenu_Why_Support",
-              "24/7 customer support for your orders"
+              "24/7 customer support for your orders",
             )}
           </li>
         </ul>
@@ -311,7 +311,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_Reviews_Title", "Customer Reviews"),
       desc: t(
         "OnlineMenu_Reviews_Desc",
-        "See what our happy customers are saying about their online ordering experience."
+        "See what our happy customers are saying about their online ordering experience.",
       ),
       // icon: "/user1.jpg",
       content: (
@@ -321,7 +321,7 @@ const OnlineMenu = () => {
               name: t("OnlineMenu_Reviews_Name1", "Rohit S."),
               feedback: t(
                 "OnlineMenu_Reviews_Review1",
-                "Ordering online was so easy and the food arrived hot and fresh!"
+                "Ordering online was so easy and the food arrived hot and fresh!",
               ),
               img: "/user2.jpg",
             },
@@ -329,7 +329,7 @@ const OnlineMenu = () => {
               name: t("OnlineMenu_Reviews_Name2", "Neha T."),
               feedback: t(
                 "OnlineMenu_Reviews_Review2",
-                "Loved the variety and the quick delivery. Will order again!"
+                "Loved the variety and the quick delivery. Will order again!",
               ),
               img: "/user1.jpg",
             },
@@ -337,7 +337,7 @@ const OnlineMenu = () => {
               name: t("OnlineMenu_Reviews_Name3", "Arjun M."),
               feedback: t(
                 "OnlineMenu_Reviews_Review3",
-                "Great offers and the checkout process was smooth."
+                "Great offers and the checkout process was smooth.",
               ),
               img: "/user4.jpg",
             },
@@ -345,7 +345,7 @@ const OnlineMenu = () => {
               name: t("OnlineMenu_Reviews_Name4", "Simran P."),
               feedback: t(
                 "OnlineMenu_Reviews_Review4",
-                "Customer support was very helpful with my order."
+                "Customer support was very helpful with my order.",
               ),
               img: "/user3.jpg",
             },
@@ -377,7 +377,7 @@ const OnlineMenu = () => {
       title: t("OnlineMenu_CTA_Title", "Ready to Order?"),
       desc: t(
         "OnlineMenu_CTA_Desc",
-        "Browse our menu and place your order for a delicious meal delivered to your door!"
+        "Browse our menu and place your order for a delicious meal delivered to your door!",
       ),
       // icon: "/cart.svg",
       content: (
@@ -391,7 +391,7 @@ const OnlineMenu = () => {
           <p className="text-lg text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
             {t(
               "OnlineMenu_CTA_Reserve_Desc",
-              "Enjoy restaurant-quality food at home. Fast delivery, secure payment, and exclusive deals await you."
+              "Enjoy restaurant-quality food at home. Fast delivery, secure payment, and exclusive deals await you.",
             )}
           </p>
           <Link
@@ -415,7 +415,7 @@ const OnlineMenu = () => {
           name="description"
           content={t(
             "OnlineMenu_Meta_Desc",
-            "Order your favorite dishes online for fast delivery. Browse our menu and enjoy exclusive offers."
+            "Order your favorite dishes online for fast delivery. Browse our menu and enjoy exclusive offers.",
           )}
         />
       </Head>
@@ -434,7 +434,7 @@ const OnlineMenu = () => {
             <source src="/online-menu-hero-bg.mp4" type="video/mp4" />
             {t(
               "OnlineMenu_Video_Fallback",
-              "Your browser does not support the video tag."
+              "Your browser does not support the video tag.",
             )}
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 via-yellow-100/30 to-white/0 dark:from-yellow-900/40 dark:via-orange-900/30 dark:to-zinc-900/0 z-0 pointer-events-none" />
@@ -445,7 +445,7 @@ const OnlineMenu = () => {
             <p className=" font-semibold md:text-2xl dark:text-zinc-200 mb-6 max-w-xl">
               {t(
                 "OnlineMenu_Hero_Desc",
-                "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!"
+                "Explore our menu, customize your order, and enjoy fast delivery to your doorstep. Restaurant-quality food, just a click away!",
               )}
             </p>
             <Link

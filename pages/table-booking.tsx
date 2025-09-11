@@ -14,7 +14,7 @@ const TableBooking = () => {
       title: t("TableBooking_How_Title", "How Table Booking Works"),
       desc: t(
         "TableBooking_How_Desc",
-        "Reserve your perfect table in just a few easy steps and enjoy a seamless dining experience."
+        "Reserve your perfect table in just a few easy steps and enjoy a seamless dining experience.",
       ),
 
       content: (
@@ -28,7 +28,7 @@ const TableBooking = () => {
                   label: t("TableBooking_Step1_Label", "Pick a Date"),
                   desc: t(
                     "TableBooking_Step1_Desc",
-                    "Choose your preferred date and time"
+                    "Choose your preferred date and time",
                   ),
                 },
                 {
@@ -36,7 +36,7 @@ const TableBooking = () => {
                   label: t("TableBooking_Step2_Label", "Select Table Type"),
                   desc: t(
                     "TableBooking_Step2_Desc",
-                    "Indoor, outdoor, or private dining"
+                    "Indoor, outdoor, or private dining",
                   ),
                 },
                 {
@@ -44,7 +44,7 @@ const TableBooking = () => {
                   label: t("TableBooking_Step3_Label", "Enter Details"),
                   desc: t(
                     "TableBooking_Step3_Desc",
-                    "Provide your name and contact info"
+                    "Provide your name and contact info",
                   ),
                 },
                 {
@@ -52,7 +52,7 @@ const TableBooking = () => {
                   label: t("TableBooking_Step4_Label", "Confirm Reservation"),
                   desc: t(
                     "TableBooking_Step4_Desc",
-                    "Get instant confirmation & reminders"
+                    "Get instant confirmation & reminders",
                   ),
                 },
               ].map((step, idx, arr) => {
@@ -110,7 +110,7 @@ const TableBooking = () => {
       title: t("TableBooking_Types_Title", "Table Types & Ambience"),
       desc: t(
         "TableBooking_Types_Desc",
-        "Choose from a variety of seating options to match your mood and occasion."
+        "Choose from a variety of seating options to match your mood and occasion.",
       ),
 
       content: (
@@ -121,7 +121,7 @@ const TableBooking = () => {
               img: "/indoor-table.jpg",
               desc: t(
                 "TableBooking_Type_Indoor_Desc",
-                "Cozy, air-conditioned comfort"
+                "Cozy, air-conditioned comfort",
               ),
             },
             {
@@ -129,7 +129,7 @@ const TableBooking = () => {
               img: "/outdoor-table.jpg",
               desc: t(
                 "TableBooking_Type_Outdoor_Desc",
-                "Fresh air, scenic views"
+                "Fresh air, scenic views",
               ),
             },
             {
@@ -137,7 +137,7 @@ const TableBooking = () => {
               img: "/private-table.jpg",
               desc: t(
                 "TableBooking_Type_Private_Desc",
-                "Exclusive, intimate setting"
+                "Exclusive, intimate setting",
               ),
             },
           ].map((type) => (
@@ -168,7 +168,7 @@ const TableBooking = () => {
       title: t("TableBooking_Why_Title", "Why Reserve a Table?"),
       desc: t(
         "TableBooking_Why_Desc",
-        "Enjoy guaranteed seating, special requests, and a personalized dining experience."
+        "Enjoy guaranteed seating, special requests, and a personalized dining experience.",
       ),
 
       content: (
@@ -184,7 +184,7 @@ const TableBooking = () => {
             </span>
             {t(
               "TableBooking_Why_Priority",
-              "Priority seating—never wait in line again"
+              "Priority seating—never wait in line again",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -198,7 +198,7 @@ const TableBooking = () => {
             </span>
             {t(
               "TableBooking_Why_Personalized",
-              "Personalized service tailored to your preferences"
+              "Personalized service tailored to your preferences",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -212,7 +212,7 @@ const TableBooking = () => {
             </span>
             {t(
               "TableBooking_Why_Celebration",
-              "Special perks for celebrations—complimentary cake or decor"
+              "Special perks for celebrations—complimentary cake or decor",
             )}
           </li>
           <li className="flex items-center gap-3">
@@ -226,7 +226,7 @@ const TableBooking = () => {
             </span>
             {t(
               "TableBooking_Why_EasyChanges",
-              "Easy modifications or cancellations anytime"
+              "Easy modifications or cancellations anytime",
             )}
           </li>
         </ul>
@@ -242,7 +242,7 @@ const TableBooking = () => {
           <p className="text-zinc-700 dark:text-zinc-200 mb-2 max-w-2xl">
             {t(
               "TableBooking_Experiences_Desc",
-              "See what our guests are saying about their table booking and dining experience."
+              "See what our guests are saying about their table booking and dining experience.",
             )}
           </p>
           <div className="flex flex-wrap gap-6 justify-center">
@@ -251,28 +251,28 @@ const TableBooking = () => {
                 name: t("TableBooking_Experiences_Name1", "Priya S."),
                 review: t(
                   "TableBooking_Experiences_Review1",
-                  "Wonderful service and a beautiful atmosphere!"
+                  "Wonderful service and a beautiful atmosphere!",
                 ),
               },
               {
                 name: t("TableBooking_Experiences_Name2", "Rahul M."),
                 review: t(
                   "TableBooking_Experiences_Review2",
-                  "Wonderful service and a beautiful atmosphere!"
+                  "Wonderful service and a beautiful atmosphere!",
                 ),
               },
               {
                 name: t("TableBooking_Experiences_Name3", "Anjali T."),
                 review: t(
                   "TableBooking_Experiences_Review3",
-                  "Wonderful service and a beautiful atmosphere!"
+                  "Wonderful service and a beautiful atmosphere!",
                 ),
               },
               {
                 name: t("TableBooking_Experiences_Name4", "Arjun D."),
                 review: t(
                   "TableBooking_Experiences_Review4",
-                  "Wonderful service and a beautiful atmosphere!"
+                  "Wonderful service and a beautiful atmosphere!",
                 ),
               },
             ].map((item, i) => (
@@ -304,7 +304,7 @@ const TableBooking = () => {
       title: t("TableBooking_CTA_Title", "Book Your Table Now!"),
       desc: t(
         "TableBooking_CTA_Desc",
-        "Ready to reserve your spot? Secure your table in seconds and look forward to a memorable meal."
+        "Ready to reserve your spot? Secure your table in seconds and look forward to a memorable meal.",
       ),
 
       content: (
@@ -318,7 +318,7 @@ const TableBooking = () => {
           <p className="text-lg text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
             {t(
               "TableBooking_CTA_Reserve_Desc",
-              "Click below to book your table online, or contact us for group reservations and special requests."
+              "Click below to book your table online, or contact us for group reservations and special requests.",
             )}
           </p>
           <Link
@@ -342,7 +342,7 @@ const TableBooking = () => {
           name="description"
           content={t(
             "TableBooking_Meta_Desc",
-            "Reserve your table online for a seamless dining experience."
+            "Reserve your table online for a seamless dining experience.",
           )}
         />
       </Head>
@@ -361,7 +361,7 @@ const TableBooking = () => {
             <source src="/table-booking-hero-bg.mp4" type="video/mp4" />
             {t(
               "TableBooking_Video_Fallback",
-              "Your browser does not support the video tag."
+              "Your browser does not support the video tag.",
             )}
           </video>
           <div className="flex-1 text-center md:text-left z-10">
@@ -371,7 +371,7 @@ const TableBooking = () => {
             <p className="font-semibold md:text-2xl dark:text-zinc-200 mb-6 max-w-xl">
               {t(
                 "TableBooking_Hero_Desc",
-                "Book your table online for a seamless dining experience. Choose your date, table type, and let us make your meal special—no waiting, just great moments."
+                "Book your table online for a seamless dining experience. Choose your date, table type, and let us make your meal special—no waiting, just great moments.",
               )}
             </p>
             <Link

@@ -21,12 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [i18n.language]);
   if (!langReady) return null;
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider>
       <Component {...pageProps} />
     </ThemeProvider>
   );
