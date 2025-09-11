@@ -12,7 +12,7 @@ const Headder = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
-  const [userInitials, setUserInitials] = React.useState(""); // Default initials
+  const [userInitials, setUserInitials] = React.useState("?"); // Default initials
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [langReady, setLangReady] = useState(false);
   const router = useRouter();
@@ -151,7 +151,6 @@ const Headder = () => {
             />
           </Link>
         </div>
-        
 
         <div className="flex items-center ml-1 gap-1 sm:ml-2 sm:gap-2">
           <ul
@@ -268,11 +267,9 @@ const Headder = () => {
               </Link>
             </li>
           </ul>
-          
 
           {/* Language Dropdown */}
           <div className="relative ml-2">
-            
             <button
               onClick={() => handleDropdown("language")}
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-tr from-orange-200 to-yellow-200 dark:from-yellow-900 dark:to-orange-900 text-orange-700 dark:text-yellow-300 font-semibold hover:bg-orange-200 dark:hover:bg-zinc-800 transition-colors focus:outline-none"

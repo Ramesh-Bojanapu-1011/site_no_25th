@@ -187,8 +187,7 @@ const AboutUs = () => {
 
         {/* 4. Our Milestones - with animated counters */}
         <section className="relative py-20 px-4 w-full flex flex-col items-center gap-16   mx-auto bg-gradient-to-br from-yellow-50 via-orange-100 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-zinc-900  shadow-2xl border-0 border-b-8 border-orange-200 dark:border-yellow-700 max-w-screen">
-          {/* Animated gradient border ring */}
-          <span className="hidden md:block absolute -top-16 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-orange-400 via-yellow-200 to-orange-600 dark:from-yellow-700 dark:via-orange-500 dark:to-yellow-300 blur-3xl opacity-30 animate-pulse-slow z-0"></span>
+           
           <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-700 dark:from-yellow-300 dark:via-orange-400 dark:to-yellow-500 mb-12 animate-gradient-x z-10">
             {t("about_milestones_title")}
           </h2>

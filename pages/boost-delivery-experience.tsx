@@ -21,7 +21,7 @@ const BoostDeliveryExperience = () => {
             <h1 className="text-4xl md:text-5xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               {t("BoostDelivery_Hero_Title")}
             </h1>
-            <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
+            <p className="font-semibold md:text-2xl dark:text-zinc-200 mb-6 max-w-xl">
               {t("BoostDelivery_Hero_Desc")}
             </p>
           </div>

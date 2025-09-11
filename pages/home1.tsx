@@ -480,7 +480,6 @@ const Home1 = () => {
               </div>
             </div>
             <Link
-            
               href="/services"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold text-lg shadow-lg hover:scale-105 hover:from-orange-600 hover:to-yellow-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-yellow-700 mt-2"
             >

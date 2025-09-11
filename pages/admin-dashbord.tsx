@@ -73,7 +73,7 @@ function getPieData(users: User[]): { name: string; value: number }[] {
     if (currentUser) {
       const parsedUser = JSON.parse(currentUser);
       currentUserCount = users.filter(
-        (u) => u.email === parsedUser.email
+        (u) => u.email === parsedUser.email,
       ).length;
     }
 
@@ -220,7 +220,7 @@ const AdminDashboardPage = () => {
                 {allUsers.map((user, idx) => (
                   <tr
                     key={user.email + idx}
-                    className="border-b border-orange-100 dark:border-yellow-900 hover:bg-orange-50/40 dark:hover:bg-yellow-900/20 transition"
+                    className="border-b border-orange-100 dark:border-yellow-900 hover:bg-orange-50/40 dark:hover:bg-yellow-900/20 transition dark:text-white"
                   >
                     <td className="py-2 px-4">
                       {user.firstName} {user.lastName}

@@ -18,7 +18,7 @@ const Footer = (props: Props) => {
   const { t } = useTranslation();
   return (
     <footer className="w-full flex flex-col items-center justify-center bg-gradient-to-r from-orange-100 to-yellow-100 dark:bg-gradient-to-r dark:from-zinc-900 dark:to-zinc-800 text-zinc-800 dark:text-yellow-100 border-t border-orange-200 dark:border-yellow-700   transition-colors duration-300">
-      <div className="max-w-345  py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-345  py-10 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 md:pl-4 gap-8">
         {/* Logo & About */}
         <div className="flex flex-col items-start">
           <Image

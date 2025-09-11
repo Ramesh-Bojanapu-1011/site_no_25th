@@ -78,7 +78,7 @@ const AuthPage = () => {
       router.push("/admin-dashbord");
     }
     const foundUserIdx = users.findIndex(
-      (u: any) => u.email === loginEmail && u.password === loginPassword
+      (u: any) => u.email === loginEmail && u.password === loginPassword,
     );
     if (foundUserIdx === -1) {
       setError("Invalid email or password.");

@@ -58,10 +58,10 @@ const PartyOrders = () => {
                       <span className="absolute left-1/2 top-0 w-1 h-10 bg-gradient-to-b from-orange-300 via-yellow-200 to-orange-200 dark:from-yellow-800 dark:via-yellow-700 dark:to-yellow-900 opacity-70 z-0 -translate-x-1/2 animate-pulse" />
                     )}
                     <div
-                      className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${
+                      className={`relative bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-2xl border-4 border-orange-100 dark:border-yellow-900 px-6 py-6 min-w-[220px] max-w-xs sm:max-w-sm md:max-w-md flex flex-col items-center gap-2 backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 ${
                         isLeft
-                          ? "ml-0 md:-ml-32 md:self-start"
-                          : "mr-0 md:-mr-32 md:self-end"
+                          ? "ml-0 md:ml-0 md:self-start"
+                          : "mr-0 md:mr-0 md:self-end"
                       }`}
                     >
                       <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-700 shadow-lg border-2 border-orange-200 dark:border-yellow-800 mb-2 relative animate-bounce-slow">
@@ -290,7 +290,7 @@ const PartyOrders = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold text-orange-600 dark:text-yellow-400 mb-4 drop-shadow-lg">
               {t("PartyOrders_Hero_Title")}
             </h1>
-            <p className="text-lg md:text-2xl text-zinc-700 dark:text-zinc-200 mb-6 max-w-xl">
+            <p className="font-semibold md:text-2xl dark:text-zinc-200 mb-6 max-w-xl">
               {t("PartyOrders_Hero_Desc")}
             </p>
             <Link
@@ -316,7 +316,12 @@ const PartyOrders = () => {
         {partySections.map((sec, i) => (
           <section
             key={i}
-            className="py-14 px-4   mx-auto flex flex-col items-center text-center gap-6"
+            className={`py-14 px-4
+              ${
+                i % 2 === 0
+                  ? "bg-orange-200 dark:bg-zinc-800"
+                  : "bg-yellow-50 dark:bg-zinc-900"
+              }   mx-auto flex flex-col items-center text-center gap-6`}
           >
             {sec.title && (
               <div className="flex flex-col items-center mb-4">
